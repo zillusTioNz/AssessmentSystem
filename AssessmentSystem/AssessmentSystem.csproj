@@ -96,8 +96,20 @@
     <Content Include="App_Data\NWind_log.ldf">
       <DependentUpon>NWind.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\SideMenu.xml" />
+    <Content Include="App_Data\SideMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\TopMenu.xml" />
+    <Content Include="CalCarry\AcademicService\Academic.aspx" />
+    <Content Include="CalCarry\CalCarryMain.aspx" />
+    <Content Include="CalCarry\Teaching\AdvisorProject.aspx" />
+    <Content Include="CalCarry\Teaching\AdvisorThesis.aspx" />
+    <Content Include="CalCarry\Teaching\CommitteeProject.aspx" />
+    <Content Include="CalCarry\Teaching\CommitteeThesis.aspx" />
+    <Content Include="CalCarry\Teaching\DirectTeaching.aspx" />
+    <Content Include="CalCarry\Teaching\Supervision.aspx" />
+    <Content Include="CalCarry\Thesis\Publishing.aspx" />
+    <Content Include="CalCarry\Thesis\Topics.aspx" />
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\BlackGlassHeader.jpg" />
     <Content Include="Content\Images\GlassHeader.jpg" />
@@ -105,6 +117,7 @@
     <Content Include="Content\Images\RedWineHeader.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
@@ -164,12 +177,89 @@
     <Compile Include="Account\RegisterSuccess.aspx.designer.cs">
       <DependentUpon>RegisterSuccess.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CalCarry\AcademicService\Academic.aspx.cs">
+      <DependentUpon>Academic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\AcademicService\Academic.aspx.designer.cs">
+      <DependentUpon>Academic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\CalCarryMain.aspx.cs">
+      <DependentUpon>CalCarryMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\CalCarryMain.aspx.designer.cs">
+      <DependentUpon>CalCarryMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\AdvisorProject.aspx.cs">
+      <DependentUpon>AdvisorProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\AdvisorProject.aspx.designer.cs">
+      <DependentUpon>AdvisorProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\AdvisorThesis.aspx.cs">
+      <DependentUpon>AdvisorThesis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\AdvisorThesis.aspx.designer.cs">
+      <DependentUpon>AdvisorThesis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\CommitteeProject.aspx.cs">
+      <DependentUpon>CommitteeProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\CommitteeProject.aspx.designer.cs">
+      <DependentUpon>CommitteeProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\CommitteeThesis.aspx.cs">
+      <DependentUpon>CommitteeThesis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\CommitteeThesis.aspx.designer.cs">
+      <DependentUpon>CommitteeThesis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\DirectTeaching.aspx.cs">
+      <DependentUpon>DirectTeaching.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\DirectTeaching.aspx.designer.cs">
+      <DependentUpon>DirectTeaching.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\Supervision.aspx.cs">
+      <DependentUpon>Supervision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\Supervision.aspx.designer.cs">
+      <DependentUpon>Supervision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Thesis\Publishing.aspx.cs">
+      <DependentUpon>Publishing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Thesis\Publishing.aspx.designer.cs">
+      <DependentUpon>Publishing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Thesis\Topics.aspx.cs">
+      <DependentUpon>Topics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Thesis\Topics.aspx.designer.cs">
+      <DependentUpon>Topics.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +289,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CalCarry\ArtCulture\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
