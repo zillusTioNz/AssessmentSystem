@@ -9,17 +9,19 @@
     <item Text="กรรมการสอบโครงงาน" NavigateUrl="~/CalCarry/Teaching/CommitteeProject.aspx"/>
   </group>
   <group Text="2.งานวิจัย">
-    <item Text="หัวข้องานวิจัย" NavigateUrl="~/CalCarry/Thesis/Topics.aspx"/>
-    <item Text="งานตีพิมพ์ในวารสารวิชาการ" NavigateUrl="~/CalCarry/Thesis/Publishing.aspx"/>
+    <item Text="หัวข้องานวิจัย" NavigateUrl="~/CalCarry/Research/Topics.aspx"/>
+    <item Text="งานตีพิมพ์ในวารสารวิชาการ" NavigateUrl="~/CalCarry/Research/Publishing.aspx"/>
   </group>
   <group Text="3.งานบริการวิชาการ">
     <item Text="งานบริการวิชาการ" NavigateUrl="~/CalCarry/AcademicService/Academic.aspx"/>
   </group>
   <group Text="4.งานทำนุบำรุงศิลปวัฒนธรรม">
-    <item Text="งานทำนุบำรุงศิลปวัฒนธรรม" NavigateUrl="~/CalCarry/AcademicService/Academic.aspx"/>
+    <item Text="งานทำนุบำรุงศิลปวัฒนธรรม" NavigateUrl="~/CalCarry/ArtandCulture/ArtandCulture.aspx"/>
   </group>
   <group Text="5.งานพัฒนานักศึกษา">
+    <item Text="งานพัฒนานักศึกษา" NavigateUrl="~/CalCarry/StudentDevelopment/StdDevelopment.aspx"/>
   </group>
   <group Text="6.งานบริหาร/งานส่วนกลาง">
+    <item Text="งานบริหาร/งานส่วนกลาง" NavigateUrl="~/CalCarry/Administrative/Administrative.aspx"/>
   </group>
 </menu>

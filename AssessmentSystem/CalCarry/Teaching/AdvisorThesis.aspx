@@ -20,7 +20,7 @@
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn FieldName="Refer" Visible="False" VisibleIndex="3">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Username" Visible="False" VisibleIndex="4">
+                <dx:GridViewDataTextColumn FieldName="UserName" Visible="False" VisibleIndex="4">
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn FieldName="DurationID" Visible="False" VisibleIndex="5">
                 </dx:GridViewDataTextColumn>
@@ -35,32 +35,32 @@
                 <dx:ASPxSummaryItem FieldName="CpW" SummaryType="Sum" />
             </TotalSummary>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlAdvisorThesis" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [AdvisorThesis] WHERE [id] = @original_id AND (([ThesisName] = @original_ThesisName) OR ([ThesisName] IS NULL AND @original_ThesisName IS NULL)) AND (([Refer] = @original_Refer) OR ([Refer] IS NULL AND @original_Refer IS NULL)) AND (([Username] = @original_Username) OR ([Username] IS NULL AND @original_Username IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))" InsertCommand="INSERT INTO [AdvisorThesis] ([ThesisName], [Refer], [Username], [DurationID], [StatusID]) VALUES (@ThesisName, @Refer, @Username, @DurationID, @StatusID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [AdvisorThesis]" UpdateCommand="UPDATE [AdvisorThesis] SET [ThesisName] = @ThesisName, [Refer] = @Refer, [Username] = @Username, [DurationID] = @DurationID, [StatusID] = @StatusID WHERE [id] = @original_id AND (([ThesisName] = @original_ThesisName) OR ([ThesisName] IS NULL AND @original_ThesisName IS NULL)) AND (([Refer] = @original_Refer) OR ([Refer] IS NULL AND @original_Refer IS NULL)) AND (([Username] = @original_Username) OR ([Username] IS NULL AND @original_Username IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))">
+        <asp:SqlDataSource ID="SqlAdvisorThesis" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [AdvisorThesis] WHERE [id] = @original_id AND [ThesisName] = @original_ThesisName AND (([Refer] = @original_Refer) OR ([Refer] IS NULL AND @original_Refer IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))" InsertCommand="INSERT INTO [AdvisorThesis] ([ThesisName], [Refer], [UserName], [DurationID], [StatusID]) VALUES (@ThesisName, @Refer, @UserName, @DurationID, @StatusID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [AdvisorThesis]" UpdateCommand="UPDATE [AdvisorThesis] SET [ThesisName] = @ThesisName, [Refer] = @Refer, [UserName] = @UserName, [DurationID] = @DurationID, [StatusID] = @StatusID WHERE [id] = @original_id AND [ThesisName] = @original_ThesisName AND (([Refer] = @original_Refer) OR ([Refer] IS NULL AND @original_Refer IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_ThesisName" Type="String" />
                 <asp:Parameter Name="original_Refer" Type="String" />
-                <asp:Parameter Name="original_Username" Type="String" />
+                <asp:Parameter Name="original_UserName" Type="String" />
                 <asp:Parameter Name="original_DurationID" Type="Int32" />
                 <asp:Parameter Name="original_StatusID" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="ThesisName" Type="String" />
                 <asp:Parameter Name="Refer" Type="String" />
-                <asp:Parameter Name="Username" Type="String" />
+                <asp:Parameter Name="UserName" Type="String" />
                 <asp:Parameter Name="DurationID" Type="Int32" />
                 <asp:Parameter Name="StatusID" Type="Int32" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="ThesisName" Type="String" />
                 <asp:Parameter Name="Refer" Type="String" />
-                <asp:Parameter Name="Username" Type="String" />
+                <asp:Parameter Name="UserName" Type="String" />
                 <asp:Parameter Name="DurationID" Type="Int32" />
                 <asp:Parameter Name="StatusID" Type="Int32" />
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_ThesisName" Type="String" />
                 <asp:Parameter Name="original_Refer" Type="String" />
-                <asp:Parameter Name="original_Username" Type="String" />
+                <asp:Parameter Name="original_UserName" Type="String" />
                 <asp:Parameter Name="original_DurationID" Type="Int32" />
                 <asp:Parameter Name="original_StatusID" Type="Int32" />
             </UpdateParameters>

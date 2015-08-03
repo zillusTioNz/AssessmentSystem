@@ -13,5 +13,14 @@ namespace AssessmentSystem.CalCarry.Teaching
         {
 
         }
+
+        protected void gvTesterThesis_CustomUnboundColumnData(object sender, DevExpress.Web.ASPxGridViewColumnDataEventArgs e)
+        {
+
+            if (e.Column.FieldName == "CpW")
+            {
+                e.Value = 1.5;
+            }
+        }
     }
 }
