@@ -14,8 +14,8 @@ namespace AssessmentSystem.CalCarry.Administrative
         AssessmentSystemDataContext db = new AssessmentSystemDataContext();
         static ArrayList Carry = new ArrayList();
         static ArrayList Temp = new ArrayList();
-        static bool a = true, b = true, c = true, d = true, e = true, f = true;
-        static int q = 0;
+        static bool a=true, b=true, c=true, d=true, e=true, f=true;
+
         public class ReverseSort : IComparer
         {
             public int Compare(object x, object y)
@@ -64,6 +64,8 @@ namespace AssessmentSystem.CalCarry.Administrative
                     cbFacultyBoard.Value = q.FacultyBoard;
                     seBranchBoardCmd.Value = q.BranchBoardCmd;
                     seAssignmentCmd.Value = q.AssignmentCmd;
+
+                    ShowCarry();
 
                 }
                 catch (Exception)
@@ -123,7 +125,7 @@ namespace AssessmentSystem.CalCarry.Administrative
 
             db.SubmitChanges();
 
-            //Response.Redirect("Administrative.aspx");
+            Response.Redirect("Administrative.aspx");
         }
 
         public void CreateArray(string str , ASPxCheckBox cb)
@@ -173,59 +175,63 @@ namespace AssessmentSystem.CalCarry.Administrative
 
         public void ShowCarry()
         {
-            
+            for (int i = 0; i < Temp.Count; i++)
+            {
                 if (cbChancellor.Checked&&a)
                 {
-                    tbChancellorTotal.Text = Temp[q].ToString(); 
+                    tbChancellorTotal.Text = Temp[i].ToString();
                     a = false;
-                    q++;
-                }
-                else if (cbViceChancellor.Checked&&b)
+                }else if (cbViceChancellor.Checked&&b)
                 {
-                    tbViceChanTotal.Text = Temp[q].ToString(); 
+                    tbViceChanTotal.Text = Temp[i].ToString();
                     b = false;
-                    q++;
-                }
-                else if (cbDean.Checked&&c)
+                }else if (cbDean.Checked&&c)
                 {
-                    tbDeanTotal.Text = Temp[q].ToString();
+                    tbDeanTotal.Text = Temp[i].ToString();
                     c = false;
-                    q++;
-                }
-                else if (cbChancellorAssistant.Checked&&d)
+                }else if (cbChancellorAssistant.Checked&&d)
                 {
-                    tbChanAssistTotal.Text = Temp[q].ToString();
+                    tbChanAssistTotal.Text = Temp[i].ToString();
                     d = false;
-                    q++;
-                }
-                else if (cbViceDean.Checked&&e)
+                }else if (cbViceDean.Checked&&e)
                 {
-                    tbViceDeanTotal.Text = Temp[q].ToString();
+                    tbViceDeanTotal.Text = Temp[i].ToString();
                     e = false;
-                    q++;
+                }else if (cbDepartmentHead.Checked)
+                {
+                    tbDeptHeadTotal.Text = Temp[i].ToString();
+                }else if (cbDeanOfficeHead.Checked)
+                {
+                    tbDeanOfficeHTotal.Text = Temp[i].ToString();
+                }else if (cbDeanAssistant.Checked)
+                {
+                    tbDeanAssistTotal.Text = Temp[i].ToString();
+                }else if (cbBranchHeadDirect.Checked)
+                {
+                    tbBranchHeadDTotal.Text = Temp[i].ToString();
+                }else if (cbViceDepartment.Checked)
+                {
+                    tbViceDeptTotal.Text = Temp[i].ToString();
+                }else if (cbBranchHeadIn.Checked)
+                {
+                    tbBranchHeadInTotal.Text = Temp[i].ToString();
+                }else if (cbFacultyCouncilChief.Checked)
+                {
+                    tbFactCounChiefTotal.Text = Temp[i].ToString();
+                }else if (cbViceFactCouncilChief.Checked)
+                {
+                    tbViceFactCounChiefTotal.Text = Temp[i].ToString();
+                }else if (cbCouncillors.Checked)
+                {
+                    tbCouncillorsTotal.Text = Temp[i].ToString();
                 }
-        }
+            }
 
-        public void ClearTextbox()
-        {
-            tbAdminAllTotal.Text = "";
-            tbAssignCmdTotal.Text = "";
-            tbBranchBoardCmdTotal.Text = "";
-            tbBranchHeadDTotal.Text = "";
-            tbBranchHeadInTotal.Text = "";
-            tbChanAssistTotal.Text = "";
-            tbChancellorTotal.Text = "";
-            tbCouncillorsTotal.Text = "";
-            tbDeanAssistTotal.Text = "";
-            tbDeanOfficeHTotal.Text = "";
-            tbDeptHeadTotal.Text = "";
-            tbFactBoardTotal.Text = "";
-            tbFactCounChiefTotal.Text = "";
-            tbSecretaryTotal.Text = "";
-            tbViceChanTotal.Text = "";
-            tbViceDeanTotal.Text = "";
-            tbViceDeptTotal.Text = "";
-            tbViceFactCounChiefTotal.Text = "";
+            a = true;
+            b = true;
+            c = true;
+            d = true;
+            e = true;
         }
 
         protected void cbChancellor_CheckedChanged(object sender, EventArgs e)
@@ -234,8 +240,6 @@ namespace AssessmentSystem.CalCarry.Administrative
             if (!cbChancellor.Checked)
             {
                 tbChancellorTotal.Text = "";
-                a = true;
-                q--;
             }
         }
 
@@ -245,8 +249,6 @@ namespace AssessmentSystem.CalCarry.Administrative
             if (!cbViceChancellor.Checked)
             {
                 tbViceChanTotal.Text = "";
-                b = true;
-                q--;
             }
         }
 
@@ -256,8 +258,6 @@ namespace AssessmentSystem.CalCarry.Administrative
             if (!cbDean.Checked)
             {
                 tbDeanTotal.Text = "";
-                c = true;
-                q--;
             }
         }
 
@@ -267,8 +267,6 @@ namespace AssessmentSystem.CalCarry.Administrative
             if (!cbChancellorAssistant.Checked)
             {
                 tbChanAssistTotal.Text = "";
-                d = true;
-                q--;
             }
         }
     }
