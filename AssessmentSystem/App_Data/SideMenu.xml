@@ -1,20 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <menu>
-  <group Text="Platform">
-    <item Text="Windows" />
-    <item Text="Linux" />
-    <item Text="Mac OS" />
+  <group Text="1.งานสอน">
+    <item Text="งานสอนโดยตรง" NavigateUrl="~/CalCarry/Teaching/DirectTeaching.aspx"/>
+    <item Text="งานนิเทศ" NavigateUrl="~/CalCarry/Teaching/Supervision.aspx"/>
+    <item Text="ที่ปรึกษาวิทยานิพนธ์ ป.โท" NavigateUrl="~/CalCarry/Teaching/AdvisorThesis.aspx"/>
+    <item Text="ที่ปรึกษาโครงงาน" NavigateUrl="~/CalCarry/Teaching/AdvisorProject.aspx"/>
+    <item Text="กรรมการสอบวิทยานิพนธ์/หัวข้อวิทยานิพนธ์" NavigateUrl="~/CalCarry/Teaching/CommitteeThesis.aspx"/>
+    <item Text="กรรมการสอบโครงงาน" NavigateUrl="~/CalCarry/Teaching/CommitteeProject.aspx"/>
   </group>
-  <group Text="SQL Server">
-    <item Text="SQL Server 2005" />
-    <item Text="SQL Server 2008" />
-    <item Text="SQL Server 2008 R2" />
+  <group Text="2.งานวิจัย">
+    <item Text="หัวข้องานวิจัย" NavigateUrl="~/CalCarry/Research/Topics.aspx"/>
+    <item Text="งานตีพิมพ์ในวารสารวิชาการ" NavigateUrl="~/CalCarry/Research/Publishing.aspx"/>
   </group>
-  <group Text="Browser">
-    <item Text="Chrome" />
-    <item Text="Firefox" />
-    <item Text="Internet Explorer" />
-    <item Text="Safari" />
-    <item Text="Opera" />
+  <group Text="3.งานบริการวิชาการ">
+    <item Text="งานบริการวิชาการ" NavigateUrl="~/CalCarry/AcademicService/Academic.aspx"/>
+  </group>
+  <group Text="4.งานทำนุบำรุงศิลปวัฒนธรรม">
+    <item Text="งานทำนุบำรุงศิลปวัฒนธรรม" NavigateUrl="~/CalCarry/ArtandCulture/ArtandCulture.aspx"/>
+  </group>
+  <group Text="5.งานพัฒนานักศึกษา">
+    <item Text="งานพัฒนานักศึกษา" NavigateUrl="~/CalCarry/StudentDevelopment/StdDevelopment.aspx"/>
+  </group>
+  <group Text="6.งานบริหาร/งานส่วนกลาง">
+    <item Text="งานบริหาร/งานส่วนกลาง" NavigateUrl="~/CalCarry/Administrative/Administrative.aspx"/>
   </group>
 </menu>

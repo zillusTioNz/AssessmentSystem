@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AssessmentSystem  {
+namespace AssessmentSystem {
     
     
     public partial class RootMaster {
@@ -67,6 +67,15 @@ namespace AssessmentSystem  {
         protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
         
         /// <summary>
+        /// ASPxMenu1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxMenu ASPxMenu1;
+        
+        /// <summary>
         /// SplitterContentControl3 control.
         /// </summary>
         /// <remarks>
@@ -101,5 +110,14 @@ namespace AssessmentSystem  {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
+        
+        /// <summary>
+        /// XmlDataSourceHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSourceHeader;
     }
 }
