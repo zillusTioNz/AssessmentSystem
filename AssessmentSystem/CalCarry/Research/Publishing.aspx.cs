@@ -17,6 +17,8 @@ namespace AssessmentSystem.CalCarry.Thesis
         SqlDataAdapter dtAdapter;
         DataTable dt = new DataTable();
         DataSet ds = new DataSet();
+        private int i = 0;
+        static int id;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,19 +35,26 @@ namespace AssessmentSystem.CalCarry.Thesis
 
                 int resStatus = Convert.ToInt32(e.GetListSourceFieldValue("ResStatusID"));
                 int resType = Convert.ToInt32(e.GetListSourceFieldValue("ResTypeID"));
-                int id = Convert.ToInt32(e.GetListSourceFieldValue("ResNumber"));
+                
+                try
+                {
+                    id = Convert.ToInt32(e.GetListSourceFieldValue("ResNumber"));
+                }
+                catch (Exception)
+                {
 
+                }
+                
                 strSQL = "SELECT * FROM Research WHERE id = '" + id + "'";
                 dtAdapter = new SqlDataAdapter(strSQL, objConn);
                 dtAdapter.Fill(dt);
 
                 if (resStatus == 1 && id != null)
-                {
-                    if (dt.Rows.Count > 0)
+                {if (dt.Rows.Count > 0)
                     {
-                        int proStatus = Convert.ToInt32(dt.Rows[0]["ProfessorStatusID"]);
-                        int round = Convert.ToInt32(dt.Rows[0]["RoundID"]);
-                        int percent = Convert.ToInt32(dt.Rows[0]["Percentage"]);
+                        int proStatus = Convert.ToInt32(dt.Rows[i]["ProfessorStatusID"]);
+                        int round = Convert.ToInt32(dt.Rows[i]["RoundID"]);
+                        int percent = Convert.ToInt32(dt.Rows[i]["Percentage"]);
                         double head = 10.5;
                         double sub = 1.75;
                         double tmp = 0;
@@ -101,6 +110,7 @@ namespace AssessmentSystem.CalCarry.Thesis
                             }
                         }
                     }
+                    i++;
                 }
                 else
                 {
