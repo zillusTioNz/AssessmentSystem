@@ -13,12 +13,174 @@ namespace AssessmentSystem.CalCarry.Administrative {
     public partial class Administrative {
         
         /// <summary>
-        /// Administrative1 control.
+        /// ucChancellor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AssessmentSystem.CalCarry.Administrative.Administrative1 Administrative1;
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucChancellor;
+        
+        /// <summary>
+        /// ucViceChancellor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucViceChancellor;
+        
+        /// <summary>
+        /// ucDean control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucDean;
+        
+        /// <summary>
+        /// ucChanAssist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucChanAssist;
+        
+        /// <summary>
+        /// ucViceDean control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucViceDean;
+        
+        /// <summary>
+        /// ucDeptHead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucDeptHead;
+        
+        /// <summary>
+        /// ucFactCounChief control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucFactCounChief;
+        
+        /// <summary>
+        /// ucViceFactCounChief control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucViceFactCounChief;
+        
+        /// <summary>
+        /// ucCouncillores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucCouncillores;
+        
+        /// <summary>
+        /// ucSecretary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucSecretary;
+        
+        /// <summary>
+        /// ucDeanOffHead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucDeanOffHead;
+        
+        /// <summary>
+        /// ucDeanAssist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucDeanAssist;
+        
+        /// <summary>
+        /// ucBranchHD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucBranchHD;
+        
+        /// <summary>
+        /// ucViceDept control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucViceDept;
+        
+        /// <summary>
+        /// ucBranchHI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucBranchHI;
+        
+        /// <summary>
+        /// ucFactBoard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart1 ucFactBoard;
+        
+        /// <summary>
+        /// ucBranchBCmd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart2 ucBranchBCmd;
+        
+        /// <summary>
+        /// ucAssignCmd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart2 ucAssignCmd;
+        
+        /// <summary>
+        /// btSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btSubmit;
     }
 }

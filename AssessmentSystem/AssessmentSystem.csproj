@@ -102,9 +102,10 @@
     </Content>
     <Content Include="App_Data\TopMenu.xml" />
     <Content Include="CalCarry\AcademicService\Academic.aspx" />
-    <Content Include="CalCarry\AcademicService\test.aspx" />
     <Content Include="CalCarry\Administrative\Administrative.ascx" />
     <Content Include="CalCarry\Administrative\Administrative.aspx" />
+    <Content Include="CalCarry\Administrative\admpart1.ascx" />
+    <Content Include="CalCarry\Administrative\admpart2.ascx" />
     <Content Include="CalCarry\ArtandCulture\ArtandCulture.aspx" />
     <Content Include="CalCarry\CalCarryMain.aspx" />
     <Content Include="CalCarry\StudentDevelopment\StdDevelopment.aspx" />
@@ -125,8 +126,6 @@
     <Content Include="Default.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="WebForm1.aspx" />
-    <Content Include="xxx.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Light.master" />
@@ -202,13 +201,6 @@
     <Compile Include="CalCarry\AcademicService\Academic.aspx.designer.cs">
       <DependentUpon>Academic.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CalCarry\AcademicService\test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CalCarry\AcademicService\test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CalCarry\Administrative\Administrative.ascx.cs">
       <DependentUpon>Administrative.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,6 +214,20 @@
     </Compile>
     <Compile Include="CalCarry\Administrative\Administrative.aspx.designer.cs">
       <DependentUpon>Administrative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Administrative\admpart1.ascx.cs">
+      <DependentUpon>admpart1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Administrative\admpart1.ascx.designer.cs">
+      <DependentUpon>admpart1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Administrative\admpart2.ascx.cs">
+      <DependentUpon>admpart2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Administrative\admpart2.ascx.designer.cs">
+      <DependentUpon>admpart2.ascx</DependentUpon>
     </Compile>
     <Compile Include="CalCarry\ArtandCulture\ArtandCulture.aspx.cs">
       <DependentUpon>ArtandCulture.aspx</DependentUpon>
@@ -338,20 +344,6 @@
     </Compile>
     <Compile Include="Root.master.designer.cs">
       <DependentUpon>Root.master</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="xxx.ascx.cs">
-      <DependentUpon>xxx.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="xxx.ascx.designer.cs">
-      <DependentUpon>xxx.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

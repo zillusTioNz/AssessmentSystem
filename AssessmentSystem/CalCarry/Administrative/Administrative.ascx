@@ -176,7 +176,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbViceDean" runat="server" CheckState="Unchecked">
+                        <dx:ASPxCheckBox ID="cbViceDean" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbViceDean_CheckedChanged">
                         </dx:ASPxCheckBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -209,7 +209,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbDepartmentHead" runat="server" CheckState="Unchecked">
+                        <dx:ASPxCheckBox ID="cbDepartmentHead" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbDepartmentHead_CheckedChanged">
                         </dx:ASPxCheckBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -230,172 +230,6 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            
-            <dx:LayoutItem ColSpan="2" ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="หัวหน้าสำนักงานคณะบดี/เลขาธิการคณาจารย์และข้าราชการ">
-                        </dx:ASPxLabel>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbDeanOfficeHead" runat="server" CheckState="Unchecked">
-                        </dx:ASPxCheckBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbDeanOfficeHCredit" runat="server" Width="170px" Text="16" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbDeanOfficeHTotal" runat="server" Width="170px" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            
-            <dx:LayoutItem ColSpan="2" ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="ผู้ช่วยคณะบดี/ผู้ช่วยผู้อำนวยการ">
-                        </dx:ASPxLabel>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbDeanAssistant" runat="server" CheckState="Unchecked">
-                        </dx:ASPxCheckBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbDeanAssistCredit" runat="server" Width="170px" Text="14" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbDeanAssistTotal" runat="server" Width="170px" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            
-            <dx:LayoutItem ColSpan="2" ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxLabel ID="ASPxLabel8" runat="server" Text="หัวหน้าสาขาที่ขึ้นตรงต่อภาควิชา/หัวหน้าฝ่าย">
-                        </dx:ASPxLabel>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbBranchHeadDirect" runat="server" CheckState="Unchecked">
-                        </dx:ASPxCheckBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbBranchHeadDCredit" runat="server" Width="170px" Text="14" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbBranchHeadDTotal" runat="server" Width="170px" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            
-            <dx:LayoutItem ColSpan="2" ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxLabel ID="ASPxLabel9" runat="server" Text="หัวหน้างาน/หัวหน้าแผนก (รองหัวหน้าภาค และหัวหน้าธุรการภาค)">
-                        </dx:ASPxLabel>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbViceDepartment" runat="server" CheckState="Unchecked">
-                        </dx:ASPxCheckBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbViceDeptCredit" runat="server" Width="170px" Text="12" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbViceDeptTotal" runat="server" Width="170px" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            
-            <dx:LayoutItem ColSpan="2" ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxLabel ID="ASPxLabel10" runat="server" Text="(หัวหน้าสาขาในงานภาควิชา)">
-                        </dx:ASPxLabel>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbBranchHeadIn" runat="server" CheckState="Unchecked">
-                        </dx:ASPxCheckBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbBranchHeadInCredit" runat="server" Width="170px" Text="12" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
-                <LayoutItemNestedControlCollection>
-                    <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbBranchHeadInTotal" runat="server" Width="170px" ReadOnly="True">
-                        </dx:ASPxTextBox>
-                    </dx:LayoutItemNestedControlContainer>
-                </LayoutItemNestedControlCollection>
-            </dx:LayoutItem>
-            
             <dx:LayoutItem ColSpan="2" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
@@ -407,7 +241,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbFacultyCouncilChief" runat="server" CheckState="Unchecked">
+                        <dx:ASPxCheckBox ID="cbFacultyCouncilChief" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbFacultyCouncilChief_CheckedChanged">
                         </dx:ASPxCheckBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -440,7 +274,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbViceFactCouncilChief" runat="server" CheckState="Unchecked">
+                        <dx:ASPxCheckBox ID="cbViceFactCouncilChief" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbViceFactCouncilChief_CheckedChanged">
                         </dx:ASPxCheckBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -473,7 +307,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbCouncillors" runat="server" CheckState="Unchecked">
+                        <dx:ASPxCheckBox ID="cbCouncillors" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbCouncillors_CheckedChanged">
                         </dx:ASPxCheckBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -506,7 +340,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbSecretary" runat="server" CheckState="Unchecked">
+                        <dx:ASPxCheckBox ID="cbSecretary" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbSecretary_CheckedChanged">
                         </dx:ASPxCheckBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -530,6 +364,172 @@
             <dx:LayoutItem ColSpan="2" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="หัวหน้าสำนักงานคณะบดี/เลขาธิการคณาจารย์และข้าราชการ">
+                        </dx:ASPxLabel>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxCheckBox ID="cbDeanOfficeHead" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbDeanOfficeHead_CheckedChanged">
+                        </dx:ASPxCheckBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbDeanOfficeHCredit" runat="server" Width="170px" Text="16" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbDeanOfficeHTotal" runat="server" Width="170px" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            
+            <dx:LayoutItem ColSpan="2" ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="ผู้ช่วยคณะบดี/ผู้ช่วยผู้อำนวยการ">
+                        </dx:ASPxLabel>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxCheckBox ID="cbDeanAssistant" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbDeanAssistant_CheckedChanged">
+                        </dx:ASPxCheckBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbDeanAssistCredit" runat="server" Width="170px" Text="14" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbDeanAssistTotal" runat="server" Width="170px" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            
+            <dx:LayoutItem ColSpan="2" ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxLabel ID="ASPxLabel8" runat="server" Text="หัวหน้าสาขาที่ขึ้นตรงต่อภาควิชา/หัวหน้าฝ่าย">
+                        </dx:ASPxLabel>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxCheckBox ID="cbBranchHeadDirect" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbBranchHeadDirect_CheckedChanged">
+                        </dx:ASPxCheckBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbBranchHeadDCredit" runat="server" Width="170px" Text="14" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbBranchHeadDTotal" runat="server" Width="170px" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            
+            <dx:LayoutItem ColSpan="2" ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxLabel ID="ASPxLabel9" runat="server" Text="หัวหน้างาน/หัวหน้าแผนก (รองหัวหน้าภาค และหัวหน้าธุรการภาค)">
+                        </dx:ASPxLabel>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxCheckBox ID="cbViceDepartment" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbViceDepartment_CheckedChanged">
+                        </dx:ASPxCheckBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbViceDeptCredit" runat="server" Width="170px" Text="12" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbViceDeptTotal" runat="server" Width="170px" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            
+            <dx:LayoutItem ColSpan="2" ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxLabel ID="ASPxLabel10" runat="server" Text="(หัวหน้าสาขาในงานภาควิชา)">
+                        </dx:ASPxLabel>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxCheckBox ID="cbBranchHeadIn" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbBranchHeadIn_CheckedChanged">
+                        </dx:ASPxCheckBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbBranchHeadInCredit" runat="server" Width="170px" Text="12" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxTextBox ID="tbBranchHeadInTotal" runat="server" Width="170px" ReadOnly="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            
+            
+            <dx:LayoutItem ColSpan="2" ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxLabel ID="ASPxLabel16" runat="server" Text="กรรมการประจำคณะประเภทคณาจารย์ประจำ">
                         </dx:ASPxLabel>
                     </dx:LayoutItemNestedControlContainer>
@@ -538,7 +538,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxCheckBox ID="cbFacultyBoard" runat="server" CheckState="Unchecked">
+                        <dx:ASPxCheckBox ID="cbFacultyBoard" runat="server" CheckState="Unchecked" AutoPostBack="True" OnCheckedChanged="cbFacultyBoard_CheckedChanged">
                         </dx:ASPxCheckBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>

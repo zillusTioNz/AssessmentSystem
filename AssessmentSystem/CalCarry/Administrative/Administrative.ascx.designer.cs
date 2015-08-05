@@ -274,6 +274,150 @@ namespace AssessmentSystem.CalCarry.Administrative {
         protected global::DevExpress.Web.ASPxTextBox tbDeptHeadTotal;
         
         /// <summary>
+        /// ASPxLabel11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel11;
+        
+        /// <summary>
+        /// cbFacultyCouncilChief control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox cbFacultyCouncilChief;
+        
+        /// <summary>
+        /// tbFactCounChiefCredit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbFactCounChiefCredit;
+        
+        /// <summary>
+        /// tbFactCounChiefTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbFactCounChiefTotal;
+        
+        /// <summary>
+        /// ASPxLabel12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel12;
+        
+        /// <summary>
+        /// cbViceFactCouncilChief control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox cbViceFactCouncilChief;
+        
+        /// <summary>
+        /// tbViceFactCounChiefCredit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbViceFactCounChiefCredit;
+        
+        /// <summary>
+        /// tbViceFactCounChiefTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbViceFactCounChiefTotal;
+        
+        /// <summary>
+        /// ASPxLabel13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel13;
+        
+        /// <summary>
+        /// cbCouncillors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox cbCouncillors;
+        
+        /// <summary>
+        /// tbCouncillorsCredit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbCouncillorsCredit;
+        
+        /// <summary>
+        /// tbCouncillorsTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbCouncillorsTotal;
+        
+        /// <summary>
+        /// ASPxLabel14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel14;
+        
+        /// <summary>
+        /// cbSecretary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox cbSecretary;
+        
+        /// <summary>
+        /// tbSecretaryCredit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbSecretaryCredit;
+        
+        /// <summary>
+        /// tbSecretaryTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbSecretaryTotal;
+        
+        /// <summary>
         /// ASPxLabel6 control.
         /// </summary>
         /// <remarks>
@@ -452,150 +596,6 @@ namespace AssessmentSystem.CalCarry.Administrative {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox tbBranchHeadInTotal;
-        
-        /// <summary>
-        /// ASPxLabel11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel11;
-        
-        /// <summary>
-        /// cbFacultyCouncilChief control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxCheckBox cbFacultyCouncilChief;
-        
-        /// <summary>
-        /// tbFactCounChiefCredit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbFactCounChiefCredit;
-        
-        /// <summary>
-        /// tbFactCounChiefTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbFactCounChiefTotal;
-        
-        /// <summary>
-        /// ASPxLabel12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel12;
-        
-        /// <summary>
-        /// cbViceFactCouncilChief control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxCheckBox cbViceFactCouncilChief;
-        
-        /// <summary>
-        /// tbViceFactCounChiefCredit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbViceFactCounChiefCredit;
-        
-        /// <summary>
-        /// tbViceFactCounChiefTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbViceFactCounChiefTotal;
-        
-        /// <summary>
-        /// ASPxLabel13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel13;
-        
-        /// <summary>
-        /// cbCouncillors control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxCheckBox cbCouncillors;
-        
-        /// <summary>
-        /// tbCouncillorsCredit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbCouncillorsCredit;
-        
-        /// <summary>
-        /// tbCouncillorsTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbCouncillorsTotal;
-        
-        /// <summary>
-        /// ASPxLabel14 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel14;
-        
-        /// <summary>
-        /// cbSecretary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxCheckBox cbSecretary;
-        
-        /// <summary>
-        /// tbSecretaryCredit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbSecretaryCredit;
-        
-        /// <summary>
-        /// tbSecretaryTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbSecretaryTotal;
         
         /// <summary>
         /// ASPxLabel16 control.
