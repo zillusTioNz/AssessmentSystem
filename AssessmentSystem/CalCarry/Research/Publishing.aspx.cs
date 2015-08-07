@@ -44,17 +44,19 @@ namespace AssessmentSystem.CalCarry.Thesis
                 {
 
                 }
-                
+
                 strSQL = "SELECT * FROM Research WHERE id = '" + id + "'";
                 dtAdapter = new SqlDataAdapter(strSQL, objConn);
                 dtAdapter.Fill(dt);
 
                 if (resStatus == 1 && id != null)
-                {if (dt.Rows.Count > 0)
+                {
+                    if (dt.Rows.Count > 0)
                     {
                         int proStatus = Convert.ToInt32(dt.Rows[i]["ProfessorStatusID"]);
                         int round = Convert.ToInt32(dt.Rows[i]["RoundID"]);
                         int percent = Convert.ToInt32(dt.Rows[i]["Percentage"]);
+
                         double head = 10.5;
                         double sub = 1.75;
                         double tmp = 0;

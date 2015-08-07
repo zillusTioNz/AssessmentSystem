@@ -39,6 +39,9 @@ namespace AssessmentSystem
     partial void InsertAcademicService(AcademicService instance);
     partial void UpdateAcademicService(AcademicService instance);
     partial void DeleteAcademicService(AcademicService instance);
+    partial void InsertResearch(Research instance);
+    partial void UpdateResearch(Research instance);
+    partial void DeleteResearch(Research instance);
     #endregion
 		
 		public AssessmentSystemDataContext() : 
@@ -92,6 +95,14 @@ namespace AssessmentSystem
 			get
 			{
 				return this.GetTable<AcademicService>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Research> Researches
+		{
+			get
+			{
+				return this.GetTable<Research>();
 			}
 		}
 	}
@@ -1553,6 +1564,236 @@ namespace AssessmentSystem
 					this._UserName = value;
 					this.SendPropertyChanged("UserName");
 					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Research")]
+	public partial class Research : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _ResName;
+		
+		private System.Nullable<int> _RoundID;
+		
+		private string _Refer;
+		
+		private System.Nullable<int> _ProfessorStatusID;
+		
+		private System.Nullable<int> _Percentage;
+		
+		private string _UserName;
+		
+		private System.Nullable<int> _DurationID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnResNameChanging(string value);
+    partial void OnResNameChanged();
+    partial void OnRoundIDChanging(System.Nullable<int> value);
+    partial void OnRoundIDChanged();
+    partial void OnReferChanging(string value);
+    partial void OnReferChanged();
+    partial void OnProfessorStatusIDChanging(System.Nullable<int> value);
+    partial void OnProfessorStatusIDChanged();
+    partial void OnPercentageChanging(System.Nullable<int> value);
+    partial void OnPercentageChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnDurationIDChanging(System.Nullable<int> value);
+    partial void OnDurationIDChanged();
+    #endregion
+		
+		public Research()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResName", DbType="NVarChar(150)")]
+		public string ResName
+		{
+			get
+			{
+				return this._ResName;
+			}
+			set
+			{
+				if ((this._ResName != value))
+				{
+					this.OnResNameChanging(value);
+					this.SendPropertyChanging();
+					this._ResName = value;
+					this.SendPropertyChanged("ResName");
+					this.OnResNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoundID", DbType="Int")]
+		public System.Nullable<int> RoundID
+		{
+			get
+			{
+				return this._RoundID;
+			}
+			set
+			{
+				if ((this._RoundID != value))
+				{
+					this.OnRoundIDChanging(value);
+					this.SendPropertyChanging();
+					this._RoundID = value;
+					this.SendPropertyChanged("RoundID");
+					this.OnRoundIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Refer", DbType="NVarChar(MAX)")]
+		public string Refer
+		{
+			get
+			{
+				return this._Refer;
+			}
+			set
+			{
+				if ((this._Refer != value))
+				{
+					this.OnReferChanging(value);
+					this.SendPropertyChanging();
+					this._Refer = value;
+					this.SendPropertyChanged("Refer");
+					this.OnReferChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfessorStatusID", DbType="Int")]
+		public System.Nullable<int> ProfessorStatusID
+		{
+			get
+			{
+				return this._ProfessorStatusID;
+			}
+			set
+			{
+				if ((this._ProfessorStatusID != value))
+				{
+					this.OnProfessorStatusIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProfessorStatusID = value;
+					this.SendPropertyChanged("ProfessorStatusID");
+					this.OnProfessorStatusIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Percentage", DbType="Int")]
+		public System.Nullable<int> Percentage
+		{
+			get
+			{
+				return this._Percentage;
+			}
+			set
+			{
+				if ((this._Percentage != value))
+				{
+					this.OnPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._Percentage = value;
+					this.SendPropertyChanged("Percentage");
+					this.OnPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", DbType="Int")]
+		public System.Nullable<int> DurationID
+		{
+			get
+			{
+				return this._DurationID;
+			}
+			set
+			{
+				if ((this._DurationID != value))
+				{
+					this.OnDurationIDChanging(value);
+					this.SendPropertyChanging();
+					this._DurationID = value;
+					this.SendPropertyChanged("DurationID");
+					this.OnDurationIDChanged();
 				}
 			}
 		}

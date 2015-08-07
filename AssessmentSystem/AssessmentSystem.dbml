@@ -69,4 +69,16 @@
       <Column Name="UserName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Research" Member="Researches">
+    <Type Name="Research">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="RoundID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Refer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ProfessorStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Percentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="DurationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

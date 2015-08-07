@@ -229,6 +229,7 @@
     <Compile Include="CalCarry\Administrative\admpart2.ascx.designer.cs">
       <DependentUpon>admpart2.ascx</DependentUpon>
     </Compile>
+    <Compile Include="CalCarry\App_Code\MySavedObjects.cs" />
     <Compile Include="CalCarry\ArtandCulture\ArtandCulture.aspx.cs">
       <DependentUpon>ArtandCulture.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -352,7 +353,10 @@
     </None>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CalCarry\Teaching\SupervisionFiles\" />
+    <Folder Include="Documents\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
