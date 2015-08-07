@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Supervision.aspx.cs" Inherits="AssessmentSystem.CalCarry.Teaching.Supervision" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-        Supervision Page<dx:ASPxGridView ID="gvSupervision" runat="server" AutoGenerateColumns="False" DataSourceID="SqlSupervision" KeyFieldName="id" OnCustomUnboundColumnData="gvSupervision_CustomUnboundColumnData">
+        Supervision Page<dx:ASPxGridView ID="gvSupervision" runat="server" AutoGenerateColumns="False" DataSourceID="SqlSupervision" KeyFieldName="id" OnCustomUnboundColumnData="gvSupervision_CustomUnboundColumnData" OnRowUpdating="gvSupervision_RowUpdating">
             <SettingsEditing Mode="Inline">
             </SettingsEditing>
             <Settings ShowFilterRow="True" />
@@ -11,7 +11,16 @@
                 <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" Visible="False" VisibleIndex="1">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Refer" Visible="False" VisibleIndex="3">
+                <dx:GridViewDataTextColumn FieldName="Refer" VisibleIndex="3" Caption="เอกสารอ้างอิง" UnboundType="Object">
+                    <DataItemTemplate>
+                        <dx:ASPxHyperLink ID="ASPxHyperLink" runat="server" OnLoad="ASPxHyperLink_Load" Target="_blank" Text="no data uploaded" />
+                    </DataItemTemplate>
+                    <EditItemTemplate>
+                        <dx:ASPxUploadControl ID="ASPxUploadControl1" runat="server" FileUploadMode="OnPageLoad" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px" ShowAddRemoveButtons="True" OnFilesUploadComplete="ASPxUploadControl1_FilesUploadComplete">
+                            <ValidationSettings AllowedFileExtensions=".jpg, .pdf, .docx" MaxFileSize="4194304">
+                            </ValidationSettings>
+                        </dx:ASPxUploadControl>
+                    </EditItemTemplate>
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn FieldName="UserName" Visible="False" VisibleIndex="2">
                 </dx:GridViewDataTextColumn>
