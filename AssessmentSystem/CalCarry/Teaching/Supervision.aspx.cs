@@ -19,7 +19,7 @@ namespace AssessmentSystem.CalCarry.Teaching
         static StringWriter sw;
         static StringWriter sx;
         static XElement element;
-        const string fileName = "";
+        const string fileName = "test";
         AssessmentSystemDataContext db = new AssessmentSystemDataContext();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace AssessmentSystem.CalCarry.Teaching
                 sw = new StringWriter();
                 XDocument xDoc = new XDocument(
                         new XDeclaration("1.0", "UTF-16", null),
-                        new XElement("fileUrls",
+                        new XElement("FileUrls",
                                 new XComment("For add file url")
                                 ));
                 xDoc.Save(sw);
@@ -99,7 +99,9 @@ namespace AssessmentSystem.CalCarry.Teaching
                 element = XElement.Parse(Session["xml"].ToString());
             }
             element.Add(new XElement("File",
-                    new XElement("Url", UploadDirectory + "(" + fileName + "-" + i.ToString() + ")" + e.UploadedFile.FileName)));
+                    new XElement("Url", UploadDirectory + "(" + fileName + "-" + i.ToString() + ")" + e.UploadedFile.FileName),
+                    new XElement("Name", e.UploadedFile.FileName)
+                    ));
 
             try
             {
@@ -128,17 +130,6 @@ namespace AssessmentSystem.CalCarry.Teaching
             return string.Format("{0} ({1})|{2}", fileLabel, fileLength, fileLabel);
         }
 
-        protected void ASPxHyperLink_Load(object sender, EventArgs e)
-        {
-            //ASPxHyperLink hpl = sender as ASPxHyperLink;
-            //GridViewDataItemTemplateContainer c = hpl.NamingContainer as GridViewDataItemTemplateContainer;
-            //if (!String.IsNullOrWhiteSpace(FileList[c.VisibleIndex].FileName) && !String.IsNullOrWhiteSpace(FileList[c.VisibleIndex].Url))
-            //{
-            //    hpl.Text = FileList[c.VisibleIndex].FileName;
-            //    hpl.NavigateUrl = FileList[c.VisibleIndex].Url;
-            //}
-        }
-
         protected void ASPxUploadControl1_FilesUploadComplete(object sender, FilesUploadCompleteEventArgs e)
         {
             if (!Convert.ToBoolean(Session["check"]))
@@ -151,7 +142,13 @@ namespace AssessmentSystem.CalCarry.Teaching
 
         protected void gvSupervision_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
         {
+            var q = (from p in db.Supervisions
+                where p.id == Convert.ToInt32(gvSupervision.GetRowValues(gvSupervision.EditingRowVisibleIndex, gvSupervision.KeyFieldName))
+                select p).First();
 
+            q.Refer = Session["xml"].ToString();
+
+            db.SubmitChanges();
         }
     }
 }

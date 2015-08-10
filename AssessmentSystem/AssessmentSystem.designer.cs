@@ -42,6 +42,9 @@ namespace AssessmentSystem
     partial void InsertResearch(Research instance);
     partial void UpdateResearch(Research instance);
     partial void DeleteResearch(Research instance);
+    partial void InsertSupervision(Supervision instance);
+    partial void UpdateSupervision(Supervision instance);
+    partial void DeleteSupervision(Supervision instance);
     #endregion
 		
 		public AssessmentSystemDataContext() : 
@@ -103,6 +106,14 @@ namespace AssessmentSystem
 			get
 			{
 				return this.GetTable<Research>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Supervision> Supervisions
+		{
+			get
+			{
+				return this.GetTable<Supervision>();
 			}
 		}
 	}
@@ -1754,6 +1765,164 @@ namespace AssessmentSystem
 					this._Percentage = value;
 					this.SendPropertyChanged("Percentage");
 					this.OnPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", DbType="Int")]
+		public System.Nullable<int> DurationID
+		{
+			get
+			{
+				return this._DurationID;
+			}
+			set
+			{
+				if ((this._DurationID != value))
+				{
+					this.OnDurationIDChanging(value);
+					this.SendPropertyChanging();
+					this._DurationID = value;
+					this.SendPropertyChanged("DurationID");
+					this.OnDurationIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Supervision")]
+	public partial class Supervision : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _StdNumber;
+		
+		private string _Refer;
+		
+		private string _UserName;
+		
+		private System.Nullable<int> _DurationID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnStdNumberChanging(System.Nullable<int> value);
+    partial void OnStdNumberChanged();
+    partial void OnReferChanging(string value);
+    partial void OnReferChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnDurationIDChanging(System.Nullable<int> value);
+    partial void OnDurationIDChanged();
+    #endregion
+		
+		public Supervision()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StdNumber", DbType="Int")]
+		public System.Nullable<int> StdNumber
+		{
+			get
+			{
+				return this._StdNumber;
+			}
+			set
+			{
+				if ((this._StdNumber != value))
+				{
+					this.OnStdNumberChanging(value);
+					this.SendPropertyChanging();
+					this._StdNumber = value;
+					this.SendPropertyChanged("StdNumber");
+					this.OnStdNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Refer", DbType="NVarChar(MAX)")]
+		public string Refer
+		{
+			get
+			{
+				return this._Refer;
+			}
+			set
+			{
+				if ((this._Refer != value))
+				{
+					this.OnReferChanging(value);
+					this.SendPropertyChanging();
+					this._Refer = value;
+					this.SendPropertyChanged("Refer");
+					this.OnReferChanged();
 				}
 			}
 		}

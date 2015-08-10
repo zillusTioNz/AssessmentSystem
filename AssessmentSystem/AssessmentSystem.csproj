@@ -117,6 +117,7 @@
     <Content Include="CalCarry\Teaching\Supervision.aspx" />
     <Content Include="CalCarry\Research\Publishing.aspx" />
     <Content Include="CalCarry\Research\Topics.aspx" />
+    <Content Include="CalCarry\Teaching\SupervisionFV.aspx" />
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\BlackGlassHeader.jpg" />
     <Content Include="Content\Images\GlassHeader.jpg" />
@@ -306,6 +307,13 @@
     </Compile>
     <Compile Include="CalCarry\Research\Topics.aspx.designer.cs">
       <DependentUpon>Topics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\SupervisionFV.aspx.cs">
+      <DependentUpon>SupervisionFV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Teaching\SupervisionFV.aspx.designer.cs">
+      <DependentUpon>SupervisionFV.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
