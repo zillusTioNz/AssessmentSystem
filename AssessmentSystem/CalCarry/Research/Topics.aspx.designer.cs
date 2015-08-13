@@ -13,6 +13,15 @@ namespace AssessmentSystem.CalCarry.Thesis {
     public partial class Topics {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// gvResearch control.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,14 @@ namespace AssessmentSystem.CalCarry.Thesis {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlProfessorStatus;
+        
+        /// <summary>
+        /// SqlDocuments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments;
     }
 }

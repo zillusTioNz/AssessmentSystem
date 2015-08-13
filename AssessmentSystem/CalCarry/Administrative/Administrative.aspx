@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Administrative.aspx.cs" Inherits="AssessmentSystem.CalCarry.Administrative.Administrative" %>
-<%@ Register src="Administrative.ascx" tagname="Administrative" tagprefix="uc1" %>
 <%@ Register src="admpart1.ascx" tagname="admpart1" tagprefix="uc2" %>
 <%@ Register src="admpart2.ascx" tagname="admpart2" tagprefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">

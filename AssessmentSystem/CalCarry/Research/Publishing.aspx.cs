@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DevExpress.Web;
 
 namespace AssessmentSystem.CalCarry.Thesis
 {
     public partial class Publishing : System.Web.UI.Page
     {
+        AssessmentSystemDataContext db = new AssessmentSystemDataContext();
+
         SqlConnection objConn = new SqlConnection();
         String strConnString, strSQL;
         SqlDataAdapter dtAdapter;
@@ -127,6 +131,54 @@ namespace AssessmentSystem.CalCarry.Thesis
                 }
 
                 
+            }
+        }
+
+        protected void gvResearchPublish_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            var q = (from p in db.Documents
+                     where p.Iden == Convert.ToInt32(e.Keys[0]) && p.TableNameID == 8
+                     select p).ToArray();
+
+            foreach (var item in q)
+            {
+                File.Delete(Server.MapPath(item.Path));
+            }
+        }
+
+        protected void gvFileDetail_BeforePerformDataSelect(object sender, EventArgs e)
+        {
+            Session["id"] = (sender as ASPxGridView).GetMasterRowKeyValue();
+        }
+
+        protected void gvFileDetail_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                ASPxGridView gvFileDetail = sender as ASPxGridView;
+                string path = gvFileDetail.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl1_FileUploadComplete1(object sender, FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/Research/PublishingFiles/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 8;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/Research/PublishingFiles/" + e.UploadedFile.FileName), true);
             }
         }
     }

@@ -45,6 +45,9 @@ namespace AssessmentSystem
     partial void InsertSupervision(Supervision instance);
     partial void UpdateSupervision(Supervision instance);
     partial void DeleteSupervision(Supervision instance);
+    partial void InsertDocument(Document instance);
+    partial void UpdateDocument(Document instance);
+    partial void DeleteDocument(Document instance);
     #endregion
 		
 		public AssessmentSystemDataContext() : 
@@ -114,6 +117,14 @@ namespace AssessmentSystem
 			get
 			{
 				return this.GetTable<Supervision>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Document> Documents
+		{
+			get
+			{
+				return this.GetTable<Document>();
 			}
 		}
 	}
@@ -1963,6 +1974,164 @@ namespace AssessmentSystem
 					this._DurationID = value;
 					this.SendPropertyChanged("DurationID");
 					this.OnDurationIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Documents")]
+	public partial class Document : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _Iden;
+		
+		private System.Nullable<int> _TableNameID;
+		
+		private string _Path;
+		
+		private string _FileName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnIdenChanging(System.Nullable<int> value);
+    partial void OnIdenChanged();
+    partial void OnTableNameIDChanging(System.Nullable<int> value);
+    partial void OnTableNameIDChanged();
+    partial void OnPathChanging(string value);
+    partial void OnPathChanged();
+    partial void OnFileNameChanging(string value);
+    partial void OnFileNameChanged();
+    #endregion
+		
+		public Document()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Iden", DbType="Int")]
+		public System.Nullable<int> Iden
+		{
+			get
+			{
+				return this._Iden;
+			}
+			set
+			{
+				if ((this._Iden != value))
+				{
+					this.OnIdenChanging(value);
+					this.SendPropertyChanging();
+					this._Iden = value;
+					this.SendPropertyChanged("Iden");
+					this.OnIdenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TableNameID", DbType="Int")]
+		public System.Nullable<int> TableNameID
+		{
+			get
+			{
+				return this._TableNameID;
+			}
+			set
+			{
+				if ((this._TableNameID != value))
+				{
+					this.OnTableNameIDChanging(value);
+					this.SendPropertyChanging();
+					this._TableNameID = value;
+					this.SendPropertyChanged("TableNameID");
+					this.OnTableNameIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Path", DbType="NVarChar(MAX)")]
+		public string Path
+		{
+			get
+			{
+				return this._Path;
+			}
+			set
+			{
+				if ((this._Path != value))
+				{
+					this.OnPathChanging(value);
+					this.SendPropertyChanging();
+					this._Path = value;
+					this.SendPropertyChanged("Path");
+					this.OnPathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileName", DbType="NVarChar(MAX)")]
+		public string FileName
+		{
+			get
+			{
+				return this._FileName;
+			}
+			set
+			{
+				if ((this._FileName != value))
+				{
+					this.OnFileNameChanging(value);
+					this.SendPropertyChanging();
+					this._FileName = value;
+					this.SendPropertyChanged("FileName");
+					this.OnFileNameChanged();
 				}
 			}
 		}

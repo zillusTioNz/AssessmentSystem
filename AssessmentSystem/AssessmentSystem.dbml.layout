@@ -32,5 +32,11 @@
         <elementListCompartment Id="266d472f-fda6-4c82-8039-95bd404df1f8" absoluteBounds="7.8900000000000006, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="a22c1d80-ca71-46e9-b52d-55a15d556c9e" absoluteBounds="7.875, 2.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AssessmentSystemDataContext/Document" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8be5157-54a0-4d77-b4d8-29308541fdbc" absoluteBounds="7.8900000000000006, 3.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
