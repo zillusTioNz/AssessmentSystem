@@ -33,8 +33,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxFormLayout1_E12" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl1" runat="server" ActiveTabIndex="0" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments2" KeyFieldName="id" OnRowDeleting="gvFileDetail1_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl1" runat="server" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="1" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -85,8 +151,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxFormLayout1_E11" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl2" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments2" KeyFieldName="id" OnRowDeleting="gvFileDetail2_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl2" runat="server" OnFileUploadComplete="ASPxUploadControl2_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="15" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -125,8 +257,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxTextBox1" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl3" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail3" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments3" KeyFieldName="id" OnRowDeleting="gvFileDetail3_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl3" runat="server" OnFileUploadComplete="ASPxUploadControl3_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments3" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="16" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -165,8 +363,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxTextBox5" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl4" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail4" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments4" KeyFieldName="id" OnRowDeleting="gvFileDetail4_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl4" runat="server" OnFileUploadComplete="ASPxUploadControl4_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments4" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="17" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -205,8 +469,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxTextBox9" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl5" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail5" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments5" KeyFieldName="id" OnRowDeleting="gvFileDetail5_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl5" runat="server" OnFileUploadComplete="ASPxUploadControl5_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments5" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="18" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -263,8 +593,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxFormLayout1_E17" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl6" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail6" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments6" KeyFieldName="id" OnRowDeleting="gvFileDetail6_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl6" runat="server" OnFileUploadComplete="ASPxUploadControl6_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments6" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="19" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -303,8 +699,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxTextBox2" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl7" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail7" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments7" KeyFieldName="id" OnRowDeleting="gvFileDetail7_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl7" runat="server" OnFileUploadComplete="ASPxUploadControl7_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments7" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="20" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -343,8 +805,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxTextBox13" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl8" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail8" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments8" KeyFieldName="id" OnRowDeleting="gvFileDetail8_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl8" runat="server" OnFileUploadComplete="ASPxUploadControl8_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments8" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="21" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -383,8 +911,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxTextBox16" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl9" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail9" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments9" KeyFieldName="id" OnRowDeleting="gvFileDetail9_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl9" runat="server" OnFileUploadComplete="ASPxUploadControl9_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments9" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="22" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -435,8 +1029,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxFormLayout1_E26" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl10" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail10" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments10" KeyFieldName="id" OnRowDeleting="gvFileDetail10_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl10" runat="server" OnFileUploadComplete="ASPxUploadControl10_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments10" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="23" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
@@ -475,8 +1135,74 @@
             <dx:LayoutItem Caption="เอกสารอ้างอิง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="ASPxTextBox19" runat="server" Width="170px">
-                        </dx:ASPxTextBox>
+                        <dx:ASPxPageControl ID="pageControl11" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
+                            <TabPages>
+                                <dx:TabPage Text="รายชื่อไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxGridView ID="gvFileDetail11" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments11" KeyFieldName="id" OnRowDeleting="gvFileDetail11_RowDeleting">
+                                                <Columns>
+                                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                    </dx:GridViewCommandColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                        <EditFormSettings Visible="False" />
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                        <PropertiesHyperLinkEdit Target="_blank" TextField="FileName">
+                                                        </PropertiesHyperLinkEdit>
+                                                    </dx:GridViewDataHyperLinkColumn>
+                                                </Columns>
+                                            </dx:ASPxGridView>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                                <dx:TabPage Text="อัพโหลดไฟล์">
+                                    <ContentCollection>
+                                        <dx:ContentControl runat="server">
+                                            <dx:ASPxUploadControl ID="ASPxUploadControl11" runat="server" OnFileUploadComplete="ASPxUploadControl11_FileUploadComplete" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                            </dx:ASPxUploadControl>
+                                        </dx:ContentControl>
+                                    </ContentCollection>
+                                </dx:TabPage>
+                            </TabPages>
+                        </dx:ASPxPageControl>
+                        <asp:SqlDataSource ID="SqlDocuments11" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Documents] WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableNameID] IS NULL AND @original_TableName IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))" InsertCommand="INSERT INTO [Documents] ([Iden], [TableNameID], [Path], [FileName]) VALUES (@Iden, @TableNameID, @Path, @FileName)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Documents] WHERE (([Iden] = @Iden) AND ([TableNameID] = @TableNameID))" UpdateCommand="UPDATE [Documents] SET [Iden] = @Iden, [TableNameID] = @TableNameID, [Path] = @Path, [FileName] = @FileName WHERE [id] = @original_id AND (([Iden] = @original_Iden) OR ([Iden] IS NULL AND @original_Iden IS NULL)) AND (([TableNameID] = @original_TableNameID) OR ([TableName] IS NULL AND @original_TableNameID IS NULL)) AND (([Path] = @original_Path) OR ([Path] IS NULL AND @original_Path IS NULL)) AND (([FileName] = @original_FileName) OR ([FileName] IS NULL AND @original_FileName IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_TableName" Type="String" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                            </InsertParameters>
+                            <SelectParameters>
+                                <asp:SessionParameter Name="Iden" SessionField="id" Type="Int32" />
+                                <asp:Parameter DefaultValue="24" Name="TableNameID" />
+                            </SelectParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Iden" Type="Int32" />
+                                <asp:Parameter Name="TableNameID" />
+                                <asp:Parameter Name="Path" Type="String" />
+                                <asp:Parameter Name="FileName" Type="String" />
+                                <asp:Parameter Name="original_id" Type="Int32" />
+                                <asp:Parameter Name="original_Iden" Type="Int32" />
+                                <asp:Parameter Name="original_TableNameID" />
+                                <asp:Parameter Name="original_Path" Type="String" />
+                                <asp:Parameter Name="original_FileName" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>

@@ -345,11 +345,24 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CalCarry\AcademicService\AcademicFiles\" />
+    <Folder Include="CalCarry\AcademicService\Files\R10\" />
+    <Folder Include="CalCarry\AcademicService\Files\R11\" />
+    <Folder Include="CalCarry\AcademicService\Files\R1\" />
+    <Folder Include="CalCarry\AcademicService\Files\R2\" />
+    <Folder Include="CalCarry\AcademicService\Files\R3\" />
+    <Folder Include="CalCarry\AcademicService\Files\R4\" />
+    <Folder Include="CalCarry\AcademicService\Files\R5\" />
+    <Folder Include="CalCarry\AcademicService\Files\R6\" />
+    <Folder Include="CalCarry\AcademicService\Files\R7\" />
+    <Folder Include="CalCarry\AcademicService\Files\R8\" />
+    <Folder Include="CalCarry\AcademicService\Files\R9\" />
     <Folder Include="CalCarry\Administrative\AdminFiles\" />
     <Folder Include="CalCarry\ArtandCulture\ArtandCultureFiles\" />
     <Folder Include="CalCarry\Research\PublishingFiles\" />
     <Folder Include="CalCarry\Research\TopicFiles\" />
+    <Folder Include="CalCarry\StudentDevelopment\R1Files\" />
+    <Folder Include="CalCarry\StudentDevelopment\R2Files\" />
+    <Folder Include="CalCarry\StudentDevelopment\R3Files\" />
     <Folder Include="CalCarry\Teaching\AdvisorProjectFiles\" />
     <Folder Include="CalCarry\Teaching\AdvisorThesisFiles\" />
     <Folder Include="CalCarry\Teaching\CommitteeProjectFiles\" />
