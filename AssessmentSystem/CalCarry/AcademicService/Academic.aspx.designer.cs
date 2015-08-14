@@ -49,13 +49,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxFormLayout1_E4;
         
         /// <summary>
-        /// ASPxFormLayout1_E12 control.
+        /// pageControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E12;
+        protected global::DevExpress.Web.ASPxPageControl pageControl1;
+        
+        /// <summary>
+        /// gvFileDetail1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail1;
+        
+        /// <summary>
+        /// ASPxUploadControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl1;
+        
+        /// <summary>
+        /// SqlDocuments1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments1;
         
         /// <summary>
         /// seCmtPro control.
@@ -103,13 +130,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxFormLayout1_E2;
         
         /// <summary>
-        /// ASPxFormLayout1_E11 control.
+        /// pageControl2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E11;
+        protected global::DevExpress.Web.ASPxPageControl pageControl2;
+        
+        /// <summary>
+        /// gvFileDetail2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail2;
+        
+        /// <summary>
+        /// ASPxUploadControl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl2;
+        
+        /// <summary>
+        /// SqlDocuments2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments2;
         
         /// <summary>
         /// seEih control.
@@ -148,13 +202,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
         
         /// <summary>
-        /// ASPxTextBox1 control.
+        /// pageControl3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox1;
+        protected global::DevExpress.Web.ASPxPageControl pageControl3;
+        
+        /// <summary>
+        /// gvFileDetail3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail3;
+        
+        /// <summary>
+        /// ASPxUploadControl3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl3;
+        
+        /// <summary>
+        /// SqlDocuments3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments3;
         
         /// <summary>
         /// seEip control.
@@ -193,13 +274,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
         
         /// <summary>
-        /// ASPxTextBox5 control.
+        /// pageControl4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox5;
+        protected global::DevExpress.Web.ASPxPageControl pageControl4;
+        
+        /// <summary>
+        /// gvFileDetail4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail4;
+        
+        /// <summary>
+        /// ASPxUploadControl4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl4;
+        
+        /// <summary>
+        /// SqlDocuments4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments4;
         
         /// <summary>
         /// seEoh control.
@@ -238,13 +346,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
         
         /// <summary>
-        /// ASPxTextBox9 control.
+        /// pageControl5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox9;
+        protected global::DevExpress.Web.ASPxPageControl pageControl5;
+        
+        /// <summary>
+        /// gvFileDetail5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail5;
+        
+        /// <summary>
+        /// ASPxUploadControl5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl5;
+        
+        /// <summary>
+        /// SqlDocuments5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments5;
         
         /// <summary>
         /// seEop control.
@@ -301,13 +436,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxFormLayout1_E10;
         
         /// <summary>
-        /// ASPxFormLayout1_E17 control.
+        /// pageControl6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E17;
+        protected global::DevExpress.Web.ASPxPageControl pageControl6;
+        
+        /// <summary>
+        /// gvFileDetail6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail6;
+        
+        /// <summary>
+        /// ASPxUploadControl6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl6;
+        
+        /// <summary>
+        /// SqlDocuments6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments6;
         
         /// <summary>
         /// seCmtAp control.
@@ -346,13 +508,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
         
         /// <summary>
-        /// ASPxTextBox2 control.
+        /// pageControl7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox2;
+        protected global::DevExpress.Web.ASPxPageControl pageControl7;
+        
+        /// <summary>
+        /// gvFileDetail7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail7;
+        
+        /// <summary>
+        /// ASPxUploadControl7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl7;
+        
+        /// <summary>
+        /// SqlDocuments7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments7;
         
         /// <summary>
         /// seCmtCp control.
@@ -391,13 +580,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel5;
         
         /// <summary>
-        /// ASPxTextBox13 control.
+        /// pageControl8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox13;
+        protected global::DevExpress.Web.ASPxPageControl pageControl8;
+        
+        /// <summary>
+        /// gvFileDetail8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail8;
+        
+        /// <summary>
+        /// ASPxUploadControl8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl8;
+        
+        /// <summary>
+        /// SqlDocuments8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments8;
         
         /// <summary>
         /// seCmtBp control.
@@ -436,13 +652,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel6;
         
         /// <summary>
-        /// ASPxTextBox16 control.
+        /// pageControl9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox16;
+        protected global::DevExpress.Web.ASPxPageControl pageControl9;
+        
+        /// <summary>
+        /// gvFileDetail9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail9;
+        
+        /// <summary>
+        /// ASPxUploadControl9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl9;
+        
+        /// <summary>
+        /// SqlDocuments9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments9;
         
         /// <summary>
         /// seCmtTp control.
@@ -490,13 +733,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxFormLayout1_E25;
         
         /// <summary>
-        /// ASPxFormLayout1_E26 control.
+        /// pageControl10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E26;
+        protected global::DevExpress.Web.ASPxPageControl pageControl10;
+        
+        /// <summary>
+        /// gvFileDetail10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail10;
+        
+        /// <summary>
+        /// ASPxUploadControl10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl10;
+        
+        /// <summary>
+        /// SqlDocuments10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments10;
         
         /// <summary>
         /// seSat control.
@@ -535,13 +805,40 @@ namespace AssessmentSystem.CalCarry.AcademicService {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel7;
         
         /// <summary>
-        /// ASPxTextBox19 control.
+        /// pageControl11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox19;
+        protected global::DevExpress.Web.ASPxPageControl pageControl11;
+        
+        /// <summary>
+        /// gvFileDetail11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail11;
+        
+        /// <summary>
+        /// ASPxUploadControl11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl11;
+        
+        /// <summary>
+        /// SqlDocuments11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments11;
         
         /// <summary>
         /// seSot control.

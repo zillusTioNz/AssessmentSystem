@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -129,6 +130,325 @@ namespace AssessmentSystem.CalCarry.AcademicService
             Response.Write(sb.ToString());
 
             Response.Redirect("Academic.aspx");
+        }
+
+        protected void gvFileDetail1_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail1.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl1_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R1/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 1;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R1/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail2_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail2.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl2_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R2/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 15;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R2/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail3_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail3.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl3_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R3/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 16;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R3/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail4_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail4.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl4_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R4/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 17;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R4/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail5_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail5.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl5_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R5/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 18;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R5/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail6_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail6.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl6_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R6/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 19;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R6/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail7_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail7.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl7_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R7/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 20;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R7/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail8_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail8.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl8_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R8/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 21;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R8/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail9_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail9.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl9_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R9/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 22;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R9/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail10_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail10.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl10_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R10/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 23;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R10/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvFileDetail11_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            try
+            {
+                string path = gvFileDetail11.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+                File.Delete(Server.MapPath(path));
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        protected void ASPxUploadControl11_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        {
+            if (e.IsValid)
+            {
+                Document x = new Document();
+                x.Path = "~/CalCarry/AcademicService/Files/R11/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 24;
+                x.FileName = e.UploadedFile.FileName;
+
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
+
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R11/" + e.UploadedFile.FileName), true);
+            }
         }
     }
 }

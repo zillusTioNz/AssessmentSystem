@@ -102,7 +102,6 @@
     </Content>
     <Content Include="App_Data\TopMenu.xml" />
     <Content Include="CalCarry\AcademicService\Academic.aspx" />
-    <Content Include="CalCarry\Administrative\Administrative.ascx" />
     <Content Include="CalCarry\Administrative\Administrative.aspx" />
     <Content Include="CalCarry\Administrative\admpart1.ascx" />
     <Content Include="CalCarry\Administrative\admpart2.ascx" />
@@ -201,13 +200,6 @@
     <Compile Include="CalCarry\AcademicService\Academic.aspx.designer.cs">
       <DependentUpon>Academic.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CalCarry\Administrative\Administrative.ascx.cs">
-      <DependentUpon>Administrative.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CalCarry\Administrative\Administrative.ascx.designer.cs">
-      <DependentUpon>Administrative.ascx</DependentUpon>
-    </Compile>
     <Compile Include="CalCarry\Administrative\Administrative.aspx.cs">
       <DependentUpon>Administrative.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,7 +221,6 @@
     <Compile Include="CalCarry\Administrative\admpart2.ascx.designer.cs">
       <DependentUpon>admpart2.ascx</DependentUpon>
     </Compile>
-    <Compile Include="CalCarry\App_Code\MySavedObjects.cs" />
     <Compile Include="CalCarry\ArtandCulture\ArtandCulture.aspx.cs">
       <DependentUpon>ArtandCulture.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -354,8 +345,29 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CalCarry\AcademicService\Files\R10\" />
+    <Folder Include="CalCarry\AcademicService\Files\R11\" />
+    <Folder Include="CalCarry\AcademicService\Files\R1\" />
+    <Folder Include="CalCarry\AcademicService\Files\R2\" />
+    <Folder Include="CalCarry\AcademicService\Files\R3\" />
+    <Folder Include="CalCarry\AcademicService\Files\R4\" />
+    <Folder Include="CalCarry\AcademicService\Files\R5\" />
+    <Folder Include="CalCarry\AcademicService\Files\R6\" />
+    <Folder Include="CalCarry\AcademicService\Files\R7\" />
+    <Folder Include="CalCarry\AcademicService\Files\R8\" />
+    <Folder Include="CalCarry\AcademicService\Files\R9\" />
+    <Folder Include="CalCarry\Administrative\AdminFiles\" />
+    <Folder Include="CalCarry\ArtandCulture\ArtandCultureFiles\" />
+    <Folder Include="CalCarry\Research\PublishingFiles\" />
+    <Folder Include="CalCarry\Research\TopicFiles\" />
+    <Folder Include="CalCarry\StudentDevelopment\R1Files\" />
+    <Folder Include="CalCarry\StudentDevelopment\R2Files\" />
+    <Folder Include="CalCarry\StudentDevelopment\R3Files\" />
+    <Folder Include="CalCarry\Teaching\AdvisorProjectFiles\" />
+    <Folder Include="CalCarry\Teaching\AdvisorThesisFiles\" />
+    <Folder Include="CalCarry\Teaching\CommitteeProjectFiles\" />
+    <Folder Include="CalCarry\Teaching\CommitteeThesisFiles\" />
     <Folder Include="CalCarry\Teaching\SupervisionFiles\" />
-    <Folder Include="Documents\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

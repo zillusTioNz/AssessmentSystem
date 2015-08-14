@@ -5,38 +5,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Xml.Linq;
-using AssessmentSystem.CalCarry.App_Code;
-using DevExpress.Web;
+using System.Xml.Linq;using DevExpress.Web;
 
 namespace AssessmentSystem.CalCarry.Teaching
 {
     public partial class Supervision : System.Web.UI.Page
     {
-        const string UploadDirectory = "~/Documents/";
-        const int ThumbnailSize = 100;
-        static int i = 1;
-        static StringWriter sw;
-        static StringWriter sx;
-        static XElement element;
-        const string fileName = "";
         AssessmentSystemDataContext db = new AssessmentSystemDataContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                i = 1;
-                sw = new StringWriter();
-                XDocument xDoc = new XDocument(
-                        new XDeclaration("1.0", "UTF-16", null),
-                        new XElement("fileUrls",
-                                new XComment("For add file url")
-                                ));
-                xDoc.Save(sw);
-                element = XElement.Parse(sw.ToString());
-                Session["check"] = false;
-            }
+            
 
         }
 
@@ -54,104 +33,55 @@ namespace AssessmentSystem.CalCarry.Teaching
             {
                 e.Value = StdNumber * CarryCredit;
             }
-
-            //if (e.IsGetData)
-            //{
-            //    if (FileList[e.ListSourceRowIndex].FileName != String.Empty && FileList[e.ListSourceRowIndex].Url != String.Empty)
-            //    {
-            //        ASPxHyperLink hl = gvSupervision.FindRowCellTemplateControl(e.ListSourceRowIndex, (GridViewDataColumn)e.Column, "ASPxHyperLink") as ASPxHyperLink;
-            //        hl.Text = FileList[e.ListSourceRowIndex].FileName;
-            //        hl.NavigateUrl = FileList[e.ListSourceRowIndex].Url;
-            //    }
-            //}
         }
 
-        //public List<MySavedObjects> FileList
-        //{
-        //    get
-        //    {
-        //        List<MySavedObjects> list = Session["list"] as List<MySavedObjects>;
-        //        if (list == null)
-        //        {
-        //            list = new List<MySavedObjects>();
-        //            for (int i = 0; i < gvSupervision.VisibleRowCount; i++)
-        //            {
-        //                list.Add(new MySavedObjects() { RowNumber = i });
-        //            }
-        //            Session["list"] = list;
-        //        }
-        //        return list;
-        //    }
-        //}
-
-        protected void ASPxUploadControl1_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
+        protected void ASPxUploadControl1_FileUploadComplete1(object sender, FileUploadCompleteEventArgs e)
         {
-            //if (e.IsValid)
-            //{
-            //    e.UploadedFile.SaveAs(Server.MapPath("~/Documents/" + e.UploadedFile.FileName), true);
-            //    FileList[gvSupervision.EditingRowVisibleIndex].Url = Page.ResolveUrl("~/Documents/" + e.UploadedFile.FileName);
-            //    FileList[gvSupervision.EditingRowVisibleIndex].FileName = e.UploadedFile.FileName;
-            //    Session["list"] = FileList;
-            //}
-
-            if (Convert.ToBoolean(Session["check"]))
+            if (e.IsValid)
             {
-                element = XElement.Parse(Session["xml"].ToString());
-            }
-            element.Add(new XElement("File",
-                    new XElement("Url", UploadDirectory + "(" + fileName + "-" + i.ToString() + ")" + e.UploadedFile.FileName)));
+                Document x = new Document();
+                x.Path = "~/CalCarry/Teaching/SupervisionFiles/" + e.UploadedFile.FileName;
+                x.Iden = Convert.ToInt32(Session["id"]);
+                x.TableNameID = 10;
+                x.FileName = e.UploadedFile.FileName;
+                db.Documents.InsertOnSubmit(x);
+                db.SubmitChanges();
 
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/Teaching/SupervisionFiles/" + e.UploadedFile.FileName), true);
+            }
+        }
+
+        protected void gvSupervision_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            
+            var q = (from p in db.Documents
+                where p.Iden == Convert.ToInt32(e.Keys[0]) && p.TableNameID == 10
+                select p).ToArray();
+
+            foreach (var item in q)
+            {
+                File.Delete(Server.MapPath(item.Path));
+            }
+        }
+
+        protected void gvFileDetail_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
             try
             {
-                e.CallbackData = SavePostedFiles(e.UploadedFile);
-                i++;
-                Session["check"] = false;
+                ASPxGridView gvFileDetail = sender as ASPxGridView;
+                string path = gvFileDetail.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
+
+                File.Delete(Server.MapPath(path));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                e.IsValid = false;
-                e.ErrorText = ex.Message;
             }
         }
 
-        string SavePostedFiles(UploadedFile uploadedFile)
+        protected void gvFileDetail_BeforePerformDataSelect(object sender, EventArgs e)
         {
-            if (!uploadedFile.IsValid)
-                return string.Empty;
-
-            FileInfo fileInfo = new FileInfo(uploadedFile.FileName);
-            string resFileName = MapPath(UploadDirectory) + "(" + fileName + "-" + i.ToString() + ")" + fileInfo.Name;
-            uploadedFile.SaveAs(resFileName);
-
-            string fileLabel = "(" + fileName + "-" + i.ToString() + ")" + fileInfo.Name;
-            string fileLength = uploadedFile.ContentLength / 1024 + "K";
-            return string.Format("{0} ({1})|{2}", fileLabel, fileLength, fileLabel);
+            Session["id"] = (sender as ASPxGridView).GetMasterRowKeyValue();
         }
 
-        protected void ASPxHyperLink_Load(object sender, EventArgs e)
-        {
-            //ASPxHyperLink hpl = sender as ASPxHyperLink;
-            //GridViewDataItemTemplateContainer c = hpl.NamingContainer as GridViewDataItemTemplateContainer;
-            //if (!String.IsNullOrWhiteSpace(FileList[c.VisibleIndex].FileName) && !String.IsNullOrWhiteSpace(FileList[c.VisibleIndex].Url))
-            //{
-            //    hpl.Text = FileList[c.VisibleIndex].FileName;
-            //    hpl.NavigateUrl = FileList[c.VisibleIndex].Url;
-            //}
-        }
-
-        protected void ASPxUploadControl1_FilesUploadComplete(object sender, FilesUploadCompleteEventArgs e)
-        {
-            if (!Convert.ToBoolean(Session["check"]))
-            {
-                sx = new StringWriter();
-                element.Save(sx);
-                Session["xml"] = sx.ToString();
-            }
-        }
-
-        protected void gvSupervision_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
-        {
-
-        }
     }
 }

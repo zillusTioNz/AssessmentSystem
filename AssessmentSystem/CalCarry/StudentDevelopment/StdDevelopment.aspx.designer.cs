@@ -13,6 +13,15 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
     public partial class StdDevelopment {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// flAcademicService control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxFormLayout flAcademicService;
+        
+        /// <summary>
+        /// flAcademicService_E3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel flAcademicService_E3;
         
         /// <summary>
         /// flAcademicService_E1 control.
@@ -58,13 +76,40 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel8;
         
         /// <summary>
-        /// ASPxFormLayout1_E11 control.
+        /// pageControl3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E11;
+        protected global::DevExpress.Web.ASPxPageControl pageControl3;
+        
+        /// <summary>
+        /// gvFileDetail3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail3;
+        
+        /// <summary>
+        /// ASPxUploadControl4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl4;
+        
+        /// <summary>
+        /// SqlDocuments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments;
         
         /// <summary>
         /// seCmtPro control.
@@ -103,13 +148,40 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
         
         /// <summary>
-        /// ASPxTextBox1 control.
+        /// pageControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox1;
+        protected global::DevExpress.Web.ASPxPageControl pageControl1;
+        
+        /// <summary>
+        /// gvFileDetail1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail1;
+        
+        /// <summary>
+        /// ASPxUploadControl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl2;
+        
+        /// <summary>
+        /// SqlDocuments1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments1;
         
         /// <summary>
         /// seAsp control.
@@ -148,13 +220,40 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
         protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
         
         /// <summary>
-        /// ASPxTextBox5 control.
+        /// pageControl2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox5;
+        protected global::DevExpress.Web.ASPxPageControl pageControl2;
+        
+        /// <summary>
+        /// gvFileDetail2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail2;
+        
+        /// <summary>
+        /// ASPxUploadControl3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl3;
+        
+        /// <summary>
+        /// SqlDocuments2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments2;
         
         /// <summary>
         /// seAcp control.
