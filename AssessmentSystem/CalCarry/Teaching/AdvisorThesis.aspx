@@ -3,7 +3,7 @@
     <p>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        AdvisorThesis Page<dx:ASPxGridView ID="gvAdvisorThesis" runat="server" AutoGenerateColumns="False" DataSourceID="SqlAdvisorThesis" KeyFieldName="id" OnCustomUnboundColumnData="gvAdvisorThesis_CustomUnboundColumnData" OnRowDeleting="gvAdvisorThesis_RowDeleting">
+        <dx:ASPxGridView ID="gvAdvisorThesis" runat="server" AutoGenerateColumns="False" DataSourceID="SqlAdvisorThesis" KeyFieldName="id" OnCustomUnboundColumnData="gvAdvisorThesis_CustomUnboundColumnData" OnRowDeleting="gvAdvisorThesis_RowDeleting">
             <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
             <Templates>
                 <DetailRow>
@@ -84,7 +84,7 @@
                 <dx:ASPxSummaryItem FieldName="CpW" SummaryType="Sum" />
             </TotalSummary>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlAdvisorThesis" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [AdvisorThesis] WHERE [id] = @original_id AND [ThesisName] = @original_ThesisName AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))" InsertCommand="INSERT INTO [AdvisorThesis] ([ThesisName], [UserName], [DurationID], [StatusID]) VALUES (@ThesisName, @UserName, @DurationID, @StatusID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [AdvisorThesis]" UpdateCommand="UPDATE [AdvisorThesis] SET [ThesisName] = @ThesisName, [UserName] = @UserName, [DurationID] = @DurationID, [StatusID] = @StatusID WHERE [id] = @original_id AND [ThesisName] = @original_ThesisName AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))">
+        <asp:SqlDataSource ID="SqlAdvisorThesis" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [AdvisorThesis] WHERE [id] = @original_id AND [ThesisName] = @original_ThesisName AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))" InsertCommand="INSERT INTO [AdvisorThesis] ([ThesisName], [UserName], [DurationID], [StatusID]) VALUES (@ThesisName, @UserName, @DurationID, @StatusID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, ThesisName, UserName, DurationID, StatusID FROM AdvisorThesis WHERE (UserName = @UserName) AND (DurationID = @DurationID)" UpdateCommand="UPDATE [AdvisorThesis] SET [ThesisName] = @ThesisName, [UserName] = @UserName, [DurationID] = @DurationID, [StatusID] = @StatusID WHERE [id] = @original_id AND [ThesisName] = @original_ThesisName AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_ThesisName" Type="String" />
@@ -98,6 +98,10 @@
                 <asp:Parameter Name="DurationID" Type="Int32" />
                 <asp:Parameter Name="StatusID" Type="Int32" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:SessionParameter Name="UserName" SessionField="UserName" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="ThesisName" Type="String" />
                 <asp:Parameter Name="UserName" Type="String" />

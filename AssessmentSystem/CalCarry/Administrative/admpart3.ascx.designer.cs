@@ -7,63 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AssessmentSystem {
+namespace AssessmentSystem.CalCarry.Administrative {
     
     
-    public partial class Default {
+    public partial class admpart2_2 {
         
         /// <summary>
-        /// form1 control.
+        /// lbText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lbText;
         
         /// <summary>
-        /// lblUserName control.
+        /// pageControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblUserName;
+        protected global::DevExpress.Web.ASPxPageControl pageControl;
         
         /// <summary>
-        /// tbUserName control.
+        /// gvFileDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbUserName;
+        protected global::DevExpress.Web.ASPxGridView gvFileDetail;
         
         /// <summary>
-        /// lblPassword control.
+        /// ASPxUploadControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblPassword;
+        protected global::DevExpress.Web.ASPxUploadControl ASPxUploadControl1;
         
         /// <summary>
-        /// tbPassword control.
+        /// SqlDocuments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox tbPassword;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDocuments;
         
         /// <summary>
-        /// btnLogin control.
+        /// seNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnLogin;
+        protected global::DevExpress.Web.ASPxSpinEdit seNumber;
+        
+        /// <summary>
+        /// lbCredit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbCredit;
+        
+        /// <summary>
+        /// tbTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbTotal;
     }
 }

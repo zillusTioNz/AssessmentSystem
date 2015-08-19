@@ -3,7 +3,7 @@
     <p>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        CommitteeProject Page<dx:ASPxGridView ID="gvTesterProject" runat="server" AutoGenerateColumns="False" DataSourceID="SqlTesterProject" KeyFieldName="id" OnCustomUnboundColumnData="gvTesterProject_CustomUnboundColumnData" OnRowDeleting="gvTesterProject_RowDeleting">
+        <dx:ASPxGridView ID="gvTesterProject" runat="server" AutoGenerateColumns="False" DataSourceID="SqlTesterProject" KeyFieldName="id" OnCustomUnboundColumnData="gvTesterProject_CustomUnboundColumnData" OnRowDeleting="gvTesterProject_RowDeleting">
             <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
             <Templates>
                 <DetailRow>
@@ -87,7 +87,7 @@
                 <dx:ASPxSummaryItem FieldName="CpW" SummaryType="Sum" />
             </TotalSummary>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlTesterProject" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [TesterProject] WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([ProjectName] = @original_ProjectName) OR ([ProjectName] IS NULL AND @original_ProjectName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [TesterProject] ([StdGroup], [ProjectName], [UserName], [DurationID]) VALUES (@StdGroup, @ProjectName, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [TesterProject]" UpdateCommand="UPDATE [TesterProject] SET [StdGroup] = @StdGroup, [ProjectName] = @ProjectName, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([ProjectName] = @original_ProjectName) OR ([ProjectName] IS NULL AND @original_ProjectName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
+        <asp:SqlDataSource ID="SqlTesterProject" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [TesterProject] WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([ProjectName] = @original_ProjectName) OR ([ProjectName] IS NULL AND @original_ProjectName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [TesterProject] ([StdGroup], [ProjectName], [UserName], [DurationID]) VALUES (@StdGroup, @ProjectName, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, StdGroup, ProjectName, UserName, DurationID FROM TesterProject WHERE (UserName = @UserName) AND (DurationID = @DurationID)" UpdateCommand="UPDATE [TesterProject] SET [StdGroup] = @StdGroup, [ProjectName] = @ProjectName, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([ProjectName] = @original_ProjectName) OR ([ProjectName] IS NULL AND @original_ProjectName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_StdGroup" Type="String" />
@@ -101,6 +101,10 @@
                 <asp:Parameter Name="UserName" Type="String" />
                 <asp:Parameter Name="DurationID" Type="Int32" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:SessionParameter Name="UserName" SessionField="UserName" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="StdGroup" Type="String" />
                 <asp:Parameter Name="ProjectName" Type="String" />

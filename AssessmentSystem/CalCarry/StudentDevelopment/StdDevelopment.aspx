@@ -3,7 +3,6 @@
     <p>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        Student Development Page
             <dx:ASPxFormLayout ID="flAcademicService" runat="server" ColCount="5">
                 <Items>
                     <dx:EmptyLayoutItem>

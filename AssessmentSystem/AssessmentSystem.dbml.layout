@@ -14,12 +14,6 @@
         <elementListCompartment Id="1e3ef46e-c194-4913-a003-53204d32d277" absoluteBounds="3.3899999999999997, 1.085, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f39e5214-54c8-46b0-8b5a-94b6f9a322a7" absoluteBounds="1.25, 0.5, 2, 5.6169254557291657">
-      <DataClassMoniker Name="/AssessmentSystemDataContext/AcademicService" />
-      <nestedChildShapes>
-        <elementListCompartment Id="826a489f-fb7c-4d23-9369-b0ff919bb107" absoluteBounds="1.2650000000000001, 0.96, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="16b84795-3898-47a4-9db5-0095a7947ae0" absoluteBounds="5.625, 3.375, 2, 2.3478011067708335">
       <DataClassMoniker Name="/AssessmentSystemDataContext/Research" />
       <nestedChildShapes>
@@ -36,6 +30,18 @@
       <DataClassMoniker Name="/AssessmentSystemDataContext/Document" />
       <nestedChildShapes>
         <elementListCompartment Id="b8be5157-54a0-4d77-b4d8-29308541fdbc" absoluteBounds="7.8900000000000006, 3.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abe0c410-b667-41e6-a638-a23c21ef96dd" absoluteBounds="1, 0.625, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/AssessmentSystemDataContext/AcademicService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79b14197-0a69-4795-8b13-5c031c15a4ce" absoluteBounds="1.0150000000000001, 1.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6584f470-a983-4c26-b753-f61236fd5cf4" absoluteBounds="0.875, 4.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AssessmentSystemDataContext/Duration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e2eecc4e-b88a-4348-a4f1-04315b9946a2" absoluteBounds="0.89000000000000012, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

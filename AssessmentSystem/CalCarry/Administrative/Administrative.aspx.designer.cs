@@ -172,7 +172,16 @@ namespace AssessmentSystem.CalCarry.Administrative {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AssessmentSystem.CalCarry.Administrative.admpart2 ucAssignCmd;
+        protected global::AssessmentSystem.CalCarry.Administrative.admpart2_2 ucAssignCmd;
+        
+        /// <summary>
+        /// tbAllTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox tbAllTotal;
         
         /// <summary>
         /// btSubmit control.

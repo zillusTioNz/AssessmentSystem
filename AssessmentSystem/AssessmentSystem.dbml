@@ -40,35 +40,6 @@
       <Column Name="DurationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.AcademicService" Member="AcademicServices">
-    <Type Name="AcademicService">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CommitteeProject" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CommitteeRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ExpertInHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ExpertInRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ExpertInPracHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ExpertInPracRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ExpertOutHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ExpertOutRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ExpertOutPracHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ExpertOutPracRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CommitteeAcPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CommitteeAcRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CommitteeCrPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CommitteeCrRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CommitteeBsPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CommitteeBsRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CommitteeThPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CommitteeThRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ServiceAnalysisTimes" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ServiceAnalysisRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ServiceOtherTimes" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ServiceOtherRefer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DurationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Research" Member="Researches">
     <Type Name="Research">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -97,6 +68,31 @@
       <Column Name="TableNameID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Path" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="FileName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AcademicService" Member="AcademicServices">
+    <Type Name="AcademicService">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CommitteeProject" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpertInHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpertInPracHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpertOutHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpertOutPracHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommitteeAcPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommitteeCrPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommitteeBsPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommitteeThPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ServiceAnalysisTimes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ServiceOtherTimes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DurationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Duration" Member="Durations">
+    <Type Name="Duration">
+      <Column Name="DurationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

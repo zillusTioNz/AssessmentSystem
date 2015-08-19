@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Academic.aspx.cs" Inherits="AssessmentSystem.CalCarry.AcademicService.Academic" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-        Academic Page</p>
+        &nbsp;</p>
     <dx:ASPxFormLayout ID="flAcademicService" runat="server" ColCount="5">
         <Items>
             <dx:EmptyLayoutItem ColSpan="3">
@@ -22,7 +22,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem ShowCaption="False">
+            <dx:LayoutItem ShowCaption="False" Width="50%">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxLabel ID="ASPxFormLayout1_E4" runat="server" Text="คณะกรรมการ คณะทำงาน">
@@ -30,7 +30,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl1" runat="server" ActiveTabIndex="0" AutoPostBack="True" EnableCallBacks="True">
@@ -107,7 +107,7 @@
             <dx:LayoutItem Caption="จำนวนงาน">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seCmtPro" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seCmtPro" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seCmtPro_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -115,7 +115,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtCredit" runat="server" Width="170px" ReadOnly="True" Text="0.3">
+                        <dx:ASPxTextBox ID="tbCmtCredit" runat="server" Width="70px" ReadOnly="True" Text="0.3">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -123,7 +123,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbCmtTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -148,7 +148,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl2" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -225,7 +225,7 @@
             <dx:LayoutItem Caption="จำนวนชั่วโมง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seEih" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seEih" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seEih_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -233,7 +233,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbEihCredit" runat="server" Width="170px" Text="1">
+                        <dx:ASPxTextBox ID="tbEihCredit" runat="server" Width="70px" Text="1">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -241,7 +241,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbEihTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbEihTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -254,7 +254,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl3" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -331,7 +331,7 @@
             <dx:LayoutItem Caption="จำนวนชั่วโมง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seEip" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seEip" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seEip_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -339,7 +339,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbEipCredit" runat="server" Width="170px" ReadOnly="True" Text="0.5">
+                        <dx:ASPxTextBox ID="tbEipCredit" runat="server" Width="70px" ReadOnly="True" Text="0.5">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -347,7 +347,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbEipTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbEipTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -360,7 +360,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl4" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -437,7 +437,7 @@
             <dx:LayoutItem Caption="จำนวนชั่วโมง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seEoh" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seEoh" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seEoh_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -445,7 +445,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbEohCredit" runat="server" Width="170px" ReadOnly="True" Text="1">
+                        <dx:ASPxTextBox ID="tbEohCredit" runat="server" Width="70px" ReadOnly="True" Text="1">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -453,7 +453,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbEohTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbEohTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -466,7 +466,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl5" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -543,7 +543,7 @@
             <dx:LayoutItem Caption="จำนวนชั่วโมง">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seEop" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seEop" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seEop_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -551,7 +551,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbEopCredit" runat="server" Width="170px" ReadOnly="True" Text="0.5">
+                        <dx:ASPxTextBox ID="tbEopCredit" runat="server" Width="70px" ReadOnly="True" Text="0.5">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -559,7 +559,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbEopTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbEopTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -590,7 +590,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl6" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -667,7 +667,7 @@
             <dx:LayoutItem Caption="จำนวน (ราย)">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seCmtAp" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seCmtAp" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seCmtAp_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -675,7 +675,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtApCredit" runat="server" Width="170px" ReadOnly="True" Text="2">
+                        <dx:ASPxTextBox ID="tbCmtApCredit" runat="server" Width="70px" ReadOnly="True" Text="2">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -683,7 +683,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtApTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbCmtApTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -696,7 +696,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl7" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -773,7 +773,7 @@
             <dx:LayoutItem Caption="จำนวน (ราย)">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seCmtCp" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seCmtCp" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seCmtCp_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -781,7 +781,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtCpCredit" runat="server" Width="170px" ReadOnly="True" Text="2">
+                        <dx:ASPxTextBox ID="tbCmtCpCredit" runat="server" Width="70px" ReadOnly="True" Text="2">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -789,7 +789,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtCpTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbCmtCpTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -802,7 +802,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl8" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -879,7 +879,7 @@
             <dx:LayoutItem Caption="จำนวน (ราย)">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seCmtBp" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seCmtBp" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seCmtBp_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -887,7 +887,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtBpCredit" runat="server" Width="170px" ReadOnly="True" Text="2">
+                        <dx:ASPxTextBox ID="tbCmtBpCredit" runat="server" Width="70px" ReadOnly="True" Text="2">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -895,7 +895,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtBpTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbCmtBpTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -908,7 +908,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl9" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -985,7 +985,7 @@
             <dx:LayoutItem Caption="จำนวน (ราย)">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seCmtTp" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seCmtTp" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seCmtTp_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -993,7 +993,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtTpCredit" runat="server" Width="170px" ReadOnly="True" Text="1">
+                        <dx:ASPxTextBox ID="tbCmtTpCredit" runat="server" Width="70px" ReadOnly="True" Text="1">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1001,7 +1001,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbCmtTpTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbCmtTpTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1026,7 +1026,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl10" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -1103,7 +1103,7 @@
             <dx:LayoutItem Caption="จำนวน (ครั้ง)">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seSat" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seSat" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seSat_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1111,7 +1111,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbSatCredit" runat="server" Width="170px" ReadOnly="True" Text="1">
+                        <dx:ASPxTextBox ID="tbSatCredit" runat="server" Width="70px" ReadOnly="True" Text="1">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1119,7 +1119,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbSatTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbSatTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1132,7 +1132,7 @@
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
             </dx:LayoutItem>
-            <dx:LayoutItem Caption="เอกสารอ้างอิง">
+            <dx:LayoutItem Caption="เอกสารอ้างอิง" ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         <dx:ASPxPageControl ID="pageControl11" runat="server" ActiveTabIndex="1" AutoPostBack="True" EnableCallBacks="True">
@@ -1209,7 +1209,7 @@
             <dx:LayoutItem Caption="จำนวน (ครั้ง)">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxSpinEdit ID="seSot" runat="server" Number="0">
+                        <dx:ASPxSpinEdit ID="seSot" runat="server" Number="0" AutoPostBack="True" OnNumberChanged="seSot_NumberChanged" Width="50px">
                         </dx:ASPxSpinEdit>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1217,7 +1217,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbSotCredit" runat="server" Width="170px" ReadOnly="True" Text="7">
+                        <dx:ASPxTextBox ID="tbSotCredit" runat="server" Width="70px" ReadOnly="True" Text="7">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1225,7 +1225,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbSotTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbSotTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1241,7 +1241,7 @@
             <dx:LayoutItem ShowCaption="False">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="tbAllTotal" runat="server" Width="170px" ReadOnly="True">
+                        <dx:ASPxTextBox ID="tbAllTotal" runat="server" Width="70px" ReadOnly="True">
                         </dx:ASPxTextBox>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>
@@ -1249,7 +1249,7 @@
             <dx:LayoutItem ColSpan="5" ShowCaption="False" HorizontalAlign="Right">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxButton ID="btSubmit" runat="server" OnClick="btSubmit_Click" Text="บันทุกขอมูล">
+                        <dx:ASPxButton ID="btSubmit" runat="server" OnClick="btSubmit_Click" Text="บันทึกข้อมูล">
                         </dx:ASPxButton>
                     </dx:LayoutItemNestedControlContainer>
                 </LayoutItemNestedControlCollection>

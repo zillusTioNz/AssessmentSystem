@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="admpart2.ascx.cs" Inherits="AssessmentSystem.CalCarry.Administrative.admpart2" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="admpart3.ascx.cs" Inherits="AssessmentSystem.CalCarry.Administrative.admpart2_2" %>
 <style type="text/css">
     .auto-style1 {
         width: 162px;
@@ -105,7 +105,7 @@
                                 <dx:ASPxPageControl runat="server" EnableCallBacks="True" ActiveTabIndex="0" AutoPostBack="True" ID="pageControl"><TabPages>
 <dx:TabPage Text="รายชื่อไฟล์"><ContentCollection>
 <dx:ContentControl runat="server">
-                                                    <dx:ASPxGridView runat="server" KeyFieldName="id" AutoGenerateColumns="False" DataSourceID="SqlDocuments" ID="gvFileDetail" OnRowDeleting="gvFileDetail_RowDeleting"><Columns>
+                                                    <dx:ASPxGridView runat="server" KeyFieldName="id" AutoGenerateColumns="False" ID="gvFileDetail" DataSourceID="SqlDocuments" OnRowDeleting="gvFileDetail_RowDeleting"><Columns>
 <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0"></dx:GridViewCommandColumn>
 <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
 <EditFormSettings Visible="False"></EditFormSettings>
@@ -149,7 +149,7 @@
 </InsertParameters>
 <SelectParameters>
 <asp:SessionParameter SessionField="id" Name="Iden" Type="Int32"></asp:SessionParameter>
-<asp:Parameter DefaultValue="2" Name="TableNameID"></asp:Parameter>
+<asp:Parameter DefaultValue="25" Name="TableNameID"></asp:Parameter>
 </SelectParameters>
 <UpdateParameters>
 <asp:Parameter Name="Iden" Type="Int32"></asp:Parameter>
@@ -165,10 +165,10 @@
 </asp:SqlDataSource>
 
         </td>
-        <td style="width: 10%">
+        <td class="auto-style3" style="width: 10%">
             <dx:ASPxSpinEdit ID="seNumber" runat="server" Number="0" AutoPostBack="True" Width="80px" />
         </td>
-        <td style="width: 10%">
+        <td class="auto-style2" style="width: 10%">
             <asp:Label ID="lbCredit" runat="server"></asp:Label>
         </td>
         <td style="width: 10%">
@@ -177,4 +177,3 @@
         </td>
     </tr>
 </table>
-

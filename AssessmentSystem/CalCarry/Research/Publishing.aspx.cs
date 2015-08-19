@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DevExpress.Web;
@@ -26,7 +27,11 @@ namespace AssessmentSystem.CalCarry.Thesis
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["UserName"] == null && Session["DurationID"] == null)
+            {
+                FormsAuthentication.SignOut();
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
 
         protected void gvResearchPublish_CustomUnboundColumnData(object sender, DevExpress.Web.ASPxGridViewColumnDataEventArgs e)

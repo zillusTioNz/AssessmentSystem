@@ -8,19 +8,32 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-        Hello World<br />
-        <br />
-        Username :<dx:ASPxTextBox ID="tbUsername" runat="server" Theme="Default" Width="170px">
-        </dx:ASPxTextBox>
-        Password :
-        <dx:ASPxTextBox ID="tbPassword" runat="server" Width="170px">
-        </dx:ASPxTextBox>
-        <dx:ASPxButton ID="btLogin" runat="server" Text="Login" OnClick="btLogin_Click">
-        </dx:ASPxButton>
-    
-    </div>
+    <div class="accountHeader">
+    <h2>
+        Log In</h2>
+    <p>
+        Please enter your username and password. 
+        <a href="Register.aspx">Register</a> if you don't have an account.</p>
+</div>
+<dx:ASPxLabel ID="lblUserName" runat="server" AssociatedControlID="tbUserName" Text="User Name:" />
+<div class="form-field">
+    <dx:ASPxTextBox ID="tbUserName" runat="server" Width="200px">
+        <ValidationSettings ValidationGroup="LoginUserValidationGroup">
+            <RequiredField ErrorText="User Name is required." IsRequired="true" />
+        </ValidationSettings>
+    </dx:ASPxTextBox>
+</div>
+<dx:ASPxLabel ID="lblPassword" runat="server" AssociatedControlID="tbPassword" Text="Password:" />
+<div class="form-field">
+    <dx:ASPxTextBox ID="tbPassword" runat="server" Password="true" Width="200px">
+        <ValidationSettings ValidationGroup="LoginUserValidationGroup">
+            <RequiredField ErrorText="Password is required." IsRequired="true" />
+        </ValidationSettings>
+    </dx:ASPxTextBox>
+</div>
+<dx:ASPxButton ID="btnLogin" runat="server" Text="Log In" ValidationGroup="LoginUserValidationGroup"
+    OnClick="btnLogin_Click">
+</dx:ASPxButton>
     </form>
 </body>
 </html>

@@ -3,7 +3,7 @@
     <p>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        Supervision Page<dx:ASPxGridView ID="gvSupervision" runat="server" AutoGenerateColumns="False" DataSourceID="SqlSupervision" KeyFieldName="id" OnCustomUnboundColumnData="gvSupervision_CustomUnboundColumnData" OnRowDeleting="gvSupervision_RowDeleting">
+        <dx:ASPxGridView ID="gvSupervision" runat="server" AutoGenerateColumns="False" DataSourceID="SqlSupervision" KeyFieldName="id" OnCustomUnboundColumnData="gvSupervision_CustomUnboundColumnData" OnRowDeleting="gvSupervision_RowDeleting">
             <SettingsDetail ShowDetailRow="True" AllowOnlyOneMasterRowExpanded="True" />
             <Templates>
                 <DetailRow>
@@ -78,7 +78,7 @@
                 <dx:ASPxSummaryItem FieldName="CpW" SummaryType="Sum" />
             </TotalSummary>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlSupervision" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Supervision] WHERE [id] = @original_id AND (([StdNumber] = @original_StdNumber) OR ([StdNumber] IS NULL AND @original_StdNumber IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [Supervision] ([StdNumber], [UserName], [DurationID]) VALUES (@StdNumber, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Supervision]" UpdateCommand="UPDATE [Supervision] SET [StdNumber] = @StdNumber, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([StdNumber] = @original_StdNumber) OR ([StdNumber] IS NULL AND @original_StdNumber IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
+        <asp:SqlDataSource ID="SqlSupervision" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Supervision] WHERE [id] = @original_id AND (([StdNumber] = @original_StdNumber) OR ([StdNumber] IS NULL AND @original_StdNumber IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [Supervision] ([StdNumber], [UserName], [DurationID]) VALUES (@StdNumber, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, StdNumber, UserName, DurationID FROM Supervision WHERE (UserName = @UserName) AND (DurationID = @DurationID)" UpdateCommand="UPDATE [Supervision] SET [StdNumber] = @StdNumber, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([StdNumber] = @original_StdNumber) OR ([StdNumber] IS NULL AND @original_StdNumber IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_StdNumber" Type="Int32" />
@@ -90,6 +90,10 @@
                 <asp:Parameter Name="UserName" Type="String" />
                 <asp:Parameter Name="DurationID" Type="Int32" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:SessionParameter Name="UserName" SessionField="UserName" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="StdNumber" Type="Int32" />
                 <asp:Parameter Name="UserName" Type="String" />

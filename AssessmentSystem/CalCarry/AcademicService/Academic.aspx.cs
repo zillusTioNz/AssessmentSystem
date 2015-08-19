@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Configuration;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -18,72 +19,23 @@ namespace AssessmentSystem.CalCarry.AcademicService
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserName"] == null && Session["DurationID"] == null)
+            {
+                FormsAuthentication.SignOut();
+                Response.Redirect("~/Account/Login.aspx");
+            }
             if (!Page.IsPostBack)
             {
                 try
                 {
-                    var q = (from p in db.AcademicServices
-                             //where p.UserName == Session["UserName"].ToString() 
-                             select p).First();seCmtPro.Value = q.CommitteeProject;
-                    seEih.Value = q.ExpertInHours;
-                    seEip.Value = q.ExpertInPracHours;
-                    seEoh.Value = q.ExpertOutHours;
-                    seEop.Value = q.ExpertOutPracHours;
-                    seCmtAp.Value = q.CommitteeAcPerson;
-                    seCmtCp.Value = q.CommitteeCrPerson;
-                    seCmtBp.Value = q.CommitteeBsPerson;
-                    seCmtTp.Value = q.CommitteeThPerson;
-                    seSat.Value = q.ServiceAnalysisTimes;
-                    seSot.Value = q.ServiceOtherTimes;
-
-                    tbCmtTotal.Text = (Convert.ToDouble(seCmtPro.Value)*Convert.ToDouble(tbCmtCredit.Text)).ToString();
-                    tbEihTotal.Text = (Convert.ToDouble(seEih.Value) * Convert.ToDouble(tbEihCredit.Text)).ToString();
-                    tbEipTotal.Text = (Convert.ToDouble(seEip.Value) * Convert.ToDouble(tbEipCredit.Text)).ToString();
-                    
-                    
-                    if (Convert.ToDouble(seEoh.Value) * Convert.ToDouble(tbEohCredit.Text) >= 7)
-                    {
-                        tbEohTotal.Text = "7";
-                    }
-                    else
-                    {
-                        tbEohTotal.Text = (Convert.ToDouble(seEoh.Value) * Convert.ToDouble(tbEohCredit.Text)).ToString();
-                    }
-                    
-                    if (tbEohTotal.Text == "7")
-                    {
-                        tbEopTotal.Text = "0";
-                    }
-                    else if ((Convert.ToDouble(seEop.Value) * Convert.ToDouble(tbEopCredit.Text)) <= (7 - Convert.ToDouble(tbEohTotal.Text)))
-                    {
-                        tbEopTotal.Text = (Convert.ToDouble(seEop.Value) * Convert.ToDouble(tbEopCredit.Text)).ToString();
-                    }
-                    else
-                    {
-                        tbEopTotal.Text = (7 - Convert.ToDouble(tbEohTotal.Text)).ToString();
-                    }
-
-                    tbCmtApTotal.Text = (Convert.ToDouble(seCmtAp.Value) * Convert.ToDouble(tbCmtApCredit.Text)).ToString();
-                    tbCmtCpTotal.Text = (Convert.ToDouble(seCmtCp.Value) * Convert.ToDouble(tbCmtCpCredit.Text)).ToString();
-                    tbCmtBpTotal.Text = (Convert.ToDouble(seCmtBp.Value) * Convert.ToDouble(tbCmtCpCredit.Text)).ToString();
-                    tbCmtTpTotal.Text = (Convert.ToDouble(seCmtTp.Value) * Convert.ToDouble(tbCmtTpCredit.Text)).ToString();
-
-                    tbSatTotal.Text = (Convert.ToDouble(seSat.Value) * Convert.ToDouble(tbSatCredit.Text)).ToString();
-                    tbSotTotal.Text = (Convert.ToDouble(seSot.Value) * Convert.ToDouble(tbSotCredit.Text)).ToString();
-
-                    tbAllTotal.Text = (Convert.ToDouble(tbCmtTotal.Text) + Convert.ToDouble(tbEihTotal.Text)
-                        + Convert.ToDouble(tbEipTotal.Text) + Convert.ToDouble(tbEohTotal.Text)
-                        + Convert.ToDouble(tbEopTotal.Text) + Convert.ToDouble(tbCmtApTotal.Text)
-                        + Convert.ToDouble(tbCmtCpTotal.Text) + Convert.ToDouble(tbCmtBpTotal.Text)
-                        + Convert.ToDouble(tbCmtTpTotal.Text) + Convert.ToDouble(tbSatTotal.Text)
-                        + Convert.ToDouble(tbSotTotal.Text)).ToString();
+                    Calculating();
                 }
                 catch (Exception)
                 {
                     AssessmentSystem.AcademicService x = new AssessmentSystem.AcademicService();
 
-                    //x.UserName = Session["UserName"].ToString();
+                    x.UserName = Session["UserName"].ToString();
+                    x.DurationID = Convert.ToInt32(Session["DurationID"]);
                     x.CommitteeProject = Convert.ToInt32(seCmtPro.Value);
                     x.ExpertInHours = Convert.ToInt32(seEih.Value);
                     x.ExpertInPracHours = Convert.ToInt32(seEip.Value);
@@ -105,7 +57,7 @@ namespace AssessmentSystem.CalCarry.AcademicService
         protected void btSubmit_Click(object sender, EventArgs e)
         {
             var q = (from p in db.AcademicServices
-                     //where p.UserName == Session["UserName"].ToString() 
+                     where p.UserName == Session["UserName"].ToString() && p.DurationID == Convert.ToInt32(Session["DurationID"])
                      select p).First();
 
             q.CommitteeProject = Convert.ToInt32(seCmtPro.Value);
@@ -122,14 +74,73 @@ namespace AssessmentSystem.CalCarry.AcademicService
 
             db.SubmitChanges();
 
-            StringBuilder sb = new StringBuilder();
-            sb = new StringBuilder();
-            sb.Append("<script language='javascript' type='text/javascript'>");
-            sb.Append("alert('Success!!!')");
-            sb.Append("</script>");
-            Response.Write(sb.ToString());
-
             Response.Redirect("Academic.aspx");
+        }
+
+        public void Calculating()
+        {
+            var q = (from p in db.AcademicServices
+                     where p.UserName == Session["UserName"].ToString() && p.DurationID == Convert.ToInt32(Session["DurationID"])
+                     select p).First(); seCmtPro.Value = q.CommitteeProject;
+
+            Session["id"] = q.id;
+            seEih.Value = q.ExpertInHours;
+            seEip.Value = q.ExpertInPracHours;
+            seEoh.Value = q.ExpertOutHours;
+            seEop.Value = q.ExpertOutPracHours;
+            seCmtAp.Value = q.CommitteeAcPerson;
+            seCmtCp.Value = q.CommitteeCrPerson;
+            seCmtBp.Value = q.CommitteeBsPerson;
+            seCmtTp.Value = q.CommitteeThPerson;
+            seSat.Value = q.ServiceAnalysisTimes;
+            seSot.Value = q.ServiceOtherTimes;
+
+            tbCmtTotal.Text = (Convert.ToDouble(seCmtPro.Value) * Convert.ToDouble(tbCmtCredit.Text)).ToString();
+            tbEihTotal.Text = (Convert.ToDouble(seEih.Value) * Convert.ToDouble(tbEihCredit.Text)).ToString();
+            tbEipTotal.Text = (Convert.ToDouble(seEip.Value) * Convert.ToDouble(tbEipCredit.Text)).ToString();
+
+
+            if (Convert.ToDouble(seEoh.Value) * Convert.ToDouble(tbEohCredit.Text) >= 7)
+            {
+                tbEohTotal.Text = "7";
+            }
+            else
+            {
+                tbEohTotal.Text = (Convert.ToDouble(seEoh.Value) * Convert.ToDouble(tbEohCredit.Text)).ToString();
+            }
+
+            if (tbEohTotal.Text == "7")
+            {
+                tbEopTotal.Text = "0";
+            }
+            else if ((Convert.ToDouble(seEop.Value) * Convert.ToDouble(tbEopCredit.Text)) <= (7 - Convert.ToDouble(tbEohTotal.Text)))
+            {
+                tbEopTotal.Text = (Convert.ToDouble(seEop.Value) * Convert.ToDouble(tbEopCredit.Text)).ToString();
+            }
+            else
+            {
+                tbEopTotal.Text = (7 - Convert.ToDouble(tbEohTotal.Text)).ToString();
+            }
+
+            tbCmtApTotal.Text = (Convert.ToDouble(seCmtAp.Value) * Convert.ToDouble(tbCmtApCredit.Text)).ToString();
+            tbCmtCpTotal.Text = (Convert.ToDouble(seCmtCp.Value) * Convert.ToDouble(tbCmtCpCredit.Text)).ToString();
+            tbCmtBpTotal.Text = (Convert.ToDouble(seCmtBp.Value) * Convert.ToDouble(tbCmtCpCredit.Text)).ToString();
+            tbCmtTpTotal.Text = (Convert.ToDouble(seCmtTp.Value) * Convert.ToDouble(tbCmtTpCredit.Text)).ToString();
+
+            tbSatTotal.Text = (Convert.ToDouble(seSat.Value) * Convert.ToDouble(tbSatCredit.Text)).ToString();
+            tbSotTotal.Text = (Convert.ToDouble(seSot.Value) * Convert.ToDouble(tbSotCredit.Text)).ToString();
+
+            Total();
+        }
+
+        public void Total()
+        {
+            tbAllTotal.Text = (Convert.ToDouble(tbCmtTotal.Text) + Convert.ToDouble(tbEihTotal.Text)
+                + Convert.ToDouble(tbEipTotal.Text) + Convert.ToDouble(tbEohTotal.Text)
+                + Convert.ToDouble(tbEopTotal.Text) + Convert.ToDouble(tbCmtApTotal.Text)
+                + Convert.ToDouble(tbCmtCpTotal.Text) + Convert.ToDouble(tbCmtBpTotal.Text)
+                + Convert.ToDouble(tbCmtTpTotal.Text) + Convert.ToDouble(tbSatTotal.Text)
+                + Convert.ToDouble(tbSotTotal.Text)).ToString();
         }
 
         protected void gvFileDetail1_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
@@ -449,6 +460,90 @@ namespace AssessmentSystem.CalCarry.AcademicService
 
                 e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/AcademicService/Files/R11/" + e.UploadedFile.FileName), true);
             }
+        }
+
+        protected void seCmtPro_NumberChanged(object sender, EventArgs e)
+        {
+            tbCmtTotal.Text = (Convert.ToDouble(seCmtPro.Value) * Convert.ToDouble(tbCmtCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seEih_NumberChanged(object sender, EventArgs e)
+        {
+            tbEihTotal.Text = (Convert.ToDouble(seEih.Value) * Convert.ToDouble(tbEihCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seEip_NumberChanged(object sender, EventArgs e)
+        {
+            tbEipTotal.Text = (Convert.ToDouble(seEip.Value) * Convert.ToDouble(tbEipCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seEoh_NumberChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(seEoh.Value) * Convert.ToDouble(tbEohCredit.Text) >= 7)
+            {
+                tbEohTotal.Text = "7";
+            }
+            else
+            {
+                tbEohTotal.Text = (Convert.ToDouble(seEoh.Value) * Convert.ToDouble(tbEohCredit.Text)).ToString();
+            }
+            Total();
+        }
+
+        protected void seEop_NumberChanged(object sender, EventArgs e)
+        {
+            if (tbEohTotal.Text == "7")
+            {
+                tbEopTotal.Text = "0";
+            }
+            else if ((Convert.ToDouble(seEop.Value) * Convert.ToDouble(tbEopCredit.Text)) <= (7 - Convert.ToDouble(tbEohTotal.Text)))
+            {
+                tbEopTotal.Text = (Convert.ToDouble(seEop.Value) * Convert.ToDouble(tbEopCredit.Text)).ToString();
+            }
+            else
+            {
+                tbEopTotal.Text = (7 - Convert.ToDouble(tbEohTotal.Text)).ToString();
+            }
+            Total();
+        }
+
+        protected void seCmtAp_NumberChanged(object sender, EventArgs e)
+        {
+            tbCmtApTotal.Text = (Convert.ToDouble(seCmtAp.Value) * Convert.ToDouble(tbCmtApCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seCmtCp_NumberChanged(object sender, EventArgs e)
+        {
+            tbCmtCpTotal.Text = (Convert.ToDouble(seCmtCp.Value) * Convert.ToDouble(tbCmtCpCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seCmtBp_NumberChanged(object sender, EventArgs e)
+        {
+            tbCmtBpTotal.Text = (Convert.ToDouble(seCmtBp.Value) * Convert.ToDouble(tbCmtCpCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seCmtTp_NumberChanged(object sender, EventArgs e)
+        {
+            tbCmtTpTotal.Text = (Convert.ToDouble(seCmtTp.Value) * Convert.ToDouble(tbCmtTpCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seSat_NumberChanged(object sender, EventArgs e)
+        {
+            tbSatTotal.Text = (Convert.ToDouble(seSat.Value) * Convert.ToDouble(tbSatCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seSot_NumberChanged(object sender, EventArgs e)
+        {
+            tbSotTotal.Text = (Convert.ToDouble(seSot.Value) * Convert.ToDouble(tbSotCredit.Text)).ToString();
+            Total();
         }
     }
 }

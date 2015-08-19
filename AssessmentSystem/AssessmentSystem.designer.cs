@@ -36,9 +36,6 @@ namespace AssessmentSystem
     partial void InsertAdministrative(Administrative instance);
     partial void UpdateAdministrative(Administrative instance);
     partial void DeleteAdministrative(Administrative instance);
-    partial void InsertAcademicService(AcademicService instance);
-    partial void UpdateAcademicService(AcademicService instance);
-    partial void DeleteAcademicService(AcademicService instance);
     partial void InsertResearch(Research instance);
     partial void UpdateResearch(Research instance);
     partial void DeleteResearch(Research instance);
@@ -48,6 +45,12 @@ namespace AssessmentSystem
     partial void InsertDocument(Document instance);
     partial void UpdateDocument(Document instance);
     partial void DeleteDocument(Document instance);
+    partial void InsertAcademicService(AcademicService instance);
+    partial void UpdateAcademicService(AcademicService instance);
+    partial void DeleteAcademicService(AcademicService instance);
+    partial void InsertDuration(Duration instance);
+    partial void UpdateDuration(Duration instance);
+    partial void DeleteDuration(Duration instance);
     #endregion
 		
 		public AssessmentSystemDataContext() : 
@@ -96,14 +99,6 @@ namespace AssessmentSystem
 			}
 		}
 		
-		public System.Data.Linq.Table<AcademicService> AcademicServices
-		{
-			get
-			{
-				return this.GetTable<AcademicService>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Research> Researches
 		{
 			get
@@ -125,6 +120,22 @@ namespace AssessmentSystem
 			get
 			{
 				return this.GetTable<Document>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AcademicService> AcademicServices
+		{
+			get
+			{
+				return this.GetTable<AcademicService>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Duration> Durations
+		{
+			get
+			{
+				return this.GetTable<Duration>();
 			}
 		}
 	}
@@ -973,644 +984,6 @@ namespace AssessmentSystem
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AcademicService")]
-	public partial class AcademicService : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private System.Nullable<int> _CommitteeProject;
-		
-		private string _CommitteeRefer;
-		
-		private System.Nullable<int> _ExpertInHours;
-		
-		private string _ExpertInRefer;
-		
-		private System.Nullable<int> _ExpertInPracHours;
-		
-		private string _ExpertInPracRefer;
-		
-		private System.Nullable<int> _ExpertOutHours;
-		
-		private string _ExpertOutRefer;
-		
-		private System.Nullable<int> _ExpertOutPracHours;
-		
-		private string _ExpertOutPracRefer;
-		
-		private System.Nullable<int> _CommitteeAcPerson;
-		
-		private string _CommitteeAcRefer;
-		
-		private System.Nullable<int> _CommitteeCrPerson;
-		
-		private string _CommitteeCrRefer;
-		
-		private System.Nullable<int> _CommitteeBsPerson;
-		
-		private string _CommitteeBsRefer;
-		
-		private System.Nullable<int> _CommitteeThPerson;
-		
-		private string _CommitteeThRefer;
-		
-		private System.Nullable<int> _ServiceAnalysisTimes;
-		
-		private string _ServiceAnalysisRefer;
-		
-		private System.Nullable<int> _ServiceOtherTimes;
-		
-		private string _ServiceOtherRefer;
-		
-		private System.Nullable<int> _DurationID;
-		
-		private string _UserName;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnCommitteeProjectChanging(System.Nullable<int> value);
-    partial void OnCommitteeProjectChanged();
-    partial void OnCommitteeReferChanging(string value);
-    partial void OnCommitteeReferChanged();
-    partial void OnExpertInHoursChanging(System.Nullable<int> value);
-    partial void OnExpertInHoursChanged();
-    partial void OnExpertInReferChanging(string value);
-    partial void OnExpertInReferChanged();
-    partial void OnExpertInPracHoursChanging(System.Nullable<int> value);
-    partial void OnExpertInPracHoursChanged();
-    partial void OnExpertInPracReferChanging(string value);
-    partial void OnExpertInPracReferChanged();
-    partial void OnExpertOutHoursChanging(System.Nullable<int> value);
-    partial void OnExpertOutHoursChanged();
-    partial void OnExpertOutReferChanging(string value);
-    partial void OnExpertOutReferChanged();
-    partial void OnExpertOutPracHoursChanging(System.Nullable<int> value);
-    partial void OnExpertOutPracHoursChanged();
-    partial void OnExpertOutPracReferChanging(string value);
-    partial void OnExpertOutPracReferChanged();
-    partial void OnCommitteeAcPersonChanging(System.Nullable<int> value);
-    partial void OnCommitteeAcPersonChanged();
-    partial void OnCommitteeAcReferChanging(string value);
-    partial void OnCommitteeAcReferChanged();
-    partial void OnCommitteeCrPersonChanging(System.Nullable<int> value);
-    partial void OnCommitteeCrPersonChanged();
-    partial void OnCommitteeCrReferChanging(string value);
-    partial void OnCommitteeCrReferChanged();
-    partial void OnCommitteeBsPersonChanging(System.Nullable<int> value);
-    partial void OnCommitteeBsPersonChanged();
-    partial void OnCommitteeBsReferChanging(string value);
-    partial void OnCommitteeBsReferChanged();
-    partial void OnCommitteeThPersonChanging(System.Nullable<int> value);
-    partial void OnCommitteeThPersonChanged();
-    partial void OnCommitteeThReferChanging(string value);
-    partial void OnCommitteeThReferChanged();
-    partial void OnServiceAnalysisTimesChanging(System.Nullable<int> value);
-    partial void OnServiceAnalysisTimesChanged();
-    partial void OnServiceAnalysisReferChanging(string value);
-    partial void OnServiceAnalysisReferChanged();
-    partial void OnServiceOtherTimesChanging(System.Nullable<int> value);
-    partial void OnServiceOtherTimesChanged();
-    partial void OnServiceOtherReferChanging(string value);
-    partial void OnServiceOtherReferChanged();
-    partial void OnDurationIDChanging(System.Nullable<int> value);
-    partial void OnDurationIDChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    #endregion
-		
-		public AcademicService()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeProject", DbType="Int")]
-		public System.Nullable<int> CommitteeProject
-		{
-			get
-			{
-				return this._CommitteeProject;
-			}
-			set
-			{
-				if ((this._CommitteeProject != value))
-				{
-					this.OnCommitteeProjectChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeProject = value;
-					this.SendPropertyChanged("CommitteeProject");
-					this.OnCommitteeProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeRefer", DbType="NVarChar(MAX)")]
-		public string CommitteeRefer
-		{
-			get
-			{
-				return this._CommitteeRefer;
-			}
-			set
-			{
-				if ((this._CommitteeRefer != value))
-				{
-					this.OnCommitteeReferChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeRefer = value;
-					this.SendPropertyChanged("CommitteeRefer");
-					this.OnCommitteeReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertInHours", DbType="Int")]
-		public System.Nullable<int> ExpertInHours
-		{
-			get
-			{
-				return this._ExpertInHours;
-			}
-			set
-			{
-				if ((this._ExpertInHours != value))
-				{
-					this.OnExpertInHoursChanging(value);
-					this.SendPropertyChanging();
-					this._ExpertInHours = value;
-					this.SendPropertyChanged("ExpertInHours");
-					this.OnExpertInHoursChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertInRefer", DbType="NVarChar(MAX)")]
-		public string ExpertInRefer
-		{
-			get
-			{
-				return this._ExpertInRefer;
-			}
-			set
-			{
-				if ((this._ExpertInRefer != value))
-				{
-					this.OnExpertInReferChanging(value);
-					this.SendPropertyChanging();
-					this._ExpertInRefer = value;
-					this.SendPropertyChanged("ExpertInRefer");
-					this.OnExpertInReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertInPracHours", DbType="Int")]
-		public System.Nullable<int> ExpertInPracHours
-		{
-			get
-			{
-				return this._ExpertInPracHours;
-			}
-			set
-			{
-				if ((this._ExpertInPracHours != value))
-				{
-					this.OnExpertInPracHoursChanging(value);
-					this.SendPropertyChanging();
-					this._ExpertInPracHours = value;
-					this.SendPropertyChanged("ExpertInPracHours");
-					this.OnExpertInPracHoursChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertInPracRefer", DbType="NVarChar(MAX)")]
-		public string ExpertInPracRefer
-		{
-			get
-			{
-				return this._ExpertInPracRefer;
-			}
-			set
-			{
-				if ((this._ExpertInPracRefer != value))
-				{
-					this.OnExpertInPracReferChanging(value);
-					this.SendPropertyChanging();
-					this._ExpertInPracRefer = value;
-					this.SendPropertyChanged("ExpertInPracRefer");
-					this.OnExpertInPracReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertOutHours", DbType="Int")]
-		public System.Nullable<int> ExpertOutHours
-		{
-			get
-			{
-				return this._ExpertOutHours;
-			}
-			set
-			{
-				if ((this._ExpertOutHours != value))
-				{
-					this.OnExpertOutHoursChanging(value);
-					this.SendPropertyChanging();
-					this._ExpertOutHours = value;
-					this.SendPropertyChanged("ExpertOutHours");
-					this.OnExpertOutHoursChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertOutRefer", DbType="NVarChar(MAX)")]
-		public string ExpertOutRefer
-		{
-			get
-			{
-				return this._ExpertOutRefer;
-			}
-			set
-			{
-				if ((this._ExpertOutRefer != value))
-				{
-					this.OnExpertOutReferChanging(value);
-					this.SendPropertyChanging();
-					this._ExpertOutRefer = value;
-					this.SendPropertyChanged("ExpertOutRefer");
-					this.OnExpertOutReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertOutPracHours", DbType="Int")]
-		public System.Nullable<int> ExpertOutPracHours
-		{
-			get
-			{
-				return this._ExpertOutPracHours;
-			}
-			set
-			{
-				if ((this._ExpertOutPracHours != value))
-				{
-					this.OnExpertOutPracHoursChanging(value);
-					this.SendPropertyChanging();
-					this._ExpertOutPracHours = value;
-					this.SendPropertyChanged("ExpertOutPracHours");
-					this.OnExpertOutPracHoursChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertOutPracRefer", DbType="NVarChar(MAX)")]
-		public string ExpertOutPracRefer
-		{
-			get
-			{
-				return this._ExpertOutPracRefer;
-			}
-			set
-			{
-				if ((this._ExpertOutPracRefer != value))
-				{
-					this.OnExpertOutPracReferChanging(value);
-					this.SendPropertyChanging();
-					this._ExpertOutPracRefer = value;
-					this.SendPropertyChanged("ExpertOutPracRefer");
-					this.OnExpertOutPracReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeAcPerson", DbType="Int")]
-		public System.Nullable<int> CommitteeAcPerson
-		{
-			get
-			{
-				return this._CommitteeAcPerson;
-			}
-			set
-			{
-				if ((this._CommitteeAcPerson != value))
-				{
-					this.OnCommitteeAcPersonChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeAcPerson = value;
-					this.SendPropertyChanged("CommitteeAcPerson");
-					this.OnCommitteeAcPersonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeAcRefer", DbType="NVarChar(MAX)")]
-		public string CommitteeAcRefer
-		{
-			get
-			{
-				return this._CommitteeAcRefer;
-			}
-			set
-			{
-				if ((this._CommitteeAcRefer != value))
-				{
-					this.OnCommitteeAcReferChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeAcRefer = value;
-					this.SendPropertyChanged("CommitteeAcRefer");
-					this.OnCommitteeAcReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeCrPerson", DbType="Int")]
-		public System.Nullable<int> CommitteeCrPerson
-		{
-			get
-			{
-				return this._CommitteeCrPerson;
-			}
-			set
-			{
-				if ((this._CommitteeCrPerson != value))
-				{
-					this.OnCommitteeCrPersonChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeCrPerson = value;
-					this.SendPropertyChanged("CommitteeCrPerson");
-					this.OnCommitteeCrPersonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeCrRefer", DbType="NVarChar(MAX)")]
-		public string CommitteeCrRefer
-		{
-			get
-			{
-				return this._CommitteeCrRefer;
-			}
-			set
-			{
-				if ((this._CommitteeCrRefer != value))
-				{
-					this.OnCommitteeCrReferChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeCrRefer = value;
-					this.SendPropertyChanged("CommitteeCrRefer");
-					this.OnCommitteeCrReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeBsPerson", DbType="Int")]
-		public System.Nullable<int> CommitteeBsPerson
-		{
-			get
-			{
-				return this._CommitteeBsPerson;
-			}
-			set
-			{
-				if ((this._CommitteeBsPerson != value))
-				{
-					this.OnCommitteeBsPersonChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeBsPerson = value;
-					this.SendPropertyChanged("CommitteeBsPerson");
-					this.OnCommitteeBsPersonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeBsRefer", DbType="NVarChar(MAX)")]
-		public string CommitteeBsRefer
-		{
-			get
-			{
-				return this._CommitteeBsRefer;
-			}
-			set
-			{
-				if ((this._CommitteeBsRefer != value))
-				{
-					this.OnCommitteeBsReferChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeBsRefer = value;
-					this.SendPropertyChanged("CommitteeBsRefer");
-					this.OnCommitteeBsReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeThPerson", DbType="Int")]
-		public System.Nullable<int> CommitteeThPerson
-		{
-			get
-			{
-				return this._CommitteeThPerson;
-			}
-			set
-			{
-				if ((this._CommitteeThPerson != value))
-				{
-					this.OnCommitteeThPersonChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeThPerson = value;
-					this.SendPropertyChanged("CommitteeThPerson");
-					this.OnCommitteeThPersonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeThRefer", DbType="NVarChar(MAX)")]
-		public string CommitteeThRefer
-		{
-			get
-			{
-				return this._CommitteeThRefer;
-			}
-			set
-			{
-				if ((this._CommitteeThRefer != value))
-				{
-					this.OnCommitteeThReferChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeThRefer = value;
-					this.SendPropertyChanged("CommitteeThRefer");
-					this.OnCommitteeThReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceAnalysisTimes", DbType="Int")]
-		public System.Nullable<int> ServiceAnalysisTimes
-		{
-			get
-			{
-				return this._ServiceAnalysisTimes;
-			}
-			set
-			{
-				if ((this._ServiceAnalysisTimes != value))
-				{
-					this.OnServiceAnalysisTimesChanging(value);
-					this.SendPropertyChanging();
-					this._ServiceAnalysisTimes = value;
-					this.SendPropertyChanged("ServiceAnalysisTimes");
-					this.OnServiceAnalysisTimesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceAnalysisRefer", DbType="NVarChar(MAX)")]
-		public string ServiceAnalysisRefer
-		{
-			get
-			{
-				return this._ServiceAnalysisRefer;
-			}
-			set
-			{
-				if ((this._ServiceAnalysisRefer != value))
-				{
-					this.OnServiceAnalysisReferChanging(value);
-					this.SendPropertyChanging();
-					this._ServiceAnalysisRefer = value;
-					this.SendPropertyChanged("ServiceAnalysisRefer");
-					this.OnServiceAnalysisReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceOtherTimes", DbType="Int")]
-		public System.Nullable<int> ServiceOtherTimes
-		{
-			get
-			{
-				return this._ServiceOtherTimes;
-			}
-			set
-			{
-				if ((this._ServiceOtherTimes != value))
-				{
-					this.OnServiceOtherTimesChanging(value);
-					this.SendPropertyChanging();
-					this._ServiceOtherTimes = value;
-					this.SendPropertyChanged("ServiceOtherTimes");
-					this.OnServiceOtherTimesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceOtherRefer", DbType="NVarChar(MAX)")]
-		public string ServiceOtherRefer
-		{
-			get
-			{
-				return this._ServiceOtherRefer;
-			}
-			set
-			{
-				if ((this._ServiceOtherRefer != value))
-				{
-					this.OnServiceOtherReferChanging(value);
-					this.SendPropertyChanging();
-					this._ServiceOtherRefer = value;
-					this.SendPropertyChanged("ServiceOtherRefer");
-					this.OnServiceOtherReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", DbType="Int")]
-		public System.Nullable<int> DurationID
-		{
-			get
-			{
-				return this._DurationID;
-			}
-			set
-			{
-				if ((this._DurationID != value))
-				{
-					this.OnDurationIDChanging(value);
-					this.SendPropertyChanging();
-					this._DurationID = value;
-					this.SendPropertyChanged("DurationID");
-					this.OnDurationIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Research")]
 	public partial class Research : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2132,6 +1505,490 @@ namespace AssessmentSystem
 					this._FileName = value;
 					this.SendPropertyChanged("FileName");
 					this.OnFileNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AcademicService")]
+	public partial class AcademicService : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _CommitteeProject;
+		
+		private System.Nullable<int> _ExpertInHours;
+		
+		private System.Nullable<int> _ExpertInPracHours;
+		
+		private System.Nullable<int> _ExpertOutHours;
+		
+		private System.Nullable<int> _ExpertOutPracHours;
+		
+		private System.Nullable<int> _CommitteeAcPerson;
+		
+		private System.Nullable<int> _CommitteeCrPerson;
+		
+		private System.Nullable<int> _CommitteeBsPerson;
+		
+		private System.Nullable<int> _CommitteeThPerson;
+		
+		private System.Nullable<int> _ServiceAnalysisTimes;
+		
+		private System.Nullable<int> _ServiceOtherTimes;
+		
+		private System.Nullable<int> _DurationID;
+		
+		private string _UserName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnCommitteeProjectChanging(System.Nullable<int> value);
+    partial void OnCommitteeProjectChanged();
+    partial void OnExpertInHoursChanging(System.Nullable<int> value);
+    partial void OnExpertInHoursChanged();
+    partial void OnExpertInPracHoursChanging(System.Nullable<int> value);
+    partial void OnExpertInPracHoursChanged();
+    partial void OnExpertOutHoursChanging(System.Nullable<int> value);
+    partial void OnExpertOutHoursChanged();
+    partial void OnExpertOutPracHoursChanging(System.Nullable<int> value);
+    partial void OnExpertOutPracHoursChanged();
+    partial void OnCommitteeAcPersonChanging(System.Nullable<int> value);
+    partial void OnCommitteeAcPersonChanged();
+    partial void OnCommitteeCrPersonChanging(System.Nullable<int> value);
+    partial void OnCommitteeCrPersonChanged();
+    partial void OnCommitteeBsPersonChanging(System.Nullable<int> value);
+    partial void OnCommitteeBsPersonChanged();
+    partial void OnCommitteeThPersonChanging(System.Nullable<int> value);
+    partial void OnCommitteeThPersonChanged();
+    partial void OnServiceAnalysisTimesChanging(System.Nullable<int> value);
+    partial void OnServiceAnalysisTimesChanged();
+    partial void OnServiceOtherTimesChanging(System.Nullable<int> value);
+    partial void OnServiceOtherTimesChanged();
+    partial void OnDurationIDChanging(System.Nullable<int> value);
+    partial void OnDurationIDChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    #endregion
+		
+		public AcademicService()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeProject", DbType="Int")]
+		public System.Nullable<int> CommitteeProject
+		{
+			get
+			{
+				return this._CommitteeProject;
+			}
+			set
+			{
+				if ((this._CommitteeProject != value))
+				{
+					this.OnCommitteeProjectChanging(value);
+					this.SendPropertyChanging();
+					this._CommitteeProject = value;
+					this.SendPropertyChanged("CommitteeProject");
+					this.OnCommitteeProjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertInHours", DbType="Int")]
+		public System.Nullable<int> ExpertInHours
+		{
+			get
+			{
+				return this._ExpertInHours;
+			}
+			set
+			{
+				if ((this._ExpertInHours != value))
+				{
+					this.OnExpertInHoursChanging(value);
+					this.SendPropertyChanging();
+					this._ExpertInHours = value;
+					this.SendPropertyChanged("ExpertInHours");
+					this.OnExpertInHoursChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertInPracHours", DbType="Int")]
+		public System.Nullable<int> ExpertInPracHours
+		{
+			get
+			{
+				return this._ExpertInPracHours;
+			}
+			set
+			{
+				if ((this._ExpertInPracHours != value))
+				{
+					this.OnExpertInPracHoursChanging(value);
+					this.SendPropertyChanging();
+					this._ExpertInPracHours = value;
+					this.SendPropertyChanged("ExpertInPracHours");
+					this.OnExpertInPracHoursChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertOutHours", DbType="Int")]
+		public System.Nullable<int> ExpertOutHours
+		{
+			get
+			{
+				return this._ExpertOutHours;
+			}
+			set
+			{
+				if ((this._ExpertOutHours != value))
+				{
+					this.OnExpertOutHoursChanging(value);
+					this.SendPropertyChanging();
+					this._ExpertOutHours = value;
+					this.SendPropertyChanged("ExpertOutHours");
+					this.OnExpertOutHoursChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpertOutPracHours", DbType="Int")]
+		public System.Nullable<int> ExpertOutPracHours
+		{
+			get
+			{
+				return this._ExpertOutPracHours;
+			}
+			set
+			{
+				if ((this._ExpertOutPracHours != value))
+				{
+					this.OnExpertOutPracHoursChanging(value);
+					this.SendPropertyChanging();
+					this._ExpertOutPracHours = value;
+					this.SendPropertyChanged("ExpertOutPracHours");
+					this.OnExpertOutPracHoursChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeAcPerson", DbType="Int")]
+		public System.Nullable<int> CommitteeAcPerson
+		{
+			get
+			{
+				return this._CommitteeAcPerson;
+			}
+			set
+			{
+				if ((this._CommitteeAcPerson != value))
+				{
+					this.OnCommitteeAcPersonChanging(value);
+					this.SendPropertyChanging();
+					this._CommitteeAcPerson = value;
+					this.SendPropertyChanged("CommitteeAcPerson");
+					this.OnCommitteeAcPersonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeCrPerson", DbType="Int")]
+		public System.Nullable<int> CommitteeCrPerson
+		{
+			get
+			{
+				return this._CommitteeCrPerson;
+			}
+			set
+			{
+				if ((this._CommitteeCrPerson != value))
+				{
+					this.OnCommitteeCrPersonChanging(value);
+					this.SendPropertyChanging();
+					this._CommitteeCrPerson = value;
+					this.SendPropertyChanged("CommitteeCrPerson");
+					this.OnCommitteeCrPersonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeBsPerson", DbType="Int")]
+		public System.Nullable<int> CommitteeBsPerson
+		{
+			get
+			{
+				return this._CommitteeBsPerson;
+			}
+			set
+			{
+				if ((this._CommitteeBsPerson != value))
+				{
+					this.OnCommitteeBsPersonChanging(value);
+					this.SendPropertyChanging();
+					this._CommitteeBsPerson = value;
+					this.SendPropertyChanged("CommitteeBsPerson");
+					this.OnCommitteeBsPersonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeThPerson", DbType="Int")]
+		public System.Nullable<int> CommitteeThPerson
+		{
+			get
+			{
+				return this._CommitteeThPerson;
+			}
+			set
+			{
+				if ((this._CommitteeThPerson != value))
+				{
+					this.OnCommitteeThPersonChanging(value);
+					this.SendPropertyChanging();
+					this._CommitteeThPerson = value;
+					this.SendPropertyChanged("CommitteeThPerson");
+					this.OnCommitteeThPersonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceAnalysisTimes", DbType="Int")]
+		public System.Nullable<int> ServiceAnalysisTimes
+		{
+			get
+			{
+				return this._ServiceAnalysisTimes;
+			}
+			set
+			{
+				if ((this._ServiceAnalysisTimes != value))
+				{
+					this.OnServiceAnalysisTimesChanging(value);
+					this.SendPropertyChanging();
+					this._ServiceAnalysisTimes = value;
+					this.SendPropertyChanged("ServiceAnalysisTimes");
+					this.OnServiceAnalysisTimesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceOtherTimes", DbType="Int")]
+		public System.Nullable<int> ServiceOtherTimes
+		{
+			get
+			{
+				return this._ServiceOtherTimes;
+			}
+			set
+			{
+				if ((this._ServiceOtherTimes != value))
+				{
+					this.OnServiceOtherTimesChanging(value);
+					this.SendPropertyChanging();
+					this._ServiceOtherTimes = value;
+					this.SendPropertyChanged("ServiceOtherTimes");
+					this.OnServiceOtherTimesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", DbType="Int")]
+		public System.Nullable<int> DurationID
+		{
+			get
+			{
+				return this._DurationID;
+			}
+			set
+			{
+				if ((this._DurationID != value))
+				{
+					this.OnDurationIDChanging(value);
+					this.SendPropertyChanging();
+					this._DurationID = value;
+					this.SendPropertyChanged("DurationID");
+					this.OnDurationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Duration")]
+	public partial class Duration : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DurationID;
+		
+		private System.Nullable<System.DateTime> _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDurationIDChanging(int value);
+    partial void OnDurationIDChanged();
+    partial void OnStartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    #endregion
+		
+		public Duration()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DurationID
+		{
+			get
+			{
+				return this._DurationID;
+			}
+			set
+			{
+				if ((this._DurationID != value))
+				{
+					this.OnDurationIDChanging(value);
+					this.SendPropertyChanging();
+					this._DurationID = value;
+					this.SendPropertyChanged("DurationID");
+					this.OnDurationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="Date")]
+		public System.Nullable<System.DateTime> StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="Date")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
 				}
 			}
 		}

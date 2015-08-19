@@ -5,11 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DevExpress.Web;
 
 namespace AssessmentSystem.CalCarry.Administrative
 {
-    public partial class admpart2 : System.Web.UI.UserControl
+    public partial class admpart2_2 : System.Web.UI.UserControl
     {
         AssessmentSystemDataContext db = new AssessmentSystemDataContext();
 
@@ -44,7 +43,7 @@ namespace AssessmentSystem.CalCarry.Administrative
 
             if (seNumber.Number > 0)
             {
-                tbTotal.Text = ((n*credit)/2).ToString();
+                tbTotal.Text = ((n * credit) / 2).ToString();
             }
             else
             {
@@ -52,20 +51,20 @@ namespace AssessmentSystem.CalCarry.Administrative
             }
         }
 
-        protected void ASPxUploadControl1_FileUploadComplete(object sender, FileUploadCompleteEventArgs e)
+        protected void ASPxUploadControl1_FileUploadComplete(object sender, DevExpress.Web.FileUploadCompleteEventArgs e)
         {
             if (e.IsValid)
             {
                 Document x = new Document();
-                x.Path = "~/CalCarry/Administrative/AdminFilesR1/" + e.UploadedFile.FileName;
+                x.Path = "~/CalCarry/Administrative/AdminFilesR2/" + e.UploadedFile.FileName;
                 x.Iden = Convert.ToInt32(Session["id"]);
-                x.TableNameID = 2;
+                x.TableNameID = 25;
                 x.FileName = e.UploadedFile.FileName;
 
                 db.Documents.InsertOnSubmit(x);
                 db.SubmitChanges();
 
-                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/Administrative/AdminFilesR1/" + e.UploadedFile.FileName), true);
+                e.UploadedFile.SaveAs(Server.MapPath("~/CalCarry/Administrative/AdminFilesR2/" + e.UploadedFile.FileName), true);
             }
         }
 
@@ -80,5 +79,7 @@ namespace AssessmentSystem.CalCarry.Administrative
             {
             }
         }
+
+
     }
 }

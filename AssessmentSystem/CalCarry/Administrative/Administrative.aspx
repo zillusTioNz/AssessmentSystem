@@ -1,16 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Administrative.aspx.cs" Inherits="AssessmentSystem.CalCarry.Administrative.Administrative" %>
 <%@ Register src="admpart1.ascx" tagname="admpart1" tagprefix="uc2" %>
 <%@ Register src="admpart2.ascx" tagname="admpart2" tagprefix="uc3" %>
+<%@ Register src="admpart3.ascx" tagname="admpart3" tagprefix="uc4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <p>
-        Administrative Page
-        </p>
     
     
-    <p>
+            <uc2:admpart1 ID="ucChancellor" runat="server" LB="อธิการบดี" LBcredit="35" LBtext="อธิการบดี" />
         
-                <uc2:admpart1 ID="ucChancellor" runat="server" LB="อธิการบดี" LBcredit="35" LBtext="อธิการบดี" />
-                
                 <uc2:admpart1 ID="ucViceChancellor" runat="server" LBcredit="30" LBtext="รองอธิการบดี" />
         
         <uc2:admpart1 ID="ucDean" runat="server" LBcredit="30" LBtext="คณบดี/ผู้อำนวยการ" />
@@ -46,8 +42,28 @@
             
         
         
-    <uc3:admpart2 ID="ucAssignCmd" runat="server" LBcredit="10" LBtext="งานที่ผู้บังคับบัญชามอบหมาย" />
-                <dx:ASPxButton ID="btSubmit" runat="server" OnClick="btSubmit_Click" Text="Submit">
+                <uc4:admpart3 ID="ucAssignCmd" runat="server" LBcredit="10" LBtext="งานที่ผู้บังคับบัญชามอบหมาย"/>
+            
+                <table style="width:100%;">
+                    <tr>
+                        <td align="right" style="width: 90%">
+                            รวมภาระงานบริหาร/งานส่วนกลาง</td>
+                        <td align="right" style="width: 10%">
+                            <dx:ASPxTextBox ID="tbAllTotal" runat="server" Width="80px">
+                            </dx:ASPxTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="width: 90%">
+                            &nbsp;</td>
+                        <td align="right" style="width: 10%">
+                            <br />
+            
+                <dx:ASPxButton ID="btSubmit" runat="server" OnClick="btSubmit_Click" Text="บันทึกข้อมูล">
                 </dx:ASPxButton>
 
-    </asp:Content>
+                        </td>
+                    </tr>
+            </table>
+            
+                </asp:Content>

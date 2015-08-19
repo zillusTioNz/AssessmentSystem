@@ -104,6 +104,7 @@
     <Content Include="CalCarry\AcademicService\Academic.aspx" />
     <Content Include="CalCarry\Administrative\Administrative.aspx" />
     <Content Include="CalCarry\Administrative\admpart1.ascx" />
+    <Content Include="CalCarry\Administrative\admpart3.ascx" />
     <Content Include="CalCarry\Administrative\admpart2.ascx" />
     <Content Include="CalCarry\ArtandCulture\ArtandCulture.aspx" />
     <Content Include="CalCarry\CalCarryMain.aspx" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="CalCarry\Administrative\admpart1.ascx.designer.cs">
       <DependentUpon>admpart1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CalCarry\Administrative\admpart3.ascx.cs">
+      <DependentUpon>admpart3.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalCarry\Administrative\admpart3.ascx.designer.cs">
+      <DependentUpon>admpart3.ascx</DependentUpon>
     </Compile>
     <Compile Include="CalCarry\Administrative\admpart2.ascx.cs">
       <DependentUpon>admpart2.ascx</DependentUpon>
@@ -356,7 +364,8 @@
     <Folder Include="CalCarry\AcademicService\Files\R7\" />
     <Folder Include="CalCarry\AcademicService\Files\R8\" />
     <Folder Include="CalCarry\AcademicService\Files\R9\" />
-    <Folder Include="CalCarry\Administrative\AdminFiles\" />
+    <Folder Include="CalCarry\Administrative\AdminFilesR1\" />
+    <Folder Include="CalCarry\Administrative\AdminFilesR2\" />
     <Folder Include="CalCarry\ArtandCulture\ArtandCultureFiles\" />
     <Folder Include="CalCarry\Research\PublishingFiles\" />
     <Folder Include="CalCarry\Research\TopicFiles\" />

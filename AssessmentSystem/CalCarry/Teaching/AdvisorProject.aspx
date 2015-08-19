@@ -3,7 +3,7 @@
     <p>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        AdvisorProject Page<dx:ASPxGridView ID="gvAdvisorProject" runat="server" AutoGenerateColumns="False" DataSourceID="SqlAdvisorProject" KeyFieldName="id" OnCustomUnboundColumnData="gvAdvisorProject_CustomUnboundColumnData" OnRowDeleting="gvAdvisorProject_RowDeleting">
+        <dx:ASPxGridView ID="gvAdvisorProject" runat="server" AutoGenerateColumns="False" DataSourceID="SqlAdvisorProject" KeyFieldName="id" OnCustomUnboundColumnData="gvAdvisorProject_CustomUnboundColumnData" OnRowDeleting="gvAdvisorProject_RowDeleting">
             <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
             <Templates>
                 <DetailRow>
@@ -86,7 +86,7 @@
                 <dx:ASPxSummaryItem FieldName="CpW" SummaryType="Sum" />
             </TotalSummary>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlAdvisorProject" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [AdvisorProject] WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([ProjectName] = @original_ProjectName) OR ([ProjectName] IS NULL AND @original_ProjectName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))" InsertCommand="INSERT INTO [AdvisorProject] ([StdGroup], [ProjectName], [UserName], [DurationID], [StatusID]) VALUES (@StdGroup, @ProjectName, @UserName, @DurationID, @StatusID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [AdvisorProject]" UpdateCommand="UPDATE [AdvisorProject] SET [StdGroup] = @StdGroup, [ProjectName] = @ProjectName, [UserName] = @UserName, [DurationID] = @DurationID, [StatusID] = @StatusID WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([ProjectName] = @original_ProjectName) OR ([ProjectName] IS NULL AND @original_ProjectName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))">
+        <asp:SqlDataSource ID="SqlAdvisorProject" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [AdvisorProject] WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([ProjectName] = @original_ProjectName) OR ([ProjectName] IS NULL AND @original_ProjectName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))" InsertCommand="INSERT INTO [AdvisorProject] ([StdGroup], [ProjectName], [UserName], [DurationID], [StatusID]) VALUES (@StdGroup, @ProjectName, @UserName, @DurationID, @StatusID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, StdGroup, ProjectName, UserName, DurationID, StatusID FROM AdvisorProject WHERE (UserName = @UserName) AND (DurationID = @DurationID)" UpdateCommand="UPDATE [AdvisorProject] SET [StdGroup] = @StdGroup, [ProjectName] = @ProjectName, [UserName] = @UserName, [DurationID] = @DurationID, [StatusID] = @StatusID WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([ProjectName] = @original_ProjectName) OR ([ProjectName] IS NULL AND @original_ProjectName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_StdGroup" Type="String" />
@@ -102,6 +102,10 @@
                 <asp:Parameter Name="DurationID" Type="Int32" />
                 <asp:Parameter Name="StatusID" Type="Int32" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:SessionParameter Name="UserName" SessionField="UserName" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="StdGroup" Type="String" />
                 <asp:Parameter Name="ProjectName" Type="String" />

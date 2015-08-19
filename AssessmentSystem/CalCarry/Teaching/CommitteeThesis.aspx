@@ -80,7 +80,7 @@
                 <dx:ASPxSummaryItem FieldName="CpW" SummaryType="Sum" />
             </TotalSummary>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlTesterThesis" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [TesterThesis] WHERE [id] = @original_id AND (([ThesisName] = @original_ThesisName) OR ([ThesisName] IS NULL AND @original_ThesisName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [TesterThesis] ([ThesisName], [UserName], [DurationID]) VALUES (@ThesisName, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [TesterThesis]" UpdateCommand="UPDATE [TesterThesis] SET [ThesisName] = @ThesisName, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([ThesisName] = @original_ThesisName) OR ([ThesisName] IS NULL AND @original_ThesisName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
+        <asp:SqlDataSource ID="SqlTesterThesis" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [TesterThesis] WHERE [id] = @original_id AND (([ThesisName] = @original_ThesisName) OR ([ThesisName] IS NULL AND @original_ThesisName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [TesterThesis] ([ThesisName], [UserName], [DurationID]) VALUES (@ThesisName, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, ThesisName, UserName, DurationID FROM TesterThesis WHERE (UserName = @UserName) AND (DurationID = @DurationID)" UpdateCommand="UPDATE [TesterThesis] SET [ThesisName] = @ThesisName, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([ThesisName] = @original_ThesisName) OR ([ThesisName] IS NULL AND @original_ThesisName IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_ThesisName" Type="String" />
@@ -92,6 +92,10 @@
                 <asp:Parameter Name="UserName" Type="String" />
                 <asp:Parameter Name="DurationID" Type="Int32" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:SessionParameter Name="UserName" SessionField="UserName" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="ThesisName" Type="String" />
                 <asp:Parameter Name="UserName" Type="String" />

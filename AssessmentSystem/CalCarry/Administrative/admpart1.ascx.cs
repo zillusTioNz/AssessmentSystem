@@ -41,7 +41,7 @@ namespace AssessmentSystem.CalCarry.Administrative
             }
             else
             {
-                tbTotal.Text = "";
+                tbTotal.Text = "0";
             }
         }
     }

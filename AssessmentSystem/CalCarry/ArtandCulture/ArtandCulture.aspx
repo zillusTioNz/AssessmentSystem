@@ -3,7 +3,7 @@
     <p>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        Art and Culture Page<dx:ASPxGridView ID="gvCulture" runat="server" AutoGenerateColumns="False" DataSourceID="SqlCulture" KeyFieldName="id" OnCustomUnboundColumnData="gvCulture_CustomUnboundColumnData" OnRowDeleting="gvCulture_RowDeleting">
+        <dx:ASPxGridView ID="gvCulture" runat="server" AutoGenerateColumns="False" DataSourceID="SqlCulture" KeyFieldName="id" OnCustomUnboundColumnData="gvCulture_CustomUnboundColumnData" OnRowDeleting="gvCulture_RowDeleting">
             <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
             <Templates>
                 <DetailRow>
@@ -81,7 +81,7 @@
                 </dx:GridViewDataTextColumn>
             </Columns>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlCulture" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Culture] WHERE [id] = @original_id AND (([ProjectNumber] = @original_ProjectNumber) OR ([ProjectNumber] IS NULL AND @original_ProjectNumber IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [Culture] ([ProjectNumber], [UserName], [DurationID]) VALUES (@ProjectNumber, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Culture]" UpdateCommand="UPDATE [Culture] SET [ProjectNumber] = @ProjectNumber, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([ProjectNumber] = @original_ProjectNumber) OR ([ProjectNumber] IS NULL AND @original_ProjectNumber IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
+        <asp:SqlDataSource ID="SqlCulture" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [Culture] WHERE [id] = @original_id AND (([ProjectNumber] = @original_ProjectNumber) OR ([ProjectNumber] IS NULL AND @original_ProjectNumber IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [Culture] ([ProjectNumber], [UserName], [DurationID]) VALUES (@ProjectNumber, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, ProjectNumber, UserName, DurationID FROM Culture WHERE (UserName = @UserName) AND (DurationID = @DurationID)" UpdateCommand="UPDATE [Culture] SET [ProjectNumber] = @ProjectNumber, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([ProjectNumber] = @original_ProjectNumber) OR ([ProjectNumber] IS NULL AND @original_ProjectNumber IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
                 <asp:Parameter Name="original_ProjectNumber" Type="Int32" />
@@ -93,6 +93,10 @@
                 <asp:Parameter Name="UserName" Type="String" />
                 <asp:Parameter Name="DurationID" Type="Int32" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:SessionParameter Name="UserName" SessionField="UserName" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="ProjectNumber" Type="Int32" />
                 <asp:Parameter Name="UserName" Type="String" />

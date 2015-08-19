@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,7 +15,11 @@ namespace AssessmentSystem.CalCarry.Teaching
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["UserName"] == null && Session["DurationID"] == null)
+            {
+                FormsAuthentication.SignOut();
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
 
         protected void gvDirectTeaching_CustomUnboundColumnData(object sender, DevExpress.Web.ASPxGridViewColumnDataEventArgs e)

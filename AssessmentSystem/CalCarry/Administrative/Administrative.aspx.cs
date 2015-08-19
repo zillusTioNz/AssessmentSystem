@@ -12,16 +12,16 @@ namespace AssessmentSystem.CalCarry.Administrative
     {
         AssessmentSystemDataContext db = new AssessmentSystemDataContext();
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        protected void Page_Load(object sender, EventArgs e){
             if (!Page.IsPostBack)
             {
                 try
                 {
                     var q = (from p in db.Administratives
-                        //where p.UserName == Session["UserName"]
+                        where p.UserName == Session["UserName"] && p.DurationID == Convert.ToInt32(Session["DurationID"])
                         select p).First();
 
+                    Session["id"] = q.id;
                     ucChancellor.CBposition = Convert.ToBoolean(q.Chancellor);
                     ucViceChancellor.CBposition = Convert.ToBoolean(q.ViceChancellor);
                     ucDean.CBposition = Convert.ToBoolean(q.Dean);
@@ -64,7 +64,8 @@ namespace AssessmentSystem.CalCarry.Administrative
                     x.FacultyBoard = Convert.ToBoolean(ucFactBoard.CBposition);
                     x.BranchBoardCmd = Convert.ToInt32(ucBranchBCmd.SEnumber);
                     x.AssignmentCmd = Convert.ToInt32(ucAssignCmd.SEnumber);
-                    //x.UserName = Session["UserName"].ToString();
+                    x.UserName = Session["UserName"].ToString();
+                    x.DurationID = Convert.ToInt32(Session["DurationID"]);
 
                     db.Administratives.InsertOnSubmit(x);
                     db.SubmitChanges();
@@ -72,6 +73,7 @@ namespace AssessmentSystem.CalCarry.Administrative
             }
 
             Page.LoadComplete += new EventHandler(Page_LoadComplete);
+            
         }
 
         void Page_LoadComplete(object sender, EventArgs e)
@@ -169,11 +171,33 @@ namespace AssessmentSystem.CalCarry.Administrative
 
                 ucAssignCmd.TBtotal = (credit + ((n - 1) * credit) / 2).ToString();
             }
+
+            int aa = Convert.ToInt32(ucAssignCmd.TBtotal);
+            int ab = Convert.ToInt32(ucBranchBCmd.TBtotal);
+            int ac = Convert.ToInt32(ucBranchHD.TBtotal);
+            int ad = Convert.ToInt32(ucBranchHI.TBtotal);
+            int ae = Convert.ToInt32(ucChanAssist.TBtotal);
+            int af = Convert.ToInt32(ucChancellor.TBtotal);
+            int ag = Convert.ToInt32(ucCouncillores.TBtotal);
+            int ah = Convert.ToInt32(ucDean.TBtotal);
+            int ai = Convert.ToInt32(ucDeanAssist.TBtotal);
+            int aj = Convert.ToInt32(ucDeanOffHead.TBtotal);
+            int ak = Convert.ToInt32(ucDeptHead.TBtotal);
+            int al = Convert.ToInt32(ucFactBoard.TBtotal);
+            int am = Convert.ToInt32(ucFactCounChief.TBtotal);
+            int an = Convert.ToInt32(ucSecretary.TBtotal);
+            int ao = Convert.ToInt32(ucViceChancellor.TBtotal);
+            int ap = Convert.ToInt32(ucViceDean.TBtotal);
+            int aq = Convert.ToInt32(ucViceDept.TBtotal);
+            int ar = Convert.ToInt32(ucViceFactCounChief.TBtotal);
+
+            tbAllTotal.Text = (aa + ab + ac + ad + ae + af + ag + ah + ai + aj + ak + al + am + an + ao + ap + aq + ar).ToString();
         }
 
         protected void btSubmit_Click(object sender, EventArgs e)
         {
             var q = (from p in db.Administratives
+                     where p.UserName == Session["UserName"].ToString() && p.DurationID == Convert.ToInt32(Session["DurationID"])
                      select p).First();
 
             q.Chancellor = Convert.ToBoolean(ucChancellor.CBposition);
@@ -194,7 +218,8 @@ namespace AssessmentSystem.CalCarry.Administrative
             q.FacultyBoard = Convert.ToBoolean(ucFactBoard.CBposition);
             q.BranchBoardCmd = Convert.ToInt32(ucBranchBCmd.SEnumber);
             q.AssignmentCmd = Convert.ToInt32(ucAssignCmd.SEnumber);
-            //x.UserName = Session["UserName"].ToString();
+            q.UserName = Session["UserName"].ToString();
+            q.DurationID = Convert.ToInt32(Session["DurationID"]);
 
             db.SubmitChanges();
 
