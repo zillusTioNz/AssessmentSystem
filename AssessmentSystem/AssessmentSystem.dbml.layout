@@ -2,18 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AssessmentSystem">
   <DataContextMoniker Name="/AssessmentSystemDataContext" />
   <nestedChildShapes>
-    <classShape Id="6d1924db-8075-472f-a9d3-39092fda94ba" absoluteBounds="5.625, 0.5, 2, 2.5401025390625">
-      <DataClassMoniker Name="/AssessmentSystemDataContext/StdDevelopment" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3c5cc54c-4edc-482c-ac0b-f7bc043ab1b4" absoluteBounds="5.64, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d9adfd40-e8ce-4cd0-b566-9c7c2faa0004" absoluteBounds="3.375, 0.625, 2, 5.2323225911458326">
-      <DataClassMoniker Name="/AssessmentSystemDataContext/Administrative" />
-      <nestedChildShapes>
-        <elementListCompartment Id="1e3ef46e-c194-4913-a003-53204d32d277" absoluteBounds="3.3899999999999997, 1.085, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="16b84795-3898-47a4-9db5-0095a7947ae0" absoluteBounds="5.625, 3.375, 2, 2.3478011067708335">
       <DataClassMoniker Name="/AssessmentSystemDataContext/Research" />
       <nestedChildShapes>
@@ -42,6 +30,18 @@
       <DataClassMoniker Name="/AssessmentSystemDataContext/Duration" />
       <nestedChildShapes>
         <elementListCompartment Id="e2eecc4e-b88a-4348-a4f1-04315b9946a2" absoluteBounds="0.89000000000000012, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eeb7108b-651e-4a1a-9774-253bde7b07ef" absoluteBounds="3.25, 0.625, 2, 4.8477197265625">
+      <DataClassMoniker Name="/AssessmentSystemDataContext/Administrative" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cecded4-f2fa-4f7c-a430-04060b4871b3" absoluteBounds="3.265, 1.085, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="782a28b6-ee11-4674-91b4-29f6ae7fe0e5" absoluteBounds="5.75, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AssessmentSystemDataContext/StdDevelopment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97993bb7-71a5-41e1-92a1-99e6a18cbfb8" absoluteBounds="5.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

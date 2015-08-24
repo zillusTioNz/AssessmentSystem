@@ -13,8 +13,6 @@
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn Caption="ชื่อวิชา" FieldName="Subject" VisibleIndex="5">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UserName" Visible="False" VisibleIndex="2">
-                </dx:GridViewDataTextColumn>
                 <dx:GridViewBandColumn Caption="ภาระงานทฤษฎี" VisibleIndex="9">
                     <Columns>
                         <dx:GridViewDataTextColumn Caption="หน่วยกิต/สัปดาห์" VisibleIndex="0" UnboundType="Decimal" FieldName="TheoryCpW" ReadOnly="True">
@@ -62,18 +60,9 @@
                 <dx:ASPxSummaryItem FieldName="TotalinRow" SummaryType="Sum" />
             </TotalSummary>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlDirectTeaching" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [DirectTeaching] WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([StdNumber] = @original_StdNumber) OR ([StdNumber] IS NULL AND @original_StdNumber IS NULL)) AND (([Subject] = @original_Subject) OR ([Subject] IS NULL AND @original_Subject IS NULL)) AND (([TheoryCredit] = @original_TheoryCredit) OR ([TheoryCredit] IS NULL AND @original_TheoryCredit IS NULL)) AND (([PracticeCredit] = @original_PracticeCredit) OR ([PracticeCredit] IS NULL AND @original_PracticeCredit IS NULL)) AND (([TheoryWeek] = @original_TheoryWeek) OR ([TheoryWeek] IS NULL AND @original_TheoryWeek IS NULL)) AND (([PracticeWeek] = @original_PracticeWeek) OR ([PracticeWeek] IS NULL AND @original_PracticeWeek IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))" InsertCommand="INSERT INTO [DirectTeaching] ([StdGroup], [StdNumber], [Subject], [TheoryCredit], [PracticeCredit], [TheoryWeek], [PracticeWeek], [UserName], [DurationID]) VALUES (@StdGroup, @StdNumber, @Subject, @TheoryCredit, @PracticeCredit, @TheoryWeek, @PracticeWeek, @UserName, @DurationID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [DirectTeaching] WHERE (([UserName] = @UserName) AND ([DurationID] = @DurationID))" UpdateCommand="UPDATE [DirectTeaching] SET [StdGroup] = @StdGroup, [StdNumber] = @StdNumber, [Subject] = @Subject, [TheoryCredit] = @TheoryCredit, [PracticeCredit] = @PracticeCredit, [TheoryWeek] = @TheoryWeek, [PracticeWeek] = @PracticeWeek, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @original_id AND (([StdGroup] = @original_StdGroup) OR ([StdGroup] IS NULL AND @original_StdGroup IS NULL)) AND (([StdNumber] = @original_StdNumber) OR ([StdNumber] IS NULL AND @original_StdNumber IS NULL)) AND (([Subject] = @original_Subject) OR ([Subject] IS NULL AND @original_Subject IS NULL)) AND (([TheoryCredit] = @original_TheoryCredit) OR ([TheoryCredit] IS NULL AND @original_TheoryCredit IS NULL)) AND (([PracticeCredit] = @original_PracticeCredit) OR ([PracticeCredit] IS NULL AND @original_PracticeCredit IS NULL)) AND (([TheoryWeek] = @original_TheoryWeek) OR ([TheoryWeek] IS NULL AND @original_TheoryWeek IS NULL)) AND (([PracticeWeek] = @original_PracticeWeek) OR ([PracticeWeek] IS NULL AND @original_PracticeWeek IS NULL)) AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL))">
+        <asp:SqlDataSource ID="SqlDirectTeaching" runat="server" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [DirectTeaching] WHERE [id] = @id" InsertCommand="INSERT INTO [DirectTeaching] ([StdGroup], [StdNumber], [Subject], [TheoryCredit], [PracticeCredit], [TheoryWeek], [PracticeWeek], [UserName], [DurationID]) VALUES (@StdGroup, @StdNumber, @Subject, @TheoryCredit, @PracticeCredit, @TheoryWeek, @PracticeWeek, @UserName, @DurationID)" SelectCommand="SELECT * FROM [DirectTeaching] WHERE (([UserName] = @UserName) AND ([DurationID] = @DurationID))" UpdateCommand="UPDATE [DirectTeaching] SET [StdGroup] = @StdGroup, [StdNumber] = @StdNumber, [Subject] = @Subject, [TheoryCredit] = @TheoryCredit, [PracticeCredit] = @PracticeCredit, [TheoryWeek] = @TheoryWeek, [PracticeWeek] = @PracticeWeek, [UserName] = @UserName, [DurationID] = @DurationID WHERE [id] = @id">
             <DeleteParameters>
-                <asp:Parameter Name="original_id" Type="Int32" />
-                <asp:Parameter Name="original_StdGroup" Type="Int32" />
-                <asp:Parameter Name="original_StdNumber" Type="Int32" />
-                <asp:Parameter Name="original_Subject" Type="String" />
-                <asp:Parameter Name="original_TheoryCredit" Type="Int32" />
-                <asp:Parameter Name="original_PracticeCredit" Type="Int32" />
-                <asp:Parameter Name="original_TheoryWeek" Type="Int32" />
-                <asp:Parameter Name="original_PracticeWeek" Type="Int32" />
-                <asp:Parameter Name="original_UserName" Type="String" />
-                <asp:Parameter Name="original_DurationID" Type="Int32" />
+                <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="StdGroup" Type="Int32" />
@@ -83,8 +72,8 @@
                 <asp:Parameter Name="PracticeCredit" Type="Int32" />
                 <asp:Parameter Name="TheoryWeek" Type="Int32" />
                 <asp:Parameter Name="PracticeWeek" Type="Int32" />
-                <asp:Parameter Name="UserName" Type="String" />
-                <asp:Parameter Name="DurationID" Type="Int32" />
+                <asp:SessionParameter Name="UserName" SessionField="UserName" Type="String" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" Type="Int32" />
             </InsertParameters>
             <SelectParameters>
                 <asp:SessionParameter Name="UserName" SessionField="UserName" Type="String" />
@@ -98,18 +87,9 @@
                 <asp:Parameter Name="PracticeCredit" Type="Int32" />
                 <asp:Parameter Name="TheoryWeek" Type="Int32" />
                 <asp:Parameter Name="PracticeWeek" Type="Int32" />
-                <asp:Parameter Name="UserName" Type="String" />
-                <asp:Parameter Name="DurationID" Type="Int32" />
-                <asp:Parameter Name="original_id" Type="Int32" />
-                <asp:Parameter Name="original_StdGroup" Type="Int32" />
-                <asp:Parameter Name="original_StdNumber" Type="Int32" />
-                <asp:Parameter Name="original_Subject" Type="String" />
-                <asp:Parameter Name="original_TheoryCredit" Type="Int32" />
-                <asp:Parameter Name="original_PracticeCredit" Type="Int32" />
-                <asp:Parameter Name="original_TheoryWeek" Type="Int32" />
-                <asp:Parameter Name="original_PracticeWeek" Type="Int32" />
-                <asp:Parameter Name="original_UserName" Type="String" />
-                <asp:Parameter Name="original_DurationID" Type="Int32" />
+                <asp:SessionParameter Name="UserName" SessionField="UserName" Type="String" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" Type="Int32" />
+                <asp:Parameter Name="id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
     </p>

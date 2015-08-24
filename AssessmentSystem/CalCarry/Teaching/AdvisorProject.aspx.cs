@@ -29,7 +29,7 @@ namespace AssessmentSystem.CalCarry.Teaching
 
             if (e.Column.FieldName == "CpW")
             {
-                if (status == 0)
+                if (status == 1)
                 {
                     e.Value = 3;
                 }

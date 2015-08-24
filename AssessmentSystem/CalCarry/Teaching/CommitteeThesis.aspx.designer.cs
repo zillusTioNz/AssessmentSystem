@@ -13,13 +13,13 @@ namespace AssessmentSystem.CalCarry.Teaching {
     public partial class CommitteeThesis {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// ASPxLabel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
         
         /// <summary>
         /// gvTesterThesis control.

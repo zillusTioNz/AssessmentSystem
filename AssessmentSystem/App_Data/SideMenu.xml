@@ -5,8 +5,6 @@
     <item Text="งานนิเทศ" NavigateUrl="~/CalCarry/Teaching/Supervision.aspx"/>
     <item Text="ที่ปรึกษาวิทยานิพนธ์ ป.โท" NavigateUrl="~/CalCarry/Teaching/AdvisorThesis.aspx"/>
     <item Text="ที่ปรึกษาโครงงาน" NavigateUrl="~/CalCarry/Teaching/AdvisorProject.aspx"/>
-    <item Text="กรรมการสอบวิทยานิพนธ์/หัวข้อวิทยานิพนธ์" NavigateUrl="~/CalCarry/Teaching/CommitteeThesis.aspx"/>
-    <item Text="กรรมการสอบโครงงาน" NavigateUrl="~/CalCarry/Teaching/CommitteeProject.aspx"/>
   </group>
   <group Text="2.งานวิจัย">
     <item Text="หัวข้องานวิจัย" NavigateUrl="~/CalCarry/Research/Topics.aspx"/>

@@ -102,10 +102,10 @@
             <asp:Label ID="lbText" runat="server" Text="Label"></asp:Label>
         </td>
         <td class="auto-style4" style="width: 30%">
-                                <dx:ASPxPageControl runat="server" EnableCallBacks="True" ActiveTabIndex="0" AutoPostBack="True" ID="pageControl"><TabPages>
+                                <dx:ASPxPageControl runat="server" EnableCallBacks="True" ActiveTabIndex="0" ID="pageControl"><TabPages>
 <dx:TabPage Text="รายชื่อไฟล์"><ContentCollection>
 <dx:ContentControl runat="server">
-                                                    <dx:ASPxGridView runat="server" KeyFieldName="id" AutoGenerateColumns="False" DataSourceID="SqlDocuments" ID="gvFileDetail" OnRowDeleting="gvFileDetail_RowDeleting"><Columns>
+                                                    <dx:ASPxGridView runat="server" KeyFieldName="id" AutoGenerateColumns="False" DataSourceID="SqlDocuments" ID="gvFileDetail" OnRowDeleting="gvFileDetail_RowDeleting" ClientInstanceName="Gridview"><Columns>
 <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0"></dx:GridViewCommandColumn>
 <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
 <EditFormSettings Visible="False"></EditFormSettings>
@@ -124,7 +124,11 @@
 </dx:TabPage>
 <dx:TabPage Text="อัพโหลดไฟล์"><ContentCollection>
 <dx:ContentControl runat="server">
-                                                    <dx:ASPxUploadControl runat="server" UploadMode="Auto" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" Width="280px" ID="ASPxUploadControl1" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete"></dx:ASPxUploadControl>
+                                                    <dx:ASPxUploadControl runat="server" UploadMode="Auto" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" Width="280px" ID="ASPxUploadControl1" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete">
+                                                        <ClientSideEvents FilesUploadComplete="function(s, e) {
+	Gridview.Refresh();
+}" />
+                                                    </dx:ASPxUploadControl>
 
                                                 </dx:ContentControl>
 </ContentCollection>

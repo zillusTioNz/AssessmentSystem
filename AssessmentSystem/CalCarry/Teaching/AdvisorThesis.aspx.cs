@@ -21,6 +21,7 @@ namespace AssessmentSystem.CalCarry.Teaching
                 FormsAuthentication.SignOut();
                 Response.Redirect("~/Account/Login.aspx");
             }
+            int x = 1;
         }
 
         protected void gvAdvisorThesis_CustomUnboundColumnData(object sender, DevExpress.Web.ASPxGridViewColumnDataEventArgs e)
@@ -29,7 +30,7 @@ namespace AssessmentSystem.CalCarry.Teaching
 
             if (e.Column.FieldName == "CpW")
             {
-                if (status == 0)
+                if (status == 1)
                 {
                     e.Value = 3.5;
                 }

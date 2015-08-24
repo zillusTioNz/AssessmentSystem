@@ -32,8 +32,7 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment
                     tbCmtProTotal.Text = (Convert.ToDouble(seCmtPro.Value)*Convert.ToDouble(tbCmtProCredit.Text)).ToString();
                     tbAspTotal.Text = (Convert.ToDouble(seAsp.Value) * Convert.ToDouble(tbAspCredit.Text)).ToString();
                     tbAcpTotal.Text = (Convert.ToDouble(seAcp.Value) * Convert.ToDouble(tbAcpCredit.Text)).ToString();
-                    tbAllTotal.Text = (Convert.ToDouble(tbCmtProTotal.Text)+Convert.ToDouble(tbAspTotal.Text)
-                        +Convert.ToDouble(tbAcpTotal.Text)).ToString();
+                    Total();
                 }
                 catch (Exception)
                 {
@@ -63,20 +62,12 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment
 
             db.SubmitChanges();
 
-            //StringBuilder sb = new StringBuilder();
-            //sb = new StringBuilder();
-            //sb.Append("<script language='javascript' type='text/javascript'>");
-            //sb.Append("alert('Success!!!')");
-            //sb.Append("</script>");
-            //Response.Write(sb.ToString());
-
             Response.Redirect("StdDevelopment.aspx");
         }
 
         protected void gvFileDetail1_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
         {
-            try
-            {
+            try{
                 string path = gvFileDetail1.GetRowValuesByKeyValue(e.Keys[0], "Path").ToString();
                 File.Delete(Server.MapPath(path));
             }
@@ -158,6 +149,30 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment
             catch (Exception)
             {
             }
+        }
+
+        public void Total()
+        {
+            tbAllTotal.Text = (Convert.ToDouble(tbCmtProTotal.Text) + Convert.ToDouble(tbAspTotal.Text)
+                        + Convert.ToDouble(tbAcpTotal.Text)).ToString();
+        }
+
+        protected void seCmtPro_NumberChanged(object sender, EventArgs e)
+        {
+            tbCmtProTotal.Text = (Convert.ToDouble(seCmtPro.Value) * Convert.ToDouble(tbCmtProCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seAsp_NumberChanged(object sender, EventArgs e)
+        {
+            tbAspTotal.Text = (Convert.ToDouble(seAsp.Value) * Convert.ToDouble(tbAspCredit.Text)).ToString();
+            Total();
+        }
+
+        protected void seAcp_NumberChanged(object sender, EventArgs e)
+        {
+            tbAcpTotal.Text = (Convert.ToDouble(seAcp.Value) * Convert.ToDouble(tbAcpCredit.Text)).ToString();
+            Total();
         }
 
 

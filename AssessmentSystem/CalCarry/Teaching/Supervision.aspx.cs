@@ -21,7 +21,7 @@ namespace AssessmentSystem.CalCarry.Teaching
                 FormsAuthentication.SignOut();
                 Response.Redirect("~/Account/Login.aspx");
             }
-
+            
         }
 
         protected void gvSupervision_CustomUnboundColumnData(object sender, DevExpress.Web.ASPxGridViewColumnDataEventArgs e)
@@ -86,6 +86,7 @@ namespace AssessmentSystem.CalCarry.Teaching
         protected void gvFileDetail_BeforePerformDataSelect(object sender, EventArgs e)
         {
             Session["id"] = (sender as ASPxGridView).GetMasterRowKeyValue();
+            
         }
 
     }

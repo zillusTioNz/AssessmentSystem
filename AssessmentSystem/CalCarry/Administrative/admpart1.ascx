@@ -1,13 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="admpart1.ascx.cs" Inherits="AssessmentSystem.CalCarry.Administrative.admpart1" %>
-<style type="text/css">
-    .auto-style1 {
-        width: 427px;
-    }
-</style>
 
                 <table style="width:100%;">
                     <tr>
-                        <td class="auto-style1" style="width: 70%">
+                        <td style="width: 70%">
                             <asp:Label ID="lbText" runat="server" Text="Label"></asp:Label>
                         </td>
                         <td dir="ltr" style="width: 10%">

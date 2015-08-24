@@ -1,56 +1,42 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="AdvisorThesis.aspx.cs" Inherits="AssessmentSystem.CalCarry.Teaching.AdvisorMaster" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
-        <dx:ASPxGridView ID="gvAdvisorThesis" runat="server" AutoGenerateColumns="False" DataSourceID="SqlAdvisorThesis" KeyFieldName="id" OnCustomUnboundColumnData="gvAdvisorThesis_CustomUnboundColumnData" OnRowDeleting="gvAdvisorThesis_RowDeleting">
+        <dx:ASPxGridView ID="gvAdvisorThesis" runat="server" AutoGenerateColumns="False" DataSourceID="SqlAdvisorThesis" KeyFieldName="id" OnCustomUnboundColumnData="gvAdvisorThesis_CustomUnboundColumnData" OnRowDeleting="gvAdvisorThesis_RowDeleting" ClientInstanceName="MasterGrid">
             <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
             <Templates>
                 <DetailRow>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
-                            <dx:ASPxPageControl ID="pageControl" runat="server" ActiveTabIndex="0" AutoPostBack="True" EnableCallBacks="True">
-                                <TabPages>
-                                    <dx:TabPage Text="รายชื่อไฟล์" Visible="true">
-                                        <ContentCollection>
-                                            <dx:ContentControl runat="server">
-                                                <dx:ASPxGridView ID="gvFileDetail" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments" KeyFieldName="id" OnBeforePerformDataSelect="gvFileDetail_BeforePerformDataSelect" OnRowDeleting="gvFileDetail_RowDeleting">
-                                                    <Columns>
-                                                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
-                                                        </dx:GridViewCommandColumn>
-                                                        <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
-                                                            <EditFormSettings Visible="False" />
-                                                        </dx:GridViewDataTextColumn>
-                                                        <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
-                                                        </dx:GridViewDataTextColumn>
-                                                        <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
-                                                        </dx:GridViewDataTextColumn>
-                                                        <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
-                                                        </dx:GridViewDataTextColumn>
-                                                        <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
-                                                            <PropertiesHyperLinkEdit TextField="FileName">
-                                                            </PropertiesHyperLinkEdit>
-                                                        </dx:GridViewDataHyperLinkColumn>
-                                                    </Columns>
-                                                </dx:ASPxGridView>
-                                            </dx:ContentControl>
-                                        </ContentCollection>
-                                    </dx:TabPage>
-                                    <dx:TabPage Text="อัพโหลดไฟล์">
-                                        <ContentCollection>
-                                            <dx:ContentControl runat="server">
-                                                <dx:ASPxUploadControl ID="ASPxUploadControl1" runat="server" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete1" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
-                                                </dx:ASPxUploadControl>
-                                            </dx:ContentControl>
-                                        </ContentCollection>
-                                    </dx:TabPage>
-                                </TabPages>
-                            </dx:ASPxPageControl>
-                        </ContentTemplate>
-                        <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="pageControl" EventName="TabClick" />
-                        </Triggers>
-                    </asp:UpdatePanel>
+                    <table style="width:100%;">
+                        <tr>
+                            <td>
+                                <dx:ASPxGridView ID="gvFileDetail" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDocuments" KeyFieldName="id" OnBeforePerformDataSelect="gvFileDetail_BeforePerformDataSelect" OnRowDeleting="gvFileDetail_RowDeleting">
+                                    <Columns>
+                                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                        </dx:GridViewCommandColumn>
+                                        <dx:GridViewDataTextColumn FieldName="id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                            <EditFormSettings Visible="False" />
+                                        </dx:GridViewDataTextColumn>
+                                        <dx:GridViewDataTextColumn FieldName="Iden" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                        </dx:GridViewDataTextColumn>
+                                        <dx:GridViewDataTextColumn FieldName="TableNameID" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                        </dx:GridViewDataTextColumn>
+                                        <dx:GridViewDataTextColumn FieldName="FileName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                        </dx:GridViewDataTextColumn>
+                                        <dx:GridViewDataHyperLinkColumn Caption="ชื่อไฟล์" FieldName="Path" ShowInCustomizationForm="True" VisibleIndex="4">
+                                            <PropertiesHyperLinkEdit TextField="FileName">
+                                            </PropertiesHyperLinkEdit>
+                                        </dx:GridViewDataHyperLinkColumn>
+                                    </Columns>
+                                </dx:ASPxGridView>
+                            </td>
+                            <td>
+                                <dx:ASPxUploadControl ID="ASPxUploadControl1" runat="server" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete1" ShowAddRemoveButtons="True" ShowProgressPanel="True" ShowUploadButton="True" UploadMode="Auto" Width="280px">
+                                    <ClientSideEvents FilesUploadComplete="function(s, e) {
+	MasterGrid.Refresh();
+}" />
+                                </dx:ASPxUploadControl>
+                            </td>
+                        </tr>
+                    </table>
                 </DetailRow>
             </Templates>
             <SettingsEditing Mode="Inline">
@@ -69,49 +55,37 @@
                         </ValidationSettings>
                     </PropertiesTextEdit>
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UserName" Visible="False" VisibleIndex="4">
-                </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="DurationID" Visible="False" VisibleIndex="5">
-                </dx:GridViewDataTextColumn>
-                <dx:GridViewDataComboBoxColumn Caption="สถานะที่ปรึกษา" FieldName="StatusID" VisibleIndex="6">
+                <dx:GridViewDataComboBoxColumn Caption="สถานะที่ปรึกษา" FieldName="StatusID" VisibleIndex="5">
                     <PropertiesComboBox DataSourceID="SqlStatus" TextField="Status" ValueField="StatusID">
                     </PropertiesComboBox>
                 </dx:GridViewDataComboBoxColumn>
-                <dx:GridViewDataTextColumn Caption="ภาระงาน/คน/สัปดาห์" FieldName="CpW" ReadOnly="True" UnboundType="Decimal" VisibleIndex="7">
+                <dx:GridViewDataTextColumn Caption="ภาระงาน/คน/สัปดาห์" FieldName="CpW" ReadOnly="True" UnboundType="Decimal" VisibleIndex="6">
                 </dx:GridViewDataTextColumn>
             </Columns>
             <TotalSummary>
                 <dx:ASPxSummaryItem FieldName="CpW" SummaryType="Sum" />
             </TotalSummary>
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlAdvisorThesis" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [AdvisorThesis] WHERE [id] = @original_id AND [ThesisName] = @original_ThesisName AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))" InsertCommand="INSERT INTO [AdvisorThesis] ([ThesisName], [UserName], [DurationID], [StatusID]) VALUES (@ThesisName, @UserName, @DurationID, @StatusID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT id, ThesisName, UserName, DurationID, StatusID FROM AdvisorThesis WHERE (UserName = @UserName) AND (DurationID = @DurationID)" UpdateCommand="UPDATE [AdvisorThesis] SET [ThesisName] = @ThesisName, [UserName] = @UserName, [DurationID] = @DurationID, [StatusID] = @StatusID WHERE [id] = @original_id AND [ThesisName] = @original_ThesisName AND (([UserName] = @original_UserName) OR ([UserName] IS NULL AND @original_UserName IS NULL)) AND (([DurationID] = @original_DurationID) OR ([DurationID] IS NULL AND @original_DurationID IS NULL)) AND (([StatusID] = @original_StatusID) OR ([StatusID] IS NULL AND @original_StatusID IS NULL))">
+        <asp:SqlDataSource ID="SqlAdvisorThesis" runat="server" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" DeleteCommand="DELETE FROM [AdvisorThesis] WHERE [id] = @original_id" InsertCommand="INSERT INTO [AdvisorThesis] ([ThesisName], [UserName], [DurationID], [StatusID]) VALUES (@ThesisName, @UserName, @DurationID, @StatusID)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [AdvisorThesis] WHERE (([UserName] = @UserName) AND ([DurationID] = @DurationID))" UpdateCommand="UPDATE [AdvisorThesis] SET [ThesisName] = @ThesisName, [UserName] = @UserName, [DurationID] = @DurationID, [StatusID] = @StatusID WHERE [id] = @original_id">
             <DeleteParameters>
                 <asp:Parameter Name="original_id" Type="Int32" />
-                <asp:Parameter Name="original_ThesisName" Type="String" />
-                <asp:Parameter Name="original_UserName" Type="String" />
-                <asp:Parameter Name="original_DurationID" Type="Int32" />
-                <asp:Parameter Name="original_StatusID" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="ThesisName" Type="String" />
-                <asp:Parameter Name="UserName" Type="String" />
-                <asp:Parameter Name="DurationID" Type="Int32" />
+                <asp:SessionParameter Name="UserName" SessionField="UserName" Type="String" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" Type="Int32" />
                 <asp:Parameter Name="StatusID" Type="Int32" />
             </InsertParameters>
             <SelectParameters>
-                <asp:SessionParameter Name="UserName" SessionField="UserName" />
-                <asp:SessionParameter Name="DurationID" SessionField="DurationID" />
+                <asp:SessionParameter Name="UserName" SessionField="UserName" Type="String" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" Type="Int32" />
             </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="ThesisName" Type="String" />
-                <asp:Parameter Name="UserName" Type="String" />
-                <asp:Parameter Name="DurationID" Type="Int32" />
+                <asp:SessionParameter Name="UserName" SessionField="UserName" Type="String" />
+                <asp:SessionParameter Name="DurationID" SessionField="DurationID" Type="Int32" />
                 <asp:Parameter Name="StatusID" Type="Int32" />
                 <asp:Parameter Name="original_id" Type="Int32" />
-                <asp:Parameter Name="original_ThesisName" Type="String" />
-                <asp:Parameter Name="original_UserName" Type="String" />
-                <asp:Parameter Name="original_DurationID" Type="Int32" />
-                <asp:Parameter Name="original_StatusID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:AssessmentSystem %>" SelectCommand="SELECT * FROM [StatusAdvisor]"></asp:SqlDataSource>

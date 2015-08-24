@@ -13,69 +13,6 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
     public partial class StdDevelopment {
         
         /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// flAcademicService control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout flAcademicService;
-        
-        /// <summary>
-        /// flAcademicService_E3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel flAcademicService_E3;
-        
-        /// <summary>
-        /// flAcademicService_E1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel flAcademicService_E1;
-        
-        /// <summary>
-        /// ASPxFormLayout1_E8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxFormLayout1_E8;
-        
-        /// <summary>
-        /// flAcademicService_E2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel flAcademicService_E2;
-        
-        /// <summary>
-        /// ASPxLabel8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel8;
-        
-        /// <summary>
         /// pageControl3 control.
         /// </summary>
         /// <remarks>
@@ -137,15 +74,6 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox tbCmtProTotal;
-        
-        /// <summary>
-        /// ASPxLabel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
         
         /// <summary>
         /// pageControl1 control.
@@ -211,15 +139,6 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
         protected global::DevExpress.Web.ASPxTextBox tbAspTotal;
         
         /// <summary>
-        /// ASPxLabel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
-        
-        /// <summary>
         /// pageControl2 control.
         /// </summary>
         /// <remarks>
@@ -281,15 +200,6 @@ namespace AssessmentSystem.CalCarry.StudentDevelopment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox tbAcpTotal;
-        
-        /// <summary>
-        /// ASPxFormLayout1_E30 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxFormLayout1_E30;
         
         /// <summary>
         /// tbAllTotal control.

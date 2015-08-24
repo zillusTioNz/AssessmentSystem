@@ -30,12 +30,6 @@ namespace AssessmentSystem
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertStdDevelopment(StdDevelopment instance);
-    partial void UpdateStdDevelopment(StdDevelopment instance);
-    partial void DeleteStdDevelopment(StdDevelopment instance);
-    partial void InsertAdministrative(Administrative instance);
-    partial void UpdateAdministrative(Administrative instance);
-    partial void DeleteAdministrative(Administrative instance);
     partial void InsertResearch(Research instance);
     partial void UpdateResearch(Research instance);
     partial void DeleteResearch(Research instance);
@@ -51,6 +45,12 @@ namespace AssessmentSystem
     partial void InsertDuration(Duration instance);
     partial void UpdateDuration(Duration instance);
     partial void DeleteDuration(Duration instance);
+    partial void InsertAdministrative(Administrative instance);
+    partial void UpdateAdministrative(Administrative instance);
+    partial void DeleteAdministrative(Administrative instance);
+    partial void InsertStdDevelopment(StdDevelopment instance);
+    partial void UpdateStdDevelopment(StdDevelopment instance);
+    partial void DeleteStdDevelopment(StdDevelopment instance);
     #endregion
 		
 		public AssessmentSystemDataContext() : 
@@ -81,22 +81,6 @@ namespace AssessmentSystem
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<StdDevelopment> StdDevelopments
-		{
-			get
-			{
-				return this.GetTable<StdDevelopment>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Administrative> Administratives
-		{
-			get
-			{
-				return this.GetTable<Administrative>();
-			}
 		}
 		
 		public System.Data.Linq.Table<Research> Researches
@@ -138,848 +122,20 @@ namespace AssessmentSystem
 				return this.GetTable<Duration>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StdDevelopment")]
-	public partial class StdDevelopment : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private System.Nullable<int> _CommitteeProject;
-		
-		private string _CommitteeRefer;
-		
-		private System.Nullable<int> _AdvisorStdProject;
-		
-		private string _AdvisorStdRefer;
-		
-		private System.Nullable<int> _AdvisorClubProject;
-		
-		private string _AdvisorClubRefer;
-		
-		private string _UserName;
-		
-		private System.Nullable<int> _DurationID;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnCommitteeProjectChanging(System.Nullable<int> value);
-    partial void OnCommitteeProjectChanged();
-    partial void OnCommitteeReferChanging(string value);
-    partial void OnCommitteeReferChanged();
-    partial void OnAdvisorStdProjectChanging(System.Nullable<int> value);
-    partial void OnAdvisorStdProjectChanged();
-    partial void OnAdvisorStdReferChanging(string value);
-    partial void OnAdvisorStdReferChanged();
-    partial void OnAdvisorClubProjectChanging(System.Nullable<int> value);
-    partial void OnAdvisorClubProjectChanged();
-    partial void OnAdvisorClubReferChanging(string value);
-    partial void OnAdvisorClubReferChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnDurationIDChanging(System.Nullable<int> value);
-    partial void OnDurationIDChanged();
-    #endregion
-		
-		public StdDevelopment()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		public System.Data.Linq.Table<Administrative> Administratives
 		{
 			get
 			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
+				return this.GetTable<Administrative>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeProject", DbType="Int")]
-		public System.Nullable<int> CommitteeProject
+		public System.Data.Linq.Table<StdDevelopment> StdDevelopments
 		{
 			get
 			{
-				return this._CommitteeProject;
-			}
-			set
-			{
-				if ((this._CommitteeProject != value))
-				{
-					this.OnCommitteeProjectChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeProject = value;
-					this.SendPropertyChanged("CommitteeProject");
-					this.OnCommitteeProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeRefer", DbType="NVarChar(MAX)")]
-		public string CommitteeRefer
-		{
-			get
-			{
-				return this._CommitteeRefer;
-			}
-			set
-			{
-				if ((this._CommitteeRefer != value))
-				{
-					this.OnCommitteeReferChanging(value);
-					this.SendPropertyChanging();
-					this._CommitteeRefer = value;
-					this.SendPropertyChanged("CommitteeRefer");
-					this.OnCommitteeReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdvisorStdProject", DbType="Int")]
-		public System.Nullable<int> AdvisorStdProject
-		{
-			get
-			{
-				return this._AdvisorStdProject;
-			}
-			set
-			{
-				if ((this._AdvisorStdProject != value))
-				{
-					this.OnAdvisorStdProjectChanging(value);
-					this.SendPropertyChanging();
-					this._AdvisorStdProject = value;
-					this.SendPropertyChanged("AdvisorStdProject");
-					this.OnAdvisorStdProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdvisorStdRefer", DbType="NVarChar(MAX)")]
-		public string AdvisorStdRefer
-		{
-			get
-			{
-				return this._AdvisorStdRefer;
-			}
-			set
-			{
-				if ((this._AdvisorStdRefer != value))
-				{
-					this.OnAdvisorStdReferChanging(value);
-					this.SendPropertyChanging();
-					this._AdvisorStdRefer = value;
-					this.SendPropertyChanged("AdvisorStdRefer");
-					this.OnAdvisorStdReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdvisorClubProject", DbType="Int")]
-		public System.Nullable<int> AdvisorClubProject
-		{
-			get
-			{
-				return this._AdvisorClubProject;
-			}
-			set
-			{
-				if ((this._AdvisorClubProject != value))
-				{
-					this.OnAdvisorClubProjectChanging(value);
-					this.SendPropertyChanging();
-					this._AdvisorClubProject = value;
-					this.SendPropertyChanged("AdvisorClubProject");
-					this.OnAdvisorClubProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdvisorClubRefer", DbType="NVarChar(MAX)")]
-		public string AdvisorClubRefer
-		{
-			get
-			{
-				return this._AdvisorClubRefer;
-			}
-			set
-			{
-				if ((this._AdvisorClubRefer != value))
-				{
-					this.OnAdvisorClubReferChanging(value);
-					this.SendPropertyChanging();
-					this._AdvisorClubRefer = value;
-					this.SendPropertyChanged("AdvisorClubRefer");
-					this.OnAdvisorClubReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", DbType="Int")]
-		public System.Nullable<int> DurationID
-		{
-			get
-			{
-				return this._DurationID;
-			}
-			set
-			{
-				if ((this._DurationID != value))
-				{
-					this.OnDurationIDChanging(value);
-					this.SendPropertyChanging();
-					this._DurationID = value;
-					this.SendPropertyChanged("DurationID");
-					this.OnDurationIDChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Administrative")]
-	public partial class Administrative : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private System.Nullable<bool> _Chancellor;
-		
-		private System.Nullable<bool> _ViceChancellor;
-		
-		private System.Nullable<bool> _Dean;
-		
-		private System.Nullable<bool> _ChancellorAssistant;
-		
-		private System.Nullable<bool> _ViceDean;
-		
-		private System.Nullable<bool> _DepartmentHead;
-		
-		private System.Nullable<bool> _DeanOfficeHead;
-		
-		private System.Nullable<bool> _DeanAssistant;
-		
-		private System.Nullable<bool> _BranchHeadDirect;
-		
-		private System.Nullable<bool> _ViceDepartment;
-		
-		private System.Nullable<bool> _BranchHeadIn;
-		
-		private System.Nullable<bool> _FacultyCouncilChief;
-		
-		private System.Nullable<bool> _ViceFactCouncilChief;
-		
-		private System.Nullable<bool> _Councillors;
-		
-		private System.Nullable<bool> _Secretary;
-		
-		private System.Nullable<bool> _FacultyBoard;
-		
-		private System.Nullable<int> _BranchBoardCmd;
-		
-		private string _BranchBoardRefer;
-		
-		private System.Nullable<int> _AssignmentCmd;
-		
-		private string _AssignmentRefer;
-		
-		private string _UserName;
-		
-		private System.Nullable<int> _DurationID;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnChancellorChanging(System.Nullable<bool> value);
-    partial void OnChancellorChanged();
-    partial void OnViceChancellorChanging(System.Nullable<bool> value);
-    partial void OnViceChancellorChanged();
-    partial void OnDeanChanging(System.Nullable<bool> value);
-    partial void OnDeanChanged();
-    partial void OnChancellorAssistantChanging(System.Nullable<bool> value);
-    partial void OnChancellorAssistantChanged();
-    partial void OnViceDeanChanging(System.Nullable<bool> value);
-    partial void OnViceDeanChanged();
-    partial void OnDepartmentHeadChanging(System.Nullable<bool> value);
-    partial void OnDepartmentHeadChanged();
-    partial void OnDeanOfficeHeadChanging(System.Nullable<bool> value);
-    partial void OnDeanOfficeHeadChanged();
-    partial void OnDeanAssistantChanging(System.Nullable<bool> value);
-    partial void OnDeanAssistantChanged();
-    partial void OnBranchHeadDirectChanging(System.Nullable<bool> value);
-    partial void OnBranchHeadDirectChanged();
-    partial void OnViceDepartmentChanging(System.Nullable<bool> value);
-    partial void OnViceDepartmentChanged();
-    partial void OnBranchHeadInChanging(System.Nullable<bool> value);
-    partial void OnBranchHeadInChanged();
-    partial void OnFacultyCouncilChiefChanging(System.Nullable<bool> value);
-    partial void OnFacultyCouncilChiefChanged();
-    partial void OnViceFactCouncilChiefChanging(System.Nullable<bool> value);
-    partial void OnViceFactCouncilChiefChanged();
-    partial void OnCouncillorsChanging(System.Nullable<bool> value);
-    partial void OnCouncillorsChanged();
-    partial void OnSecretaryChanging(System.Nullable<bool> value);
-    partial void OnSecretaryChanged();
-    partial void OnFacultyBoardChanging(System.Nullable<bool> value);
-    partial void OnFacultyBoardChanged();
-    partial void OnBranchBoardCmdChanging(System.Nullable<int> value);
-    partial void OnBranchBoardCmdChanged();
-    partial void OnBranchBoardReferChanging(string value);
-    partial void OnBranchBoardReferChanged();
-    partial void OnAssignmentCmdChanging(System.Nullable<int> value);
-    partial void OnAssignmentCmdChanged();
-    partial void OnAssignmentReferChanging(string value);
-    partial void OnAssignmentReferChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnDurationIDChanging(System.Nullable<int> value);
-    partial void OnDurationIDChanged();
-    #endregion
-		
-		public Administrative()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Chancellor", DbType="Bit")]
-		public System.Nullable<bool> Chancellor
-		{
-			get
-			{
-				return this._Chancellor;
-			}
-			set
-			{
-				if ((this._Chancellor != value))
-				{
-					this.OnChancellorChanging(value);
-					this.SendPropertyChanging();
-					this._Chancellor = value;
-					this.SendPropertyChanged("Chancellor");
-					this.OnChancellorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViceChancellor", DbType="Bit")]
-		public System.Nullable<bool> ViceChancellor
-		{
-			get
-			{
-				return this._ViceChancellor;
-			}
-			set
-			{
-				if ((this._ViceChancellor != value))
-				{
-					this.OnViceChancellorChanging(value);
-					this.SendPropertyChanging();
-					this._ViceChancellor = value;
-					this.SendPropertyChanged("ViceChancellor");
-					this.OnViceChancellorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dean", DbType="Bit")]
-		public System.Nullable<bool> Dean
-		{
-			get
-			{
-				return this._Dean;
-			}
-			set
-			{
-				if ((this._Dean != value))
-				{
-					this.OnDeanChanging(value);
-					this.SendPropertyChanging();
-					this._Dean = value;
-					this.SendPropertyChanged("Dean");
-					this.OnDeanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChancellorAssistant", DbType="Bit")]
-		public System.Nullable<bool> ChancellorAssistant
-		{
-			get
-			{
-				return this._ChancellorAssistant;
-			}
-			set
-			{
-				if ((this._ChancellorAssistant != value))
-				{
-					this.OnChancellorAssistantChanging(value);
-					this.SendPropertyChanging();
-					this._ChancellorAssistant = value;
-					this.SendPropertyChanged("ChancellorAssistant");
-					this.OnChancellorAssistantChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViceDean", DbType="Bit")]
-		public System.Nullable<bool> ViceDean
-		{
-			get
-			{
-				return this._ViceDean;
-			}
-			set
-			{
-				if ((this._ViceDean != value))
-				{
-					this.OnViceDeanChanging(value);
-					this.SendPropertyChanging();
-					this._ViceDean = value;
-					this.SendPropertyChanged("ViceDean");
-					this.OnViceDeanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentHead", DbType="Bit")]
-		public System.Nullable<bool> DepartmentHead
-		{
-			get
-			{
-				return this._DepartmentHead;
-			}
-			set
-			{
-				if ((this._DepartmentHead != value))
-				{
-					this.OnDepartmentHeadChanging(value);
-					this.SendPropertyChanging();
-					this._DepartmentHead = value;
-					this.SendPropertyChanged("DepartmentHead");
-					this.OnDepartmentHeadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeanOfficeHead", DbType="Bit")]
-		public System.Nullable<bool> DeanOfficeHead
-		{
-			get
-			{
-				return this._DeanOfficeHead;
-			}
-			set
-			{
-				if ((this._DeanOfficeHead != value))
-				{
-					this.OnDeanOfficeHeadChanging(value);
-					this.SendPropertyChanging();
-					this._DeanOfficeHead = value;
-					this.SendPropertyChanged("DeanOfficeHead");
-					this.OnDeanOfficeHeadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeanAssistant", DbType="Bit")]
-		public System.Nullable<bool> DeanAssistant
-		{
-			get
-			{
-				return this._DeanAssistant;
-			}
-			set
-			{
-				if ((this._DeanAssistant != value))
-				{
-					this.OnDeanAssistantChanging(value);
-					this.SendPropertyChanging();
-					this._DeanAssistant = value;
-					this.SendPropertyChanged("DeanAssistant");
-					this.OnDeanAssistantChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BranchHeadDirect", DbType="Bit")]
-		public System.Nullable<bool> BranchHeadDirect
-		{
-			get
-			{
-				return this._BranchHeadDirect;
-			}
-			set
-			{
-				if ((this._BranchHeadDirect != value))
-				{
-					this.OnBranchHeadDirectChanging(value);
-					this.SendPropertyChanging();
-					this._BranchHeadDirect = value;
-					this.SendPropertyChanged("BranchHeadDirect");
-					this.OnBranchHeadDirectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViceDepartment", DbType="Bit")]
-		public System.Nullable<bool> ViceDepartment
-		{
-			get
-			{
-				return this._ViceDepartment;
-			}
-			set
-			{
-				if ((this._ViceDepartment != value))
-				{
-					this.OnViceDepartmentChanging(value);
-					this.SendPropertyChanging();
-					this._ViceDepartment = value;
-					this.SendPropertyChanged("ViceDepartment");
-					this.OnViceDepartmentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BranchHeadIn", DbType="Bit")]
-		public System.Nullable<bool> BranchHeadIn
-		{
-			get
-			{
-				return this._BranchHeadIn;
-			}
-			set
-			{
-				if ((this._BranchHeadIn != value))
-				{
-					this.OnBranchHeadInChanging(value);
-					this.SendPropertyChanging();
-					this._BranchHeadIn = value;
-					this.SendPropertyChanged("BranchHeadIn");
-					this.OnBranchHeadInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacultyCouncilChief", DbType="Bit")]
-		public System.Nullable<bool> FacultyCouncilChief
-		{
-			get
-			{
-				return this._FacultyCouncilChief;
-			}
-			set
-			{
-				if ((this._FacultyCouncilChief != value))
-				{
-					this.OnFacultyCouncilChiefChanging(value);
-					this.SendPropertyChanging();
-					this._FacultyCouncilChief = value;
-					this.SendPropertyChanged("FacultyCouncilChief");
-					this.OnFacultyCouncilChiefChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViceFactCouncilChief", DbType="Bit")]
-		public System.Nullable<bool> ViceFactCouncilChief
-		{
-			get
-			{
-				return this._ViceFactCouncilChief;
-			}
-			set
-			{
-				if ((this._ViceFactCouncilChief != value))
-				{
-					this.OnViceFactCouncilChiefChanging(value);
-					this.SendPropertyChanging();
-					this._ViceFactCouncilChief = value;
-					this.SendPropertyChanged("ViceFactCouncilChief");
-					this.OnViceFactCouncilChiefChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Councillors", DbType="Bit")]
-		public System.Nullable<bool> Councillors
-		{
-			get
-			{
-				return this._Councillors;
-			}
-			set
-			{
-				if ((this._Councillors != value))
-				{
-					this.OnCouncillorsChanging(value);
-					this.SendPropertyChanging();
-					this._Councillors = value;
-					this.SendPropertyChanged("Councillors");
-					this.OnCouncillorsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Secretary", DbType="Bit")]
-		public System.Nullable<bool> Secretary
-		{
-			get
-			{
-				return this._Secretary;
-			}
-			set
-			{
-				if ((this._Secretary != value))
-				{
-					this.OnSecretaryChanging(value);
-					this.SendPropertyChanging();
-					this._Secretary = value;
-					this.SendPropertyChanged("Secretary");
-					this.OnSecretaryChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacultyBoard", DbType="Bit")]
-		public System.Nullable<bool> FacultyBoard
-		{
-			get
-			{
-				return this._FacultyBoard;
-			}
-			set
-			{
-				if ((this._FacultyBoard != value))
-				{
-					this.OnFacultyBoardChanging(value);
-					this.SendPropertyChanging();
-					this._FacultyBoard = value;
-					this.SendPropertyChanged("FacultyBoard");
-					this.OnFacultyBoardChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BranchBoardCmd", DbType="Int")]
-		public System.Nullable<int> BranchBoardCmd
-		{
-			get
-			{
-				return this._BranchBoardCmd;
-			}
-			set
-			{
-				if ((this._BranchBoardCmd != value))
-				{
-					this.OnBranchBoardCmdChanging(value);
-					this.SendPropertyChanging();
-					this._BranchBoardCmd = value;
-					this.SendPropertyChanged("BranchBoardCmd");
-					this.OnBranchBoardCmdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BranchBoardRefer", DbType="NVarChar(MAX)")]
-		public string BranchBoardRefer
-		{
-			get
-			{
-				return this._BranchBoardRefer;
-			}
-			set
-			{
-				if ((this._BranchBoardRefer != value))
-				{
-					this.OnBranchBoardReferChanging(value);
-					this.SendPropertyChanging();
-					this._BranchBoardRefer = value;
-					this.SendPropertyChanged("BranchBoardRefer");
-					this.OnBranchBoardReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignmentCmd", DbType="Int")]
-		public System.Nullable<int> AssignmentCmd
-		{
-			get
-			{
-				return this._AssignmentCmd;
-			}
-			set
-			{
-				if ((this._AssignmentCmd != value))
-				{
-					this.OnAssignmentCmdChanging(value);
-					this.SendPropertyChanging();
-					this._AssignmentCmd = value;
-					this.SendPropertyChanged("AssignmentCmd");
-					this.OnAssignmentCmdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignmentRefer", DbType="NVarChar(MAX)")]
-		public string AssignmentRefer
-		{
-			get
-			{
-				return this._AssignmentRefer;
-			}
-			set
-			{
-				if ((this._AssignmentRefer != value))
-				{
-					this.OnAssignmentReferChanging(value);
-					this.SendPropertyChanging();
-					this._AssignmentRefer = value;
-					this.SendPropertyChanged("AssignmentRefer");
-					this.OnAssignmentReferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", DbType="Int")]
-		public System.Nullable<int> DurationID
-		{
-			get
-			{
-				return this._DurationID;
-			}
-			set
-			{
-				if ((this._DurationID != value))
-				{
-					this.OnDurationIDChanging(value);
-					this.SendPropertyChanging();
-					this._DurationID = value;
-					this.SendPropertyChanged("DurationID");
-					this.OnDurationIDChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<StdDevelopment>();
 			}
 		}
 	}
@@ -1989,6 +1145,730 @@ namespace AssessmentSystem
 					this._EndDate = value;
 					this.SendPropertyChanged("EndDate");
 					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Administrative")]
+	public partial class Administrative : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<bool> _Chancellor;
+		
+		private System.Nullable<bool> _ViceChancellor;
+		
+		private System.Nullable<bool> _Dean;
+		
+		private System.Nullable<bool> _ChancellorAssistant;
+		
+		private System.Nullable<bool> _ViceDean;
+		
+		private System.Nullable<bool> _DepartmentHead;
+		
+		private System.Nullable<bool> _FacultyCouncilChief;
+		
+		private System.Nullable<bool> _ViceFactCouncilChief;
+		
+		private System.Nullable<bool> _Councillors;
+		
+		private System.Nullable<bool> _Secretary;
+		
+		private System.Nullable<bool> _DeanOfficeHead;
+		
+		private System.Nullable<bool> _DeanAssistant;
+		
+		private System.Nullable<bool> _BranchHeadDirect;
+		
+		private System.Nullable<bool> _ViceDepartment;
+		
+		private System.Nullable<bool> _BranchHeadIn;
+		
+		private System.Nullable<bool> _FacultyBoard;
+		
+		private System.Nullable<int> _BranchBoardCmd;
+		
+		private System.Nullable<int> _AssignmentCmd;
+		
+		private string _UserName;
+		
+		private System.Nullable<int> _DurationID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnChancellorChanging(System.Nullable<bool> value);
+    partial void OnChancellorChanged();
+    partial void OnViceChancellorChanging(System.Nullable<bool> value);
+    partial void OnViceChancellorChanged();
+    partial void OnDeanChanging(System.Nullable<bool> value);
+    partial void OnDeanChanged();
+    partial void OnChancellorAssistantChanging(System.Nullable<bool> value);
+    partial void OnChancellorAssistantChanged();
+    partial void OnViceDeanChanging(System.Nullable<bool> value);
+    partial void OnViceDeanChanged();
+    partial void OnDepartmentHeadChanging(System.Nullable<bool> value);
+    partial void OnDepartmentHeadChanged();
+    partial void OnFacultyCouncilChiefChanging(System.Nullable<bool> value);
+    partial void OnFacultyCouncilChiefChanged();
+    partial void OnViceFactCouncilChiefChanging(System.Nullable<bool> value);
+    partial void OnViceFactCouncilChiefChanged();
+    partial void OnCouncillorsChanging(System.Nullable<bool> value);
+    partial void OnCouncillorsChanged();
+    partial void OnSecretaryChanging(System.Nullable<bool> value);
+    partial void OnSecretaryChanged();
+    partial void OnDeanOfficeHeadChanging(System.Nullable<bool> value);
+    partial void OnDeanOfficeHeadChanged();
+    partial void OnDeanAssistantChanging(System.Nullable<bool> value);
+    partial void OnDeanAssistantChanged();
+    partial void OnBranchHeadDirectChanging(System.Nullable<bool> value);
+    partial void OnBranchHeadDirectChanged();
+    partial void OnViceDepartmentChanging(System.Nullable<bool> value);
+    partial void OnViceDepartmentChanged();
+    partial void OnBranchHeadInChanging(System.Nullable<bool> value);
+    partial void OnBranchHeadInChanged();
+    partial void OnFacultyBoardChanging(System.Nullable<bool> value);
+    partial void OnFacultyBoardChanged();
+    partial void OnBranchBoardCmdChanging(System.Nullable<int> value);
+    partial void OnBranchBoardCmdChanged();
+    partial void OnAssignmentCmdChanging(System.Nullable<int> value);
+    partial void OnAssignmentCmdChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnDurationIDChanging(System.Nullable<int> value);
+    partial void OnDurationIDChanged();
+    #endregion
+		
+		public Administrative()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Chancellor", DbType="Bit")]
+		public System.Nullable<bool> Chancellor
+		{
+			get
+			{
+				return this._Chancellor;
+			}
+			set
+			{
+				if ((this._Chancellor != value))
+				{
+					this.OnChancellorChanging(value);
+					this.SendPropertyChanging();
+					this._Chancellor = value;
+					this.SendPropertyChanged("Chancellor");
+					this.OnChancellorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViceChancellor", DbType="Bit")]
+		public System.Nullable<bool> ViceChancellor
+		{
+			get
+			{
+				return this._ViceChancellor;
+			}
+			set
+			{
+				if ((this._ViceChancellor != value))
+				{
+					this.OnViceChancellorChanging(value);
+					this.SendPropertyChanging();
+					this._ViceChancellor = value;
+					this.SendPropertyChanged("ViceChancellor");
+					this.OnViceChancellorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dean", DbType="Bit")]
+		public System.Nullable<bool> Dean
+		{
+			get
+			{
+				return this._Dean;
+			}
+			set
+			{
+				if ((this._Dean != value))
+				{
+					this.OnDeanChanging(value);
+					this.SendPropertyChanging();
+					this._Dean = value;
+					this.SendPropertyChanged("Dean");
+					this.OnDeanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChancellorAssistant", DbType="Bit")]
+		public System.Nullable<bool> ChancellorAssistant
+		{
+			get
+			{
+				return this._ChancellorAssistant;
+			}
+			set
+			{
+				if ((this._ChancellorAssistant != value))
+				{
+					this.OnChancellorAssistantChanging(value);
+					this.SendPropertyChanging();
+					this._ChancellorAssistant = value;
+					this.SendPropertyChanged("ChancellorAssistant");
+					this.OnChancellorAssistantChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViceDean", DbType="Bit")]
+		public System.Nullable<bool> ViceDean
+		{
+			get
+			{
+				return this._ViceDean;
+			}
+			set
+			{
+				if ((this._ViceDean != value))
+				{
+					this.OnViceDeanChanging(value);
+					this.SendPropertyChanging();
+					this._ViceDean = value;
+					this.SendPropertyChanged("ViceDean");
+					this.OnViceDeanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentHead", DbType="Bit")]
+		public System.Nullable<bool> DepartmentHead
+		{
+			get
+			{
+				return this._DepartmentHead;
+			}
+			set
+			{
+				if ((this._DepartmentHead != value))
+				{
+					this.OnDepartmentHeadChanging(value);
+					this.SendPropertyChanging();
+					this._DepartmentHead = value;
+					this.SendPropertyChanged("DepartmentHead");
+					this.OnDepartmentHeadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacultyCouncilChief", DbType="Bit")]
+		public System.Nullable<bool> FacultyCouncilChief
+		{
+			get
+			{
+				return this._FacultyCouncilChief;
+			}
+			set
+			{
+				if ((this._FacultyCouncilChief != value))
+				{
+					this.OnFacultyCouncilChiefChanging(value);
+					this.SendPropertyChanging();
+					this._FacultyCouncilChief = value;
+					this.SendPropertyChanged("FacultyCouncilChief");
+					this.OnFacultyCouncilChiefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViceFactCouncilChief", DbType="Bit")]
+		public System.Nullable<bool> ViceFactCouncilChief
+		{
+			get
+			{
+				return this._ViceFactCouncilChief;
+			}
+			set
+			{
+				if ((this._ViceFactCouncilChief != value))
+				{
+					this.OnViceFactCouncilChiefChanging(value);
+					this.SendPropertyChanging();
+					this._ViceFactCouncilChief = value;
+					this.SendPropertyChanged("ViceFactCouncilChief");
+					this.OnViceFactCouncilChiefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Councillors", DbType="Bit")]
+		public System.Nullable<bool> Councillors
+		{
+			get
+			{
+				return this._Councillors;
+			}
+			set
+			{
+				if ((this._Councillors != value))
+				{
+					this.OnCouncillorsChanging(value);
+					this.SendPropertyChanging();
+					this._Councillors = value;
+					this.SendPropertyChanged("Councillors");
+					this.OnCouncillorsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Secretary", DbType="Bit")]
+		public System.Nullable<bool> Secretary
+		{
+			get
+			{
+				return this._Secretary;
+			}
+			set
+			{
+				if ((this._Secretary != value))
+				{
+					this.OnSecretaryChanging(value);
+					this.SendPropertyChanging();
+					this._Secretary = value;
+					this.SendPropertyChanged("Secretary");
+					this.OnSecretaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeanOfficeHead", DbType="Bit")]
+		public System.Nullable<bool> DeanOfficeHead
+		{
+			get
+			{
+				return this._DeanOfficeHead;
+			}
+			set
+			{
+				if ((this._DeanOfficeHead != value))
+				{
+					this.OnDeanOfficeHeadChanging(value);
+					this.SendPropertyChanging();
+					this._DeanOfficeHead = value;
+					this.SendPropertyChanged("DeanOfficeHead");
+					this.OnDeanOfficeHeadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeanAssistant", DbType="Bit")]
+		public System.Nullable<bool> DeanAssistant
+		{
+			get
+			{
+				return this._DeanAssistant;
+			}
+			set
+			{
+				if ((this._DeanAssistant != value))
+				{
+					this.OnDeanAssistantChanging(value);
+					this.SendPropertyChanging();
+					this._DeanAssistant = value;
+					this.SendPropertyChanged("DeanAssistant");
+					this.OnDeanAssistantChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BranchHeadDirect", DbType="Bit")]
+		public System.Nullable<bool> BranchHeadDirect
+		{
+			get
+			{
+				return this._BranchHeadDirect;
+			}
+			set
+			{
+				if ((this._BranchHeadDirect != value))
+				{
+					this.OnBranchHeadDirectChanging(value);
+					this.SendPropertyChanging();
+					this._BranchHeadDirect = value;
+					this.SendPropertyChanged("BranchHeadDirect");
+					this.OnBranchHeadDirectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ViceDepartment", DbType="Bit")]
+		public System.Nullable<bool> ViceDepartment
+		{
+			get
+			{
+				return this._ViceDepartment;
+			}
+			set
+			{
+				if ((this._ViceDepartment != value))
+				{
+					this.OnViceDepartmentChanging(value);
+					this.SendPropertyChanging();
+					this._ViceDepartment = value;
+					this.SendPropertyChanged("ViceDepartment");
+					this.OnViceDepartmentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BranchHeadIn", DbType="Bit")]
+		public System.Nullable<bool> BranchHeadIn
+		{
+			get
+			{
+				return this._BranchHeadIn;
+			}
+			set
+			{
+				if ((this._BranchHeadIn != value))
+				{
+					this.OnBranchHeadInChanging(value);
+					this.SendPropertyChanging();
+					this._BranchHeadIn = value;
+					this.SendPropertyChanged("BranchHeadIn");
+					this.OnBranchHeadInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacultyBoard", DbType="Bit")]
+		public System.Nullable<bool> FacultyBoard
+		{
+			get
+			{
+				return this._FacultyBoard;
+			}
+			set
+			{
+				if ((this._FacultyBoard != value))
+				{
+					this.OnFacultyBoardChanging(value);
+					this.SendPropertyChanging();
+					this._FacultyBoard = value;
+					this.SendPropertyChanged("FacultyBoard");
+					this.OnFacultyBoardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BranchBoardCmd", DbType="Int")]
+		public System.Nullable<int> BranchBoardCmd
+		{
+			get
+			{
+				return this._BranchBoardCmd;
+			}
+			set
+			{
+				if ((this._BranchBoardCmd != value))
+				{
+					this.OnBranchBoardCmdChanging(value);
+					this.SendPropertyChanging();
+					this._BranchBoardCmd = value;
+					this.SendPropertyChanged("BranchBoardCmd");
+					this.OnBranchBoardCmdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssignmentCmd", DbType="Int")]
+		public System.Nullable<int> AssignmentCmd
+		{
+			get
+			{
+				return this._AssignmentCmd;
+			}
+			set
+			{
+				if ((this._AssignmentCmd != value))
+				{
+					this.OnAssignmentCmdChanging(value);
+					this.SendPropertyChanging();
+					this._AssignmentCmd = value;
+					this.SendPropertyChanged("AssignmentCmd");
+					this.OnAssignmentCmdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", DbType="Int")]
+		public System.Nullable<int> DurationID
+		{
+			get
+			{
+				return this._DurationID;
+			}
+			set
+			{
+				if ((this._DurationID != value))
+				{
+					this.OnDurationIDChanging(value);
+					this.SendPropertyChanging();
+					this._DurationID = value;
+					this.SendPropertyChanged("DurationID");
+					this.OnDurationIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StdDevelopment")]
+	public partial class StdDevelopment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _CommitteeProject;
+		
+		private System.Nullable<int> _AdvisorStdProject;
+		
+		private System.Nullable<int> _AdvisorClubProject;
+		
+		private string _UserName;
+		
+		private System.Nullable<int> _DurationID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnCommitteeProjectChanging(System.Nullable<int> value);
+    partial void OnCommitteeProjectChanged();
+    partial void OnAdvisorStdProjectChanging(System.Nullable<int> value);
+    partial void OnAdvisorStdProjectChanged();
+    partial void OnAdvisorClubProjectChanging(System.Nullable<int> value);
+    partial void OnAdvisorClubProjectChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnDurationIDChanging(System.Nullable<int> value);
+    partial void OnDurationIDChanged();
+    #endregion
+		
+		public StdDevelopment()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommitteeProject", DbType="Int")]
+		public System.Nullable<int> CommitteeProject
+		{
+			get
+			{
+				return this._CommitteeProject;
+			}
+			set
+			{
+				if ((this._CommitteeProject != value))
+				{
+					this.OnCommitteeProjectChanging(value);
+					this.SendPropertyChanging();
+					this._CommitteeProject = value;
+					this.SendPropertyChanged("CommitteeProject");
+					this.OnCommitteeProjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdvisorStdProject", DbType="Int")]
+		public System.Nullable<int> AdvisorStdProject
+		{
+			get
+			{
+				return this._AdvisorStdProject;
+			}
+			set
+			{
+				if ((this._AdvisorStdProject != value))
+				{
+					this.OnAdvisorStdProjectChanging(value);
+					this.SendPropertyChanging();
+					this._AdvisorStdProject = value;
+					this.SendPropertyChanged("AdvisorStdProject");
+					this.OnAdvisorStdProjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdvisorClubProject", DbType="Int")]
+		public System.Nullable<int> AdvisorClubProject
+		{
+			get
+			{
+				return this._AdvisorClubProject;
+			}
+			set
+			{
+				if ((this._AdvisorClubProject != value))
+				{
+					this.OnAdvisorClubProjectChanging(value);
+					this.SendPropertyChanging();
+					this._AdvisorClubProject = value;
+					this.SendPropertyChanged("AdvisorClubProject");
+					this.OnAdvisorClubProjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationID", DbType="Int")]
+		public System.Nullable<int> DurationID
+		{
+			get
+			{
+				return this._DurationID;
+			}
+			set
+			{
+				if ((this._DurationID != value))
+				{
+					this.OnDurationIDChanging(value);
+					this.SendPropertyChanging();
+					this._DurationID = value;
+					this.SendPropertyChanged("DurationID");
+					this.OnDurationIDChanged();
 				}
 			}
 		}

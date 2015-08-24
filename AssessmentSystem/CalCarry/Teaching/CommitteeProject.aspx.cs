@@ -69,7 +69,7 @@ namespace AssessmentSystem.CalCarry.Teaching
                 Document x = new Document();
                 x.Path = "~/CalCarry/Teaching/CommitteeProjectFiles/" + e.UploadedFile.FileName;
                 x.Iden = Convert.ToInt32(Session["id"]);
-                x.TableNameID = 10;
+                x.TableNameID = 11;
                 x.FileName = e.UploadedFile.FileName;
 
                 db.Documents.InsertOnSubmit(x);

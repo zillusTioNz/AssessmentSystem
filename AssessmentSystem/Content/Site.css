@@ -490,12 +490,12 @@
 .dxsplControl_Office2010Silver .footerPane,
 .dxsplControl_Office2010Silver .footerMenu li
 {
-    background-color: #A9ACB4;
+    background-color: #800000;
     color: white;
 }
 .dxsplControl_Office2010Silver .accountHeader h2
 {
-    color: #3B3B3B;
+    color: #800000;
 }
 .dxsplControl_Office2010Silver .accountHeader p
 {
@@ -559,7 +559,7 @@
 .dxsplControl_RedWine .footerPane,
 .dxsplControl_RedWine .footerMenu li
 {
-    background-color: #78002B;
+    background-color: #800000;
     color: white;
 }
 .dxsplControl_RedWine .headerPane
@@ -573,7 +573,7 @@
 }
 .dxsplControl_RedWine .accountHeader h2
 {
-    color: #8A0A37;
+    color: #800000;
 }
 .dxsplControl_RedWine .headerMenu 
 {
